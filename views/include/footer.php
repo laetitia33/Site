@@ -2,7 +2,7 @@
 	
 	<p>&copy; 2019 Laetita Bernardi - Tous droits réservés<br></p>
 
-	<a href="https://github.com/laetitia33/site"><i class="fab fa-github-square fa-4x"></i></a>
+	<a href="https://github.com/laetitia33/site"><i class="fab fa-github-square fa-4x"></i><span class= 'github'>Lien vers repository github</span></a>
 
 	
  			<a class="btn" data-popup-open="popup-1" href="#">Mentions légales</a>  

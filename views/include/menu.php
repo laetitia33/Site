@@ -60,7 +60,6 @@ else
 				<li><a class="btn" href="index.php#container1"><i class="fas fa-wrench"></i> LIste des Services</a></li>
 				<li><a class="btn" href="index.php?action=information"><i class="fas fa-calendar-alt"></i>  Prenez rendez-vous en ligne</a>
 				</li>
-				<li><a class="btn" href="index.php?action=cinemas">  Salles de cinéma</a></li>
 				<li><a class="btn" href="index.php?action=login"><i class="fas fa-sign-in-alt"></i>  Inscription/connexion</a></li>
 				<li><a class="btn" href="index.php?action=email"><i class="fas fa-envelope"></i>  Contactez-nous</a></li>
 			</ul>

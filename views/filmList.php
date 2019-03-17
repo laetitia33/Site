@@ -70,17 +70,6 @@
 						<a class="input_read" href="index.php?action=post&amp;post_id=<?= $data['id']; ?>#news">En savoir plus</a>
 						<div class="coms">
 
-							<?php
-							if ($data['nbCommentaires'] > 0) : ?>
-							<p class ="nbcom"><?= htmlspecialchars($data['nbCommentaires'])?> avis <i class="far fa-comment"></i></p>
-							 <?php
-				            
-				           	else : ?>
-				           	<p class ="nbcom">Aucun avis</p>
-				           	<?php
-				            endif;
-				            ?>
-						<a href="index.php?action=post&amp;post_id=<?= $data['id']; ?>#com"><em><i class="fas fa-pencil-alt"> Ajouter un Avis</i></em></a><br>
 
 					
 													 	

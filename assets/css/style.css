@@ -8,14 +8,10 @@ body{
     min-height:100%; 
     position:relative; 
     padding-bottom:100px; 
-    color:white;
-    background-color:grey;
+    color :#2f2e33;
+    background-color:#d5d6d2;
     text-align:center;
-    text-shadow: 1px 1px 3px #444;
-    -webkit-text-shadow: 1px 1px 3px #444;
-    -moz-text-shadow: 1px 1px 3px #444;
-    -o-text-shadow: 1px 1px 3px #444;
-    -ms-text-shadow: 1px 1px 3px #444;
+
 }
 
 #blocpagecommentaires{       
@@ -60,10 +56,10 @@ nav
     right:0px;
     left:0px;
     top:0px;
-    background-image:radial-gradient(top, black, rgb(83,127,114));
-    background-image: -moz-radial-gradient(top, black, rgb(83,127,114));
-    background-image: -webkit-radial-gradient(top, black, rgb(83,127,114));
-    background-image: -o-radial-gradient(top, black, rgb(83,127,114)); 
+    background-image:radial-gradient(top, black, #2f2e33);
+    background-image: -moz-radial-gradient(top, black, #2f2e33);
+    background-image: -webkit-radial-gradient(top, black, #2f2e33);
+    background-image: -o-radial-gradient(top, black, #2f2e33);  
     
 }
 
@@ -112,7 +108,7 @@ nav a:hover,
 nav a:focus {
     color: white;
     text-decoration: none;
-    background-color: #B23C1B ;
+    background-color: skyblue;
 }
 
 nav a:visited{
@@ -129,7 +125,7 @@ nav a:visited{
     color:white;
     text-decoration:none;
     font-size: 35px;
-    text-shadow:0 0 20px #00FFFC,2px 3px 3px #141414, 0 0 100px #00D4D1;
+    text-shadow:0 0 20px #E6A58A,2px 3px 3px #141414, 0 0 100px #00D4D1;
     color:white/*#00FFFC*/;
     -webkit-animation: bounceInLeft 2s ease;
     animation: bounceInLeft 2s ease;
@@ -306,7 +302,7 @@ nav a:visited{
 }
 
 .scroll-to:hover{
-    background-color:#B23C1B ;
+    background-color:skyblue;
 
 }
 .scroll-to:hover i {
@@ -350,10 +346,10 @@ footer {
     font-size: 1em;
     font-style: normal;
     color: white;
-    background-image:radial-gradient(top, black, rgb(83,127,114));
-    background-image: -moz-radial-gradient(top, black, rgb(83,127,114));
-    background-image: -webkit-radial-gradient(top, black, rgb(83,127,114));
-    background-image: -o-radial-gradient(top, black, rgb(83,127,114));   
+    background-image:radial-gradient(top, black, #2f2e33);
+    background-image: -moz-radial-gradient(top, black, #2f2e33);
+    background-image: -webkit-radial-gradient(top, black, #2f2e33);
+    background-image: -o-radial-gradient(top, black, #2f2e33);     
 }
 
 footer a {
@@ -368,17 +364,44 @@ footer a {
 
 footer a:hover,
 footer a:focus {
-    color: #B23C1B;
+    color: skyblue;
     font-style:bold;
 }
 
 
 
-footer img {
-    margin-top: 6%;
-    margin-bottom: 4%;
+/* lien vers repository*/
+footer a span {
+    position: absolute;
+    margin-top: 0;
+    margin-bottom: 0;
+    margin-left: 10px;
+    padding: 25px;
+    border-radius: 3px;
+    color: #fff;
+    opacity: 0;
+    background: rgba(0, 0, 0, 0.5);
+    transition: all .25s;
+    -webkit-transition: all .25s;
+    -moz-transition: all .25s;
+    -o-transition: all .25s;
+    -ms-transition: all .25s;
+    transform: scale(0) rotate(-180deg);
+    -webkit-transform: scale(0) rotate(-180deg);
+    -moz-transform: scale(0) rotate(-180deg);
+    -o-transform: scale(0) rotate(-180deg);
+    -ms-transform: scale(0) rotate(-180deg);
 }
 
+footer a:hover span,
+footer a:focus span {
+    opacity: 1;
+    transform: scale(1) rotate(0);
+    -webkit-transform: scale(1) rotate(0);
+    -moz-transform: scale(1) rotate(0);
+    -o-transform: scale(1) rotate(0);
+    -ms-transform: scale(1) rotate(0);
+}
 /* lien mentions légales*/
 
 #legal {
@@ -525,10 +548,10 @@ h3 {
     font-size: 1.2em;
     font-style: normal;
     color: white;
-    background-image:radial-gradient(top, black, rgb(83,127,114));
-    background-image: -moz-radial-gradient(top, black, rgb(83,127,114));
-    background-image: -webkit-radial-gradient(top, black, rgb(83,127,114));
-    background-image: -o-radial-gradient(top, black, rgb(83,127,114));    
+    background-image:radial-gradient(top, black, #332E2E);
+    background-image: -moz-radial-gradient(top, black, #332E2E);
+    background-image: -webkit-radial-gradient(top, black, #332E2E);
+    background-image: -o-radial-gradient(top, black, #332E2E);     
     -webkit-box-shadow: 2px 3px 3px 2px #000;
     -moz-box-shadow: 2px 3px 3px 2px #000;
     -o-box-shadow: 2px 3px 3px 2px #000;
@@ -551,23 +574,19 @@ footer img:hover {
 }
 
 
+h1{
+    font-size:3em;
+}
 
 h2.pageList {
-   
-    color :#2C433C ;
-    text-shadow:0 0 0.4em white;
+    
+
     font-variant: small-caps slashed-zero;
     font-size : 250%;
-}
-
-.list-group h2{
-    color : #cc6633;
-    font : 150% impact, futura, sans-serif;
-    text-transform : uppercase;
-    letter-spacing : 0.3em;
-    text-align : center;  
 
 }
+
+
 
 /* image dans services */
 
@@ -598,6 +617,7 @@ h2.pageList {
 .publishDate{    
     font-size:1.2em;
     margin-bottom:3%;
+    color :#42312a;
 }
 
 /* separateur services */
@@ -609,7 +629,7 @@ h2.pageList {
     width: 250px;
 }
 .pagetitle-separator-border {
-    background-color: #2C433C;
+    background-color: #151816;
     width: 101px;
     height: 3px;
     margin: 0 auto;
@@ -618,7 +638,7 @@ h2.pageList {
 }
 .pagetitle-separator-box {
     height: 10px;
-     background-color: #2C433C;
+     background-color: #151816;
     margin: 23px auto 45px;
     position: relative;
     top: -4px;
@@ -706,7 +726,10 @@ ul.pagination1{
     color:white;
     cursor:pointer;
     box-shadow:none;
-    background:#B23C1B;
+    background-image:radial-gradient(top, black, #6899A4);
+    background-image: -moz-radial-gradient(top, black, #6899A4);
+    background-image: -webkit-radial-gradient(top, black, #6899A4);
+    background-image: -o-radial-gradient(top, black, #6899A4);
     color:white;
 }
 
@@ -716,16 +739,17 @@ ul.pagination1{
 
 }
 
+/* vignettes services */
 .list-group{
-
+    background-color: #f1f1f2;
+    padding:0px;
     box-sizing: border-box;
     flex-direction: column;
     -ms-flex-direction:column;    
     align-items:center;
-    width:33.33333333%;
-    height: auto;
-    border: 2px solid silver;
-    margin:0px;
+    width:38%;
+    height:28%;
+    margin-bottom:5%;
     -moz-box-shadow: 10px 10px 10px #343434;
     -webkit-box-shadow: 10px 10px 10px #343434;
     -o-box-shadow: 10px 10px 10px #343434;
@@ -738,18 +762,31 @@ ul.pagination1{
 }
 
 .list-group:hover{
-    background-color:#4D7B6F;
+    background-color:#a1d6e2;
 }
 
+.list-group h2{
+   
+    color :#2f2e33;
+    text-shadow:0 0 0.4em white;
+    font-variant: small-caps slashed-zero;
+    font-size : 250%; 
 
-.texte {
+}
+
+.liste-group p{
+    padding:0;
+}
+
+.texte p {
     margin-bottom:4%;
     margin-right: 12%;
     margin-left: 12%;
     color:black;
 }
 
-.input_read{
+/* boutons en savoir plus */
+.input_read{  
     padding:10px;
     color:#343434;
     color:white;
@@ -765,17 +802,17 @@ ul.pagination1{
     background:#cfcfcf;
     filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#cfcfcf", endColorstr="#656565"); /* Pour IE seulement et mode gradient à linear */
     background: -webkit-gradient(linear, left top, left bottom, from(#cfcfcf), to(#656565));
-    background: -webkit-linear-gradient(#cfcfcf, #656565);
-    background: -moz-linear-gradient(#cfcfcf, #656565);
-    background: -o-linear-gradient(#cfcfcf, #656565);
-    background: -ms-linear-gradient(#cfcfcf, #656565);
-    background: linear-gradient(#cfcfcf, #656565); 
+    background-image:radial-gradient(top, black, #bcbabe);
+    background-image: -moz-radial-gradient(top, black, #bcbabe);
+    background-image: -webkit-radial-gradient(top, black, #bcbabe);
+    background-image: -o-radial-gradient(top, black, #bcbabe); 
     -webkit-transform: scale(1);
     transform: scale(1);
     -webkit-transition: .3s ease-in-out;
     transition: .3s ease-in-out;
     cursor:pointer;
 }
+
 
 .input_read:hover{
 
@@ -784,7 +821,10 @@ ul.pagination1{
     color:black;
     border:1px solid grey;
     box-shadow:none;
-    background:#B23C1B;
+    background-image:radial-gradient(top, black, #6899A4);
+    background-image: -moz-radial-gradient(top, black, #6899A4);
+    background-image: -webkit-radial-gradient(top, black, #6899A4);
+    background-image: -o-radial-gradient(top, black, #6899A4);
     color:white;
     cursor:pointer;
 }
@@ -835,6 +875,7 @@ textarea{
 }
 
 .oneMovieDetail{
+    background-color: #f1f1f2;
     display: flex;
     display: -ms-flexbox;
     flex-direction: column;
@@ -844,23 +885,12 @@ textarea{
     margin:auto;
     height: auto;
     margin-bottom: 25px;
-    border: 10px solid white;
-    -webkit-border-radius: 3px;
-    -webkit-border-radius: 14px;
-    -moz-border-radius: 3px;
-    -moz-border-radius: 14px;
-    -o-border-radius: 3px;
-    -o-border-radius: 14px;
-    -ms-border-radius: 3px;
-    -ms-border-radius: 14px;
-    border-radius: 3px;
-    border-radius: 14px;
-    background: white;
-    -webkit-box-shadow: 5px 5px 10px silver;
-    -moz-box-shadow: 5px 5px 10px silver;
-    -o-box-shadow: 5px 5px 10px silver;
-    -ms-box-shadow:5px 5px 10px silver;
-    box-shadow: 5px 5px 10px silver;
+
+    margin-bottom:5%;
+    -moz-box-shadow: 10px 10px 10px #343434;
+    -webkit-box-shadow: 10px 10px 10px #343434;
+    -o-box-shadow: 10px 10px 10px #343434;
+    box-shadow: 10px 10px 10px #343434;
     -webkit-transition: all 1s ease;
     -moz-transition: all 1s ease;
     -o-transition: all 1s ease;
@@ -1011,7 +1041,7 @@ input[type=submit]:hover {
 }
 
 .oneMovieDetail h2{
-    color : #cc6633;
+    color :#2f2e33;
     font : 150% impact, futura, sans-serif;
     text-transform : uppercase;
     letter-spacing : 0.3em;
@@ -1052,12 +1082,12 @@ input[type=submit]:hover {
     -o-transition: all 0.5s ease;
     -moz-transition: all 0.5s ease;
     font-size:1.2em;
-    color: white;
+    color :#2f2e33;
 }
 
 .news:hover{
 
-    color: #9B0511;
+    color: skyblue;
 }
 
 #message {
@@ -1284,7 +1314,7 @@ label.error {
 }
 
 .adminPost h2{
-    color : #cc6633;
+    color :#2f2e33;
     font : 150% impact, futura, sans-serif;
     text-transform : uppercase;
     letter-spacing : 0.3em;

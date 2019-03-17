@@ -33,7 +33,157 @@ body{
     -ms-flex-pack: justify;     
 }
 
+/* div contact */
 
+#volet {
+    width: 250px;
+    padding: 10px;
+    background: #232226; 
+    color: #fff;
+    font-size:1.2em;
+    z-index:9999;
+    margin-left:-9px;
+}
+        
+#volet a.ouvrir,
+#volet a.fermer {
+    padding: 10px 25px;
+    background: #555;
+    color: #fff;
+    text-decoration: none;
+    left:223px;
+    z-index:9999;
+}
+
+#volet {
+    position: absolute;
+    left: -270px;  /* test fixed + scroll, on retire la position top */
+    -webkit-transition: all .5s ease-in;
+    -moz-transition: all .5s ease-in;
+    transition: all .5s ease-in;
+}
+
+#volet a.ouvrir,
+#volet a.fermer {
+    position: absolute;
+    z-index:300;
+    right: -88px;
+    top:46px;
+    -webkit-transform: rotate(270deg);
+    -moz-transform: rotate(270deg);
+    -o-transform: rotate(270deg);
+    -ms-transform: rotate(270deg);
+    -moz-radius: 0 0 8px 8px;
+    border-radius: 0 0 8px 8px;
+}
+
+#volet a.fermer {
+    display: none;
+}
+
+#volet:target {
+    left: 10px;
+}
+
+/* code pour la fermeture */
+
+#volet:target a.fermer {
+    display: block;
+}
+
+#volet:target a.ouvrir {
+    display: none;
+}
+
+#volet_clos:target #volet {
+    left: -270px;
+}
+
+/* test fixed + scroll */
+#volet_clos {
+    position: fixed; 
+    top: 30%; 
+    left: 0;
+}
+
+
+
+/* div contact uniquement pour page d'accueil */
+
+#volet1 {
+    width: 250px;
+    padding: 10px;
+    background: #232226; 
+    color: #fff;
+    font-size:1.2em;
+    z-index:9999;
+    margin-left:-9px;
+}
+        
+#volet1 a.ouvrir1,
+#volet1 a.fermer1 {
+    padding: 10px 25px;
+    background: #555;
+    color: #fff;
+    text-decoration: none;
+    left:223px;
+    z-index:9999;
+}
+
+#volet1 {
+    position: absolute;
+    left: -270px;  /* test fixed + scroll, on retire la position top */
+    -webkit-transition: all .5s ease-in;
+    -moz-transition: all .5s ease-in;
+    transition: all .5s ease-in;
+}
+
+#volet1 a.ouvrir1,
+#volet1 a.fermer1 {
+    position: absolute;
+    z-index:300;
+    right: -88px;
+    top:46px;
+    -webkit-transform: rotate(270deg);
+    -moz-transform: rotate(270deg);
+    -o-transform: rotate(270deg);
+    -ms-transform: rotate(270deg);
+    -moz-radius: 0 0 8px 8px;
+    border-radius: 0 0 8px 8px;
+}
+
+#volet1 a.fermer1 {
+    display: none;
+}
+
+#volet1:target {
+    left: 10px;
+}
+
+/* code pour la fermeture */
+
+#volet1:target a.fermer1 {
+    display: block;
+}
+
+#volet1:target a.ouvrir1 {
+    display: none;
+}
+
+#volet_clos1:target #volet1 {
+    left: -270px;
+}
+
+/* test fixed + scroll */
+#volet_clos1 {
+    z-index: 9999;
+    left: 0;
+}
+
+
+a[href^="#welcome"] {
+   padding-left: 10px;
+}
 /*------------------ menu ----------------*/
 
 .navigation_mob  {
@@ -575,6 +725,7 @@ footer img:hover {
 
 
 h1{
+margin-top:5%;
     font-size:3em;
 }
 
@@ -599,6 +750,7 @@ h2.pageList {
     height: 200px; 
     filter: contrast(150%);    
     transform-origin: 50% 50%;
+    z-index:-10;
 }
  
 .service img:hover {
@@ -938,7 +1090,7 @@ textarea{
     font-family: tahoma,arial,verdana;
     font-size: 1.5em;
     font-style: oblique;
-    color: rgb(30,56,56);
+    color: skyblue;
     color: black;
     background-color: lightgrey;
 }
@@ -984,7 +1136,10 @@ input[type=submit]:hover {
     transform: scale(1);
     color:black;
     box-shadow:none;
-    background:#7A020B;
+    background-image:radial-gradient(top, black, #6899A4);
+    background-image: -moz-radial-gradient(top, black, #6899A4);
+    background-image: -webkit-radial-gradient(top, black, #6899A4);
+    background-image: -o-radial-gradient(top, black, #6899A4);
     color:white;
     cursor:pointer; 
 }
@@ -1436,7 +1591,7 @@ label.error {
     }
 
     nav a{
-        padding:none;
+        padding:0px;
 
     } 
 
@@ -1461,13 +1616,19 @@ label.error {
 
     .navigation_mobile li {
         list-style-type: none;
+
     }
 
+    .tarifs:hover{
+       width:20%;
+        background-color:skyblue;
+    }
 
     ul.pagination,
     ul.pagination1{
         margin-top:5%;
         margin-bottom:5%;
+        margin:auto;
     }
 
     .pagination li,
@@ -1621,6 +1782,10 @@ label.error {
 
     #message{
         width: 95.5%;
+    }
+  .tarifs:hover{
+       width:40%;
+
     }
 
     .popup-inner{

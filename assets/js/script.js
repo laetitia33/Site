@@ -54,7 +54,28 @@ $(document).ready(function(){
 });
 
 
+//ancre vers les service //
 
+
+$('a[href^="#welcome"]').click(function(){  
+    var id = $(this).attr("href");
+    var offset = $(id).offset().top 
+    $('html, body').animate({scrollTop: offset}, 'slow'); 
+    return false;  
+}); 
+
+
+//div contact qui suit au scroll
+
+function fixDiv() {
+  var $cache = $('#volet_clos1'); 
+  if ($(window).scrollTop() > 200) 
+    $cache.css({'position': 'fixed', 'bottom': '30%'}); 
+  else
+    $cache.css({'position': 'relative', 'bottom': 'auto'});
+}
+$(window).scroll(fixDiv);
+fixDiv();
 
 //fermeture du message alerte
 $(document).ready(function(){

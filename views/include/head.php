@@ -31,6 +31,10 @@
 	
   		<script src='https://www.google.com/recaptcha/api.js'></script>
 
+  		<!--slider-->
+  		<link rel="stylesheet" type="text/css" href="assets/js/engine1/style.css" />
+		<script type="text/javascript" src="assets/js/engine1/jquery.js"></script>
+
 		<!-- validation formulaires -->
   		<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.17.0/jquery.validate.js"></script>
   		<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.17.0/additional-methods.js"></script>

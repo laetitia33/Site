@@ -57,7 +57,7 @@ else
 					<a href="assets/images/tarifs.jpg" download><i class="fas fa-download"></i> Télécharger tarifs </a>
 				</div></li>
 				<li><a class="btn" href="index.php"><i class="fas fa-home"></i> Accueil</a></li>
-				<li><a class="btn" href="index.php#container1"><i class="fas fa-wrench"></i> LIste des Services</a></li>
+				<li><a class="btn" href="#welcome"><i class="fas fa-wrench"></i> Liste des Services</a></li>
 				<li><a class="btn" href="index.php?action=information"><i class="fas fa-calendar-alt"></i>  Prenez rendez-vous en ligne</a>
 				</li>
 				<li><a class="btn" href="index.php?action=login"><i class="fas fa-sign-in-alt"></i>  Inscription/connexion</a></li>

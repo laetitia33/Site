@@ -2,6 +2,14 @@
 
 <?php ob_start(); ?>
 
+<div id="volet_clos">
+    <div id="volet">
+        <p>Par téléphone au <br> <i class="fas fa-phone-volume"></i><a href="tel:+0659982720"> 06 59 98 27 20 </a><br>du lundi au samedi de 8h à 19h <br>sans interruption  ou par <br><i class="fas fa-envelope"></i> <a href="index.php?action=email">E-mail</a></p>
+    <a href="#volet" class="ouvrir" aria-hidden="true">Contact </a>
+    <a href="#volet_clos" class="fermer" aria-hidden="true">fermer </a>
+    </div>
+</div>
+
     <h2 class  ='pageList'>Liste des membres</h2>
 
 

@@ -34,13 +34,14 @@
             
            	else : ?>
 
-			<p><a class="news" href="index.php#films"><i class="fas fa-arrow-left">
-			Retour à la liste des films</i></a></p>
+			<p><a class="news" href="index.php#welcome"><i class="fas fa-arrow-left">
+			Retour à la liste des services</i></a></p>
 			  <?php
             endif;
             ?>
 
-<!---///////affichage de l'auteur , de modification ou suppression du film  admin////-->		
+<!---///////affichage de l'auteur , de modification ou suppression du film  admin////-->
+
 		<div class ="oneMovieDetail">
 			<img src="assets/images/bobine.jpg" class ="bobine" alt="bobine"/>
 			<h2><?= htmlspecialchars($post['title']) ?></h2>	
@@ -198,8 +199,8 @@ endif;
             
            	else : ?>
 
-				<p><a class="news" href="index.php#episodes"><i class="fas fa-arrow-left">
-				Retour à la liste des films</i></a></p>
+				<p><a class="news" href="index.php#welcome"><i class="fas fa-arrow-left">
+				Retour à la liste des services</i></a></p>
 		<?php
             endif;
           ?>

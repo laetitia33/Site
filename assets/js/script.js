@@ -1,5 +1,13 @@
 
+ $('.toggle').on('click', function() {
+  $('.container').stop().addClass('active');
+});
+
+$('.close').on('click', function() {
+  $('.container').stop().removeClass('active');
+});
  //ouverture/fermeture des mentions légales
+
 $( "#legal" ).click(function() {
   $( "#legalnotice" ).fadeIn( "slow", function() {
     // Animation complete
@@ -13,8 +21,31 @@ $( "#closelegal" ).click(function() {
   });
 });
 
+//menu flottant au scroll
+$(document).ready(function() {
+      // grab the initial top offset of the navigation 
+        var stickyNavTop = $('.nav').offset().top;
+        
+        // our function that decides weather the navigation bar should have "fixed" css position or not.
+        var stickyNav = function(){
+          var scrollTop = $(window).scrollTop(); // our current vertical position from the top
+               
+          // if we've scrolled more than the navigation, change its position to fixed to stick to top,
+          // otherwise change it back to relative
+          if (scrollTop > stickyNavTop) { 
+              $('.nav').addClass('sticky');
+          } else {
+              $('.nav').removeClass('sticky'); 
+          }
+      };
 
-
+      stickyNav();
+      // and run it again every time you scroll
+      $(window).scroll(function() {
+        stickyNav();
+      });
+    });
+  
 //faire apparaitre et disparaitre le menu en responsive
   $(function() {
     $('#show_menu').click(function() {
@@ -54,15 +85,6 @@ $(document).ready(function(){
 });
 
 
-//ancre vers les service //
-
-
-$('a[href^="#welcome"]').click(function(){  
-    var id = $(this).attr("href");
-    var offset = $(id).offset().top 
-    $('html, body').animate({scrollTop: offset}, 'slow'); 
-    return false;  
-}); 
 
 
 //div contact qui suit au scroll

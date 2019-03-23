@@ -10,19 +10,23 @@
 <!--///////////////////////// slider///////////////////////////////////////////////////-->
 
 <div id="wowslider-container1">
-<div class="ws_images"><ul>
+	
+<div class="ws_images">
+	 
+	<ul>
 		<li><img src="assets/js/data1/images/image4.jpg" alt="Vous avez un problème en informatique ? ...," title="Vous avez un problème en informatique ? ...," id="wows1_0"/></li>
 		<li><img src="assets/js/data1/images/image5.jpg" alt="..vous souhaitez créer un site ? , ..." title="..vous souhaitez créer un site ? , ..." id="wows1_1"/></li>
 		<li><img src="assets/js/data1/images/image10.jpg" alt=".. Apprendre les bases de l'informatique ?.. " title=".. Apprendre les bases de l'informatique ?.. " id="wows1_2"/></li>
 		<li><img src="assets/js/data1/images/image16.jpg" alt="jquery image carousel" title="dans une ambiance sereine et décontractée,  à domicile" id="wows1_3"/></a></li>
 		<li><img src="assets/js/data1/images/image19.jpg" alt="Venez découvrir les services proposés en détail" title="Venez découvrir les services proposés en détail" id="wows1_4"/></li>
-	</ul></div>
+	</ul>
+</div>
 	<div class="ws_bullets"><div>
 		<a href="#" title="Vous avez un problème en informatique ? ...,"><span><img src="assets/js/data1/tooltips/image4.jpg" alt="Vous avez un problème en informatique ? ...,"/>1</span></a>
 		<a href="#" title="..vous souhaitez créer un site ? , ..."><span><img src="assets/js/data1/tooltips/image5.jpg" alt="..vous souhaitez créer un site ? , ..."/>2</span></a>
 		<a href="#" title=".. Apprendre les bases de l'informatique ?.. "><span><img src="assets/js/data1/tooltips/image10.jpg" alt=".. Apprendre les bases de l'informatique ?.. "/>3</span></a>
 		<a href="#" title="dans une ambiance sereine et décontractée,  à domicile"><span><img src="assets/js/data1/tooltips/image16.jpg" alt="dans une ambiance sereine et décontractée,  à domicile"/>4</span></a>
-		<a href="#" title="Venez découvrir les services proposés en détail"><span><img src="assets/js/data1/tooltips/image19.jpg" alt="Venez découvrir les services proposés en détail"/>5</span></a>
+		<a href="#" title="Venez découvrir les services proposés en détail "><span><img src="assets/js/data1/tooltips/image19.jpg" alt="Venez découvrir les services proposés en détail"/>5</span></a>
 	</div>
 </div>
 
@@ -30,9 +34,8 @@
 </div>	
 
 <!--///////////////////////// message bienvenue////////////////////////////////////////-->
-<div id='welcome'></div>
-
-	<div class= "welcome">
+<span id="welcome"></span>
+	<div class= "welcome" >
 		<h1>Bienvenue 
 		<?php 
 			if(isset($_SESSION['id']) && $_SESSION['id_group'] == 1 OR isset($_SESSION['id']) && $_SESSION['id_group'] == 2 )   : 
@@ -43,9 +46,11 @@
 
 <?php
 		if(isset($_SESSION['id']) && $_SESSION['id_group'] == 1) : ?>
-			<p class = "publishDate">  <i class="fas fa-laptop"></i> Bonjour, <?php
-			setlocale(LC_TIME, 'fr_FR.utf8','fra');
-			echo "Nous sommes le ".strftime("%d %B %Y");?> ,Verifiez la liste des services  <i class="fas fa-laptop"></i>       		
+			<p class = "publishDate">  <i class="fas fa-laptop"></i> Bonjour,<?php
+			setlocale(LC_TIME, 'fr','fr_FR','fr_FR@euro','fr_FR.utf8','fr-FR','fra');
+			date_default_timezone_set('Europe/Paris');
+			echo "Nous sommes le ".strftime("%d %B %Y")." " ."il est ".strftime( "%H:%M") ;?> 
+			,Verifiez la liste des services  <i class="fas fa-laptop"></i>       		
 			</p>
 			<?php
 		
@@ -53,8 +58,9 @@
 		: ?>
 
 			<p class = "publishDate"> <i class="fas fa-laptop"></i> Bonjour ,<?php
-			setlocale(LC_TIME, 'fr_FR.utf8','fra');
-			echo "Nous sommes le ".strftime("%d %B %Y");?> , Veuillez parcourir la liste des services   <i class="fas fa-laptop"></i>         		
+			setlocale(LC_TIME, 'fr','fr_FR','fr_FR@euro','fr_FR.utf8','fr-FR','fra');
+			date_default_timezone_set('Europe/Paris');
+			echo "Nous sommes le ".strftime("%d %B %Y")." " ."il est ".strftime( "%H:%M") ;?> , Veuillez parcourir la liste des services   <i class="fas fa-laptop"></i>         		
 			</p>
 			  <?php
          endif;
@@ -90,7 +96,7 @@
 			<div class="list-group">
 			
         		<a href="javascript:void(0)" class="list-group-item active"></a>
-        
+      
 					<a href="index.php?action=post&amp;post_id=<?= $data['id']; ?>#news">
 						<div class="service"><?php echo "<img alt ='images des services proposés' src= '".$data['image']."' />";?>								
 						</div>

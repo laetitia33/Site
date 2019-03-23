@@ -8,7 +8,7 @@ $(function() {
         } else {
             return false;
         };
-    }, "Seuls les caractères alphanumériques sont autorisés");
+    }, "Seuls les caractères <br>alphanumériques sont autorisés");
 
 
     //valider adresse mail
@@ -20,8 +20,11 @@ $(function() {
           };
       }, "Adresse email non valide");
 
+
 $('form[class="form"]').validate(
     {
+
+
          onkeyup : false, 
         ignore: "",
 
@@ -118,19 +121,19 @@ $('form[class="form"]').validate(
             msg:'veuillez entrer votre message',
 
             name :{
-              required :'Ce champ est requis',
+              required :'Veuillez entrer votre nom',
               minlength :'Veuillez entrer au moins 3 caractères'
-
+ 
             },
 
-            object :'Ce champ est requis',
+            object :'Veuillez entrer un sujet ',
 
             video :'veuillez entrer le code de la vidéo',
 
             comment:'veuillez entrer un commentaire',
 
             email:   {
-                required: 'Ce champ est requis ',
+                required: 'Veuillez entrer une adresse mail ',
                 minlength: "Veuillez entrer au moins 3 caractères"
                
             },
@@ -138,28 +141,30 @@ $('form[class="form"]').validate(
 
             pseudo:
             {
-                required: 'Ce champ est requis ',
+                required: 'veuillez entrer un pseudo',
                 minlength: "Veuillez entrer au moins 3 caractères",
                 maxlength: "Veuillez ne pas dépasser 20 caractères"
             },
 
          
             password: {
-                required: 'Mot de passe requis',
+                required: 'Veuillez entrer un mot de passe',
                 minlength: "Veuillez insérer au moins 6 caractères"
             
             },
 
             password_confirm : {
-                required: 'Veuillez confirmer votre mot de passe',
+                required: 'Veuillez confirmer votre mot de passe ',
                 equalTo : "les deux mots de passe doivent être identiques"
             },
 
-          
-
         },
 
-        submitHandler: function (form)
+        errorPlacement: function(error, element) {
+            element.attr("placeholder",error.text());
+        },
+
+       submitHandler: function (form)
         {
             return true;
         }
@@ -219,7 +224,7 @@ $('form[class="formLogin"]').validate(
             
             pseudo:
             {
-                required: 'Ce champ est requis',
+                required: 'Veuillez entrer votre pseudo',
                 minlength: "Veuillez insérer au moins 3 caractères"
                
             },
@@ -233,6 +238,9 @@ $('form[class="formLogin"]').validate(
 
         },
 
+        errorPlacement: function(error, element) {
+            element.attr("placeholder",error.text());
+        },
         submitHandler: function (form)
         {
             return true;

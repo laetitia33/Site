@@ -10,16 +10,21 @@
 		<meta property="og:type" content="website">
 		<meta property="og:image" content="assets/images/icone.png">
 		<meta name="Language" CONTENT="fr" />
-		<!--- police logo-->
-		<link href='https://fonts.googleapis.com/css?family=Rancho'rel='stylesheet' type='text/css'>
+		
+		<!--- police -->
+		<link href='http://fonts.googleapis.com/css?family=Questrial|Droid+Sans|Alice|Rancho|Roboto' rel='stylesheet' type='text/css'>
 		<!--type neon nom entreprise-->
 		<link href="https://uvc.one/upload/iblock/5b2/5b2a90b62e7e14ca24ec45683f4a7961.css" rel="stylesheet">
 
+		<!--- font awesome-icones -->
+		<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.0/css/all.css" integrity="sha384-Mmxa0mLqhmOeaE8vgOSbKacftZcsNYDjQzuCOm6D02luYSzBG8vpaOykv9lFQ51Y" crossorigin="anonymous">
+		<link href="//netdna.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
 
-		<link href="https://use.fontawesome.com/releases/v5.0.8/css/all.css" rel="stylesheet">
+
+		<!-- icone-->
 		<link href="assets/images/icone.png" rel="icon" type="image/x-icon" />
 
-
+		
 		<!--jquery-->
    		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
 

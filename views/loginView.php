@@ -37,7 +37,7 @@
  
  </div>
   <div class="card alt">
-    <div class="toggle" aria-label="Inscription,cliquez ici"></div>
+    <div class="toggle" aria-label="&#xf0d9; Inscription,cliquez ici"></div>
     <h1 class="title">Inscription
       <div class="close"></div>
     </h1>

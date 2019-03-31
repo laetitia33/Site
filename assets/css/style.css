@@ -1,4 +1,72 @@
 
+/*  bouton entrer */
+.hvr-radial-out {
+  display: inline-block;
+  vertical-align: middle;
+  -webkit-transform: perspective(1px) translateZ(0);
+  transform: perspective(1px) translateZ(0);
+  right: 3%; 
+  bottom:3%;
+  position: absolute;
+  overflow: hidden;
+  font-size:1.8em;  
+  padding:15px;
+  color:#343434;
+  color:white;
+  text-decoration:none;
+  -moz-box-shadow: 10px 10px 10px #343434;
+  -webkit-box-shadow: 10px 10px 10px #343434;
+  -o-box-shadow: 10px 10px 10px #343434;
+  box-shadow: 10px 10px 10px #343434;
+  -moz-border-radius: 10px;
+  -webkit-border-radius: 10px;
+  border-radius: 10px;
+  border: 1px solid #656565;
+  background:#cfcfcf;
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#cfcfcf", endColorstr="#656565"); /* Pour IE seulement et mode gradient à linear */
+  background: -webkit-gradient(linear, left top, left bottom, from(#cfcfcf), to(#656565));
+  background-image:radial-gradient(top, black, #bcbabe);
+  background-image: -moz-radial-gradient(top, black, #bcbabe);
+  background-image: -webkit-radial-gradient(top, black, #bcbabe);
+  background-image: -o-radial-gradient(top, black, #bcbabe); 
+  -webkit-transform: scale(1);
+  transform: scale(1);
+  -webkit-transition: .3s ease-in-out;
+  transition: .3s ease-in-out;
+  cursor:pointer;
+  -webkit-transition-property: color;
+  transition-property: color;
+  -webkit-transition-duration: 0.3s;
+  transition-duration: 0.3s;
+  z-index:9999;
+ 
+}
+.hvr-radial-out:before {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: #2098D1;
+  border-radius: 100%;
+  -webkit-transform: scale(0);
+  transform: scale(0);
+  -webkit-transition-property: transform;
+  transition-property: transform;
+  -webkit-transition-duration: 0.3s;
+  transition-duration: 0.3s;
+  -webkit-transition-timing-function: ease-out;
+  transition-timing-function: ease-out;
+}
+.hvr-radial-out:hover, .hvr-radial-out:focus, .hvr-radial-out:active {
+  color: white;
+}
+.hvr-radial-out:hover:before, .hvr-radial-out:focus:before, .hvr-radial-out:active:before {
+  -webkit-transform: scale(2);
+  transform: scale(2);
+}
 
 
 body{
@@ -57,7 +125,7 @@ body{
     color: #fff;
     text-decoration: none;
     left:223px;
-    z-index:9999;
+    z-index:99999;
 }
 
 #volet {
@@ -264,18 +332,36 @@ ul.navigation
     width: 100%;
 }
 
-
-
 nav a {
-  
-    color: white;
-    padding: 20px 10px;
-    text-decoration: none;
-   -webkit-transition: all 0.5s;
-   -moz-transition: all 0.5s;
-    -ms-transition: all 0.5s;
-    -o-transition: all 0.5s;
-    transition: all 0.5s; 
+  color: white;
+  padding: 15px 7px;
+  text-decoration: none;
+ -webkit-transition: all 0.5s;
+ -moz-transition: all 0.5s;
+  -ms-transition: all 0.5s;
+  -o-transition: all 0.5s;
+  transition: all 0.5s; 
+}
+
+nav a:before {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: #2098D1;
+  -webkit-transform: scaleY(0);
+  transform: scaleY(0);
+  -webkit-transform-origin: 50%;
+  transform-origin: 50%;
+  -webkit-transition-property: transform;
+  transition-property: transform;
+  -webkit-transition-duration: 0.3s;
+  transition-duration: 0.3s;
+  -webkit-transition-timing-function: ease-out;
+  transition-timing-function: ease-out;
 }
 
 nav a:hover,
@@ -283,13 +369,65 @@ nav a:focus {
     color: white;
     text-decoration: none;
     background-color: skyblue;
+
+}
+
+nav a:hover:before, nav a:focus:before, nav a:active:before {
+  -webkit-transform: scaleY(1);
+  transform: scaleY(1);
 }
 
 nav a:visited{
     text-decoration: none;
 }
 
+/*icones dans navigation*/
 
+
+/* Icon Pulse */
+@-webkit-keyframes hvr-icon-pulse {
+  25% {
+    -webkit-transform: scale(1.3);
+    transform: scale(1.3);
+  }
+  75% {
+    -webkit-transform: scale(0.8);
+    transform: scale(0.8);
+  }
+}
+@keyframes hvr-icon-pulse {
+  25% {
+    -webkit-transform: scale(1.3);
+    transform: scale(1.3);
+  }
+  75% {
+    -webkit-transform: scale(0.8);
+    transform: scale(0.8);
+  }
+}
+.btn {
+  display: inline-block;
+  vertical-align: middle;
+  -webkit-transform: perspective(1px) translateZ(0);
+  transform: perspective(1px) translateZ(0);
+  box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+}
+.btn i {
+  -webkit-transform: translateZ(0);
+  transform: translateZ(0);
+  -webkit-transition-timing-function: ease-out;
+  transition-timing-function: ease-out;
+}
+.btn:hover i, .btn:focus i, .btn:active i {
+  -webkit-animation-name: hvr-icon-pulse;
+  animation-name: hvr-icon-pulse;
+  -webkit-animation-duration: 1s;
+  animation-duration: 1s;
+  -webkit-animation-timing-function: linear;
+  animation-timing-function: linear;
+  -webkit-animation-iteration-count: infinite;
+  animation-iteration-count: infinite;
+}
 /*---------logo -------------*/
 .font-effect-3d-float{
 
@@ -1289,6 +1427,7 @@ textarea{
 textarea:focus {
     background-color: #a1d6e2;
     font-family: FontAwesome, Roboto,tahoma,arial,verdana;
+    box-shadow: inset 0 0 0 3px #2098D1, 0 0 1px rgba(0, 0, 0, 0);
 }
 
 #messageMail {
@@ -1320,7 +1459,7 @@ textarea:focus {
 }
 
 .inputbasic {
-    margin:1% auto 1%;
+  margin:1% auto 1%;
     width: 80%;
     padding: 15px;
     border: 1px solid grey;
@@ -1350,15 +1489,13 @@ textarea:focus {
     -o-transition: all 0.5s ease;
     -moz-transition: all 0.5s ease;
     cursor: pointer;
-    
+
 }
-
-
-
 input.inputbasic:focus {
     font-family: FontAwesome, Roboto,tahoma,arial,verdana;
     color: rgb(30,56,56);
     background-color: #a1d6e2;
+    box-shadow: inset 0 0 0 3px #2098D1, 0 0 1px rgba(0, 0, 0, 0);
 }
 
 
@@ -1465,22 +1602,30 @@ label.error {
 
 .card .toggle:hover:after,
 .card .toggle:focus:after {
-   content: attr(aria-label);  /* on affiche aria-label */
+   content: attr(aria-label);  
   position: relative;
   top: -6em;
   left: 50%;
-    transform: translateX(-50%); /* on centre horizontalement  */
-  z-index: 1; /* pour s'afficher au dessus des éléments en position relative */
-  white-space: nowrap;  /* on interdit le retour à la ligne*/
+    transform: translateX(-50%); 
+  z-index: 1; 
+  white-space: nowrap; 
   padding: 2px 2px;
      background:rgba(0,0,0,.4);
      box-shadow:0 1px 0 rgba(255,255,255,.4);
   color: #fff;
   border-radius: 4px;
   font-size: 1rem;
+   -webkit-transform: translateX(-10px);
+  transform: translateX(-10px);
+    border-width: 10px 10px 10px 0;
+  border-color: transparent #e1e1e1 transparent transparent;
+  border-style: solid;  -webkit-transform: translateX(-10px);
+  transform: translateX(-10px);
+  -webkit-transition-property: transform;
+  transition-property: transform;
+  font-family:fontawesome;
 }
-
-
+    
 
 /* pas de contour durant le :focus */
 [aria-label]:focus {
@@ -1881,6 +2026,185 @@ z-index:9999;
     opacity: 0;
   }
 }
+/*------page controle a distance -----*/
+
+.sliderTab{
+  display:none;
+}
+/*---slider explicatif----*/
+ #slider3 {
+  width: 500px;
+  height: 400px;
+  list-style: none;
+  z-index:-1;
+ }
+ /* images with caption */
+ #slider3 img {
+  width: 100%;
+  height: 100%;
+ }
+ /* position the panels so the captions appear correctly */
+ #slider3 .panel { position: relative; }
+ /* captions */
+ #slider3 .caption-top, #slider3 .caption-right,
+ #slider3 .caption-bottom, #slider3 .caption-left {
+  background: #000;
+  color: #fff;
+  padding: 10px;
+  margin: 0;
+  position: relative;
+  z-index: 10;
+  opacity: .8;
+  filter: alpha(opacity=80);
+ }
+ /* Top caption - padding is included in the width (480px here, 500px in the script), same for height */
+ #slider3 .caption-top {
+  left: 0;
+  top: 0;
+  width: 480px;
+  height: 30px;
+ }
+ /* Right caption - padding is included in the width (130px here, 150px in the script), same for height */
+ #slider3 .caption-right {
+  right: 0;
+  bottom: 0;
+  width: 130px;
+  height: 180px;
+ }
+ /* Bottom caption - padding is included in the width (480px here, 500px in the script), same for height */
+ #slider3 .caption-bottom {
+  left: 0;
+  bottom: 0;
+  width: 480px;
+  height: 30px;
+ }
+ /* Left caption - padding is included in the width (130px here, 150px in the script), same for height */
+ #slider3 .caption-left {
+  left: 0;
+  bottom: 0;
+  width: 130px;
+  height: 180px;
+ }
+ /* Caption close button */
+ .caption-top .close, .caption-right .close,
+ .caption-bottom .close, .caption-left .close {
+  font-size: 80%;
+  cursor: pointer;
+  float: right;
+  display: inline-block;
+ }
+
+
+
+ol {counter-reset: repas;
+
+
+  } /* on initialise et nomme un compteur */
+
+li.teamExpl{
+
+  justify-content: center;
+  list-style-type: none;
+  counter-increment: repas; /* on incrémente le compteur à chaque nouveau li */
+  margin-bottom: 1%;
+  margin-top:4%;
+}
+
+li.teamExpl:before {
+  content: counter(repas); /* on affiche le compteur */
+  padding:16px 20px 10px 20px;
+  margin-right:8px;
+  background: #678;
+  -moz-border-radius: 60px;
+  border-radius: 60px;
+  font-weight: bold;
+  font-size: 0.8em;
+  color: white;   
+}
+/*----bouton controle telechargement--*/
+@-webkit-keyframes hvr-pulse-shrink {
+  to {
+    -webkit-transform: scale(0.9);
+    transform: scale(0.9);
+  }
+}
+@keyframes hvr-pulse-shrink {
+  to {
+    -webkit-transform: scale(0.9);
+    transform: scale(0.9);
+  }
+}
+.hvr-pulse-shrink {
+  width: 30%;
+  margin:55px auto 55px;
+  -webkit-transform: perspective(1px) translateZ(0);
+  transform: perspective(1px) translateZ(0);
+  box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+  padding:10px;
+  color:#343434;
+  color:white;
+  text-decoration:none;
+  -moz-box-shadow: 10px 10px 10px #343434;
+  -webkit-box-shadow: 10px 10px 10px #343434;
+  -o-box-shadow: 10px 10px 10px #343434;
+  box-shadow: 10px 10px 10px #343434;
+  -moz-border-radius: 10px;
+  -webkit-border-radius: 10px;
+  border-radius: 10px;
+  border: 1px solid #656565;
+  background:#cfcfcf;
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#cfcfcf", endColorstr="#656565"); /* Pour IE seulement et mode gradient à linear */
+   background-image:radial-gradient(top, black, #6899A4);
+  background-image: -moz-radial-gradient(top, black, #6899A4);
+  background-image: -webkit-radial-gradient(top, black, #6899A4);
+  background-image: -o-radial-gradient(top, black, #6899A4);
+  -webkit-transform: scale(1);
+  transform: scale(1);
+  -webkit-transition: .3s ease-in-out;
+  transition: .3s ease-in-out;
+  cursor:pointer;
+}
+
+.hvr-pulse-shrink:hover, .hvr-pulse-shrink:focus, .hvr-pulse-shrink:active {
+  -webkit-animation-name: hvr-pulse-shrink;
+  animation-name: hvr-pulse-shrink;
+  -webkit-animation-duration: 0.3s;
+  animation-duration: 0.3s;
+  -webkit-animation-timing-function: linear;
+  animation-timing-function: linear;
+  -webkit-animation-iteration-count: infinite;
+  animation-iteration-count: infinite;
+  -webkit-animation-direction: alternate;
+  animation-direction: alternate;
+  box-shadow:none;
+
+
+}
+.hvr-pulse-shrink:before {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: #2098D1;
+  -webkit-transform: scale(0);
+  transform: scale(0);
+  -webkit-transition-property: transform;
+  transition-property: transform;
+  -webkit-transition-duration: 0.3s;
+  transition-duration: 0.3s;
+  -webkit-transition-timing-function: ease-out;
+  transition-timing-function: ease-out;
+}
+
+.hvr-pulse-shrink:hover:before, .hvr-pulse-shrink:focus:before, .hvr-pulse-shrink:active:before {
+  -webkit-transform: scale(1);
+  transform: scale(1);
+}
+
+/* ----- fin bouton telechargement---*/
 
 /*----- page infos------*/
 #messageMeteo img{
@@ -2083,14 +2407,18 @@ iframe{
         margin-bottom:2%;
         color:white;
     }
-    
-   body{
+
+    nav a:before{
+        background-color: transparent;
+    }
+
+    body{
         margin-top:0px;
         margin-left:0px;
         margin-right:0px;
     }
 
-    nav a#toggler{
+    nav a#toggler:before,nav a#toggler:hover:before,nav a#toggler:active:before{
         padding:none;
         background-color: transparent;
     }
@@ -2130,14 +2458,8 @@ iframe{
     nav a{
         padding:0px;
 
-    } 
+    }
 
-    nav a:hover,
-    nav a:focus {
-
-    border: none;
-
-    }   
 
     ul.navigation_mobile{
         padding:10px;
@@ -2157,8 +2479,15 @@ iframe{
     }
 
     .tarifs:hover{
-       width:20%;
+        width:20%;
         background-color:skyblue;
+        padding:none;
+    }
+
+    .tarifs:hover:before{
+        background-color: transparent;
+        padding:none;
+
     }
 
     ul.pagination,
@@ -2348,7 +2677,15 @@ iframe{
         transform-origin:0 0;
         -webkit-transform-origin:0 0;
     }
+    
+    .sliderPc{
+      display:none;
+    }
 
+    .sliderTab{
+      display:block;
+    }
+    
   }
 
 @media(orientation:landscape) and (max-device-width:650px) {

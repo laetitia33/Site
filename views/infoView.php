@@ -1,4 +1,4 @@
-<?php $title =  'Informations pratiques'; ?>
+<?php $title =  'Rendez-vous en ligne'; ?>
 
 <!DOCTYPE html>
 <html lang="fr" class='template'>

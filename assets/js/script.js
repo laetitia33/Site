@@ -1,4 +1,52 @@
 
+//animation slider controle
+
+$(function(){
+ $('#slider3')
+  .anythingSlider()
+  .anythingSliderFx({
+   // '.selector' : [ 'caption', 'distance/size', 'time', 'easing' ]
+   // 'distance/size', 'time' and 'easing' are optional parameters
+   '.caption-top'    : [ 'caption-Top', '50px' ],
+   '.caption-right'  : [ 'caption-Right', '130px', '1000', 'easeOutBounce' ],
+   '.caption-bottom' : [ 'caption-Bottom', '50px' ],
+   '.caption-left'   : [ 'caption-Left', '130px', '1000', 'easeOutBounce' ]
+  })
+  /* add a close button (x) to the caption */
+  .find('div[class*=caption]')
+    .css({ position: 'absolute' })
+    .prepend('<span class="close">x</span>')
+    .find('.close').click(function(){
+      var cap = $(this).parent(),
+       ani = { bottom : -50 }; // bottom
+      if (cap.is('.caption-top')) { ani = { top: -50 }; }
+      if (cap.is('.caption-left')) { ani = { left: -150 }; }
+      if (cap.is('.caption-right')) { ani = { right: -150 }; }
+      cap.animate(ani, 400, function(){ cap.hide(); } );
+    });
+});
+
+
+//ancre du bouton entrez vers services
+
+$(document).ready(function() {
+     $('a[href=#welcome]').click(function(){
+          $('html, body').animate({scrollTop:$("#welcome").offset().top}, 'slow');
+          return false;
+     });
+});
+
+
+// ancre du menu vers services
+$(document).ready(function() {
+     $('#serv').click(function(){
+          $('html, body').animate({scrollTop:$("#welcome").offset().top}, 'slow');
+          return false;
+     });
+});
+
+
+//page login/inscription
  $('.toggle').on('click', function() {
   $('.container').stop().addClass('active');
 });
@@ -83,7 +131,6 @@ $(document).ready(function(){
         return false;
     });
 });
-
 
 
 

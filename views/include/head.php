@@ -2,6 +2,7 @@
 		<meta charset="utf-8">
 		<!-- feuille de style-->
 		<link rel="stylesheet" type="text/css" href="assets/css/style.css">
+		<link rel="stylesheet" type="text/css" href="assets/css/horloge.css">
 
 		<meta name="description" content="Assitance informatique,Conseil,Conception de sites,Formation !">
 		<meta name="viewport" content="width=device-width initial-scale=1">
@@ -28,6 +29,9 @@
 		<!--jquery-->
    		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
 
+   		<!--jquery horloge-->
+		<script src="http://cdnjs.cloudflare.com/ajax/libs/moment.js/2.0.0/moment.min.js"></script>
+
 		<!--jquery-->
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/2.0.2/anime.min.js"></script>
 
@@ -36,13 +40,19 @@
 	
   		<script src='https://www.google.com/recaptcha/api.js'></script>
 
-  		<!--slider-->
-  		<link rel="stylesheet" type="text/css" href="assets/js/engine1/style.css" />
-		<script type="text/javascript" src="assets/js/engine1/jquery.js"></script>
+  		<!--slider page d'acceuil-->
+  		<link rel="stylesheet" type="text/css" href="assets/js/sliderAccueil/engine1/style.css" />
+		<script type="text/javascript" src="assets/js/sliderAccueil/engine1/jquery.js"></script>
 
 		<!-- validation formulaires -->
   		<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.17.0/jquery.validate.js"></script>
   		<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.17.0/additional-methods.js"></script>
+		
+		<!-- slider page controle pc-->
+ 		<script src="assets/js/slider_controle/jquery.easing.1.2.js"></script>
+ 		<link href="assets/js/slider_controle/anythingslider.css" rel="stylesheet">
+	 	<script src="assets/js/slider_controle/jquery.anythingslider.min.js"></script>
+ 		<script src="assets/js/slider_controle/jquery.anythingslider.fx.min.js"></script>
 
 		<title><?= isset($title) ? $title : 'Assistance informatique';?></title>
 	</head>

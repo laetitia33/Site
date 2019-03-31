@@ -1,4 +1,4 @@
-<?php $title = 'Contact cine-cinema';?>
+<?php $title = 'Contact';?>
 
 <?php ob_start(); ?> 
  <form class ="form"  method="post" action="index.php?action=addMail" > 
@@ -22,9 +22,9 @@
                     <input type="text"  id="object"  name="object" placeholder=" &#xf02b; sujet" class="inputbasic" value="" required/> 
                 </div>
                                             
-                <div class="inputbasic" >
+                <div  >
                     <label for="msg"></label>
-                    <textarea  name="msg" id="msg"  placeholder=" &#xf1dd; Entrez votre message" required></textarea>
+                    <textarea class="inputbasic" name="msg" id="msg"  placeholder=" &#xf1dd; Entrez votre message" required></textarea>
                 </div><br>
 
     <div class="g-recaptcha" data-theme="light" data-sitekey="6Leae5kUAAAAANbvHn1qo9K0BZ61pXtAOn1CwN7f" ></div>

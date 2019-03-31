@@ -23,16 +23,28 @@
 			<a id="films"></a>
 	<div class ="pageInfo">
 					
-<!--///////////////////////// rdv///////////////////////-->
-
-<!-- ScheduleOnce embed START -->
-<div id="SOIDIV_LaetitiaBernardi" data-so-page="LaetitiaBernardi" data-height="550" data-style="border: 1px solid #87CEEB; min-width: 290px; max-width: 900px;" data-psz="00"></div>
-<script type="text/javascript" src="https://cdn.oncehub.com/mergedjs/so.js"></script>
-<!-- ScheduleOnce embed END -->
-	</div>
-			<?php include_once 'views/include/footer.php' ?>			
-		
-			
+		<!--///////////////////////// rdv///////////////////////-->
+<?php 
+if(isset($_SESSION['id']) && $_SESSION['id_group'] == 1 OR isset($_SESSION['id']) && $_SESSION['id_group'] == 2 ): ?>
+		<!-- ScheduleOnce embed START -->
+		<div id="SOIDIV_LaetitiaBernardi" data-so-page="LaetitiaBernardi" data-height="550" data-style="border: 1px solid #87CEEB; min-width: 290px; max-width: 900px;" data-psz="00"></div>
+		<script type="text/javascript" src="https://cdn.oncehub.com/mergedjs/so.js"></script>
+		<!-- ScheduleOnce embed END -->
+		</div>
+						
+	
+<?php 
+	//sinon se connecter pour prendre un rdv
+else : ;
+?>
+					      							
+    <em><i class="fas fa-ban"></i>  Vous devez être <a id='validcom' href="index.php?action=login">connecté ou inscrit</a><br>pour prendre un rendez vous</em>       			
+ 		  
+	       				
+<?php 
+endif; 
+?>
+		<?php include_once 'views/include/footer.php' ?>			
 	</div>	
 	<script src="assets/js/meteo.js"></script>
 	<script src ="assets/js/script.js"></script>

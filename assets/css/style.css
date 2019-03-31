@@ -735,6 +735,7 @@ footer a:focus span {
     text-decoration: none;
     font-style: bold;
     color:#B23C1B;
+
    
 }
 
@@ -1187,6 +1188,7 @@ ul.pagination1{
 .coms{
     color:black;
     font-style:oblique;
+    margin-top:4%;
 }
 
 .oneMovieDetail{
@@ -1320,7 +1322,7 @@ ul.pagination1{
 }
 
 #message {
-    margin-top:1%;
+    margin-top:1%;   
     text-align:center;
     font-size:1.1em;
     font-weight: bold;
@@ -1334,7 +1336,7 @@ ul.pagination1{
     -ms-border-radius: 14px;
     border-radius: 3px;
     border-radius: 14px;
-    color: #9B0511;
+    color :#2f2e33;
     padding: 15px;
     width: 97.5%;
     box-shadow: 0 3px 10px #ccc;
@@ -1343,7 +1345,7 @@ ul.pagination1{
     -moz-box-shadow: 0 3px 10px #ccc;
     -o-box-shadow: 0 3px 10px #ccc;
     background-color:white ;
-    margin-bottom:2%;
+
 
 }
 
@@ -1358,19 +1360,7 @@ iframe{
     margin:auto;
 }    
 
-#SOIBTN_LaetitiaBernardi{
-    -webkit-animation: rotation 5s infinite linear;
 
-}
-
-@-webkit-keyframes rotation {
-        from {
-                -webkit-transform: rotate(0deg);
-        }
-        to {
-                -webkit-transform: rotate(359deg);
-        }
-}
 /*--------------- page contact ----------------*/
 legend p {
     font-style:oblique;
@@ -1445,7 +1435,7 @@ textarea:focus {
     -ms-border-radius: 14px;
     border-radius: 3px;
     border-radius: 14px;
-    color: #9B0511;
+    color :#2f2e33;
     padding: 15px;
     width: 97.5%;
     box-shadow: 0 3px 10px #ccc;
@@ -1458,7 +1448,7 @@ textarea:focus {
     display:none;
 }
 
-.inputbasic {
+.inputbasic{
   margin:1% auto 1%;
     width: 80%;
     padding: 15px;
@@ -1473,11 +1463,10 @@ textarea:focus {
     -moz-border-radius: 5px;
     border-radius: 3px;
     border-radius: 5px;
-    background-color: #f0f0f0;
+    background-color: white;
     font-family: FontAwesome, Roboto,tahoma,arial,verdana;
     font-size: 4em,
-    font-style: oblique;
-    color: rgb(30,56,56);
+    color: black;
     -webkit-box-shadow: 0 3px 10px #ccc;
     -moz-box-shadow: 0 3px 10px #ccc;
     -o-box-shadow: 0 3px 10px #ccc;
@@ -1534,6 +1523,7 @@ input[type=submit]   {
 
 input[type=submit]:active{
     padding: 15px;
+       color:black;
 }
 
 input[type=submit]:hover {
@@ -1790,7 +1780,7 @@ padding-left:0;
   font-weight: 400;
 }
 .card .input-container input:focus ~ label {
-  color: #9d9d9d;
+  color: black;
   -webkit-transform: translate(-12%, -50%) scale(0.75);
           transform: translate(-12%, -50%) scale(0.75);
 }
@@ -1981,16 +1971,19 @@ z-index:9999;
   content: '\00d7';
 }
 .card.alt .input-container input {
-  color: #ffffff;
+  color: black;
+  padding-left:2px;
 }
 .card.alt .input-container input:focus ~ label {
-  color: #ffffff;
+  color: black;
+   padding-left:2px;
 }
 .card.alt .input-container input:focus ~ .bar:before, .card.alt .input-container input:focus ~ .bar:after {
   background: #ffffff;
 }
 .card.alt .input-container input:valid ~ label {
-  color: #ffffff;
+  color: black;
+   padding-left:2px;
 }
 .card.alt .input-container label {
   color: rgba(255, 255, 255, 0.8);
@@ -2096,10 +2089,11 @@ z-index:9999;
 
 
 
-ol {counter-reset: repas;
-
-
-  } /* on initialise et nomme un compteur */
+ol {
+	counter-reset: repas;
+	margin:0;
+	padding:0;
+} /* on initialise et nomme un compteur */
 
 li.teamExpl{
 
@@ -2210,6 +2204,7 @@ li.teamExpl:before {
 #messageMeteo img{
     width: 75px;
     height:auto;
+
 }
 
 .accordion {

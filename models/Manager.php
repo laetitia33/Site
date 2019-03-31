@@ -16,7 +16,7 @@ class Manager
 
     protected function dbConnect() {
         $host = 'localhost';
-        $db = 'cine_cinema';
+        $db = 'info';
         $user = 'root';
         $pass = 'azerty33';
         $charset = 'UTF8';

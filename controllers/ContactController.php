@@ -42,11 +42,12 @@ class ContactController{
         $headers = 'MIME-Version: 1.0' . "\n";
         $headers .= 'Content-type: text/html; charset=ISO-8859-1' . "\n";
         $headers .= 'Reply-To: ' . $email . "\n";
-        $headers .= 'From: "Expediteur"<' . $expediteur . '>' . "\n";
+        $headers .= 'De: "Expediteur"<' . $expediteur . '>' . "\n";
         $headers .= 'Delivered-to: ' . $destinataire . "\n";
         $msg = '<div style="width: 100%; text-align: center; font-weight: bold">' . $this->_msg . '</div>';
-          mail($destinataire, $objet, $msg, $headers);       
-        $this->messag();        
+          mail($destinataire, $objet, $msg, $headers); 
+         
+               
         require('views/contactView.php');
                
     }
@@ -77,10 +78,6 @@ class ContactController{
         
     }
 
-    public function messag(){
-          echo "<div id ='message'>Message envoyé avec succès</div>";
-
-    }
 
 }
 

@@ -54,6 +54,7 @@
 	 	<script src="assets/js/slider_controle/jquery.anythingslider.min.js"></script>
  		<script src="assets/js/slider_controle/jquery.anythingslider.fx.min.js"></script>
 
+
 		<title><?= isset($title) ? $title : 'Assistance informatique';?></title>
 	</head>
 	

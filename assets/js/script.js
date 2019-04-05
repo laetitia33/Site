@@ -175,7 +175,7 @@ jQuery(document).ready(function()
  });
 
 
-//fenetre modale ouvrant la page youtube
+//fenetre modale ouvrant la page mentions legales
 //----OPEN
 $(function() {
 
@@ -197,11 +197,6 @@ $(function() {
 
   });
 
-//arreter la video a la fermeture de la modale
-jQuery('[data-popup-close]').click(function (e) {
-  var $videoEl = jQuery(this).closest('.popup-inner').find('iframe');
-  $videoEl.attr('src', $videoEl.attr('src'));
-});
 
   
 });

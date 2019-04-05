@@ -23,27 +23,38 @@
 			<a id="films"></a>
 	<div class ="pageInfo">
 					
-		<!--///////////////////////// rdv///////////////////////-->
-<?php 
-if(isset($_SESSION['id']) && $_SESSION['id_group'] == 1 OR isset($_SESSION['id']) && $_SESSION['id_group'] == 2 ): ?>
-		<!-- ScheduleOnce embed START -->
-		<div id="SOIDIV_LaetitiaBernardi" data-so-page="LaetitiaBernardi" data-height="550" data-style="border: 1px solid #87CEEB; min-width: 290px; max-width: 900px;" data-psz="00"></div>
-		<script type="text/javascript" src="https://cdn.oncehub.com/mergedjs/so.js"></script>
-		<!-- ScheduleOnce embed END -->
-		</div>
-						
-	
-<?php 
-	//sinon se connecter pour prendre un rdv
-else : ;
-?>
-					      							
-    <em><i class="fas fa-ban"></i>  Vous devez être <a id='validcom' href="index.php?action=login">connecté ou inscrit</a><br>pour prendre un rendez vous</em>       			
- 		  
-	       				
-<?php 
-endif; 
-?>
+		<!--///////////////////////// rdv ou agenda admin///////////////////////-->
+
+<?php 		
+if(isset($_SESSION['id']) && $_SESSION['id_group'] == 1 ):?>
+
+	<h2>Mon planning</h2>
+	<iframe src="https://pro.rdv360.com/agenda/laetitia-bernardi?ajx_md=1" style="border: 0" width="800" height="600" frameborder="0" scrolling="no"></iframe>
+	<?php
+
+else :;?>
+
+
+	<?php 
+	if(isset($_SESSION['id']) && $_SESSION['id_group'] == 1 OR isset($_SESSION['id']) && $_SESSION['id_group'] == 2 ): ?>
+		
+		<script type="text/javascript" src="https://www.rdv360.com/js/iframeResizer.min.js"></script><iframe id="rdv360Iframe" src="https://www.rdv360.com/laetitia-bernardi?ajx_md=1" width="100%" scrolling="no"  style="border:0px;"></iframe><script type="text/javascript">$(function(){$('#rdv360Iframe').iFrameResize();});</script>		
+
+	<?php 
+		//sinon se connecter pour prendre un rdv
+	else : ;
+	?>
+						      							
+	    <em><i class="fas fa-ban"></i>  Vous devez être <a id='validcom' href="index.php?action=login">connecté ou inscrit</a><br>pour prendre un rendez vous</em>       			
+	 		  
+		       				
+	<?php 
+	endif; 
+	?>
+
+
+<?php endif;?>
+		<a href="#" id="btntop"class="scroll-to"><i class="fa fa-chevron-up"></i></a>
 		<?php include_once 'views/include/footer.php' ?>			
 	</div>	
 	<script src="assets/js/meteo.js"></script>

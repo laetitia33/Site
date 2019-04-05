@@ -21,12 +21,20 @@ class ViewController{
     //page informations
   	public function info()
     {   
-     
+       $usersTotal =$this->_user->countUsers();//connaitre le nombre total d'inscrits
+        $commentsReportTotal = $this->_comment->countCommentsReport();//connaitre le nombre total de commentaires signalés
+        $postsTotal = $this->_post->countPosts();//connaitre le nombre total de films
+        $commentsTotal  =$this ->_comment ->countComments();//connaitre le nombre total de commentaires
         require('views/infoView.php');
     }
 
 	//page contact
     public function mailView(){   
+
+        $usersTotal =$this->_user->countUsers();//connaitre le nombre total d'inscrits
+        $commentsReportTotal = $this->_comment->countCommentsReport();//connaitre le nombre total de commentaires signalés
+        $postsTotal = $this->_post->countPosts();//connaitre le nombre total de films
+        $commentsTotal  =$this ->_comment ->countComments();//connaitre le nombre total de commentaires
 
        require ('views/contactView.php');
     }

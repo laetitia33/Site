@@ -62,6 +62,14 @@ class Routeur
                      
                     }
 
+                    // page mail lire les mails reçus
+                    elseif ($_GET['action'] == 'email') 
+                    {
+                      
+                        $this->_viewCtrl->mailView();
+                    }
+                    
+
                      // ADMIN - Page pour créer un film
                     elseif ($_GET['action'] == 'adminNewPost')
                     {
@@ -76,7 +84,14 @@ class Routeur
                         $this->_postCtrl->listPosts();
                     }
 
-
+                   // ADMIN - AGENDA
+                                       
+                    if ($_GET['action'] == 'information')
+                    {
+                        
+                        $this->_viewCtrl->info();
+                       
+                    }       
 
                     //ADMIN - film avec ses commentaires
                     elseif ($_GET['action'] == 'post') 

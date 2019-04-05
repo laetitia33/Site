@@ -4,14 +4,6 @@
 <!--///////////////////////// phrase d'accueil///////////////////////////////////////////////////-->
 
 
-		<?php
-		
-		if($commentReport===true) : ?>
-			
-			 <div id="message">Ce commentaire a bien été signalé et sera vérifié par l'administrateur</div>
-		
-		<?php
-        endif;?>
 
 
 
@@ -25,7 +17,18 @@
 	<a href="#volet" class="ouvrir" aria-hidden="true">Contact </a>
 	<a href="#volet_clos" class="fermer" aria-hidden="true">fermer </a>
 	</div>
-</div>		
+</div>	
+
+<?php
+		
+		if($commentReport===true) : ?>
+			
+			 <div id="message">Ce commentaire a bien été signalé et sera vérifié par l'administrateur</div>
+		
+		<?php
+        endif;?>
+                    
+     
 		<?php
 			if(isset($_SESSION['id']) && $_SESSION['id_group'] == 1): ?>
 			<p><a class="news" href="index.php#adminView"><i class="fas fa-arrow-left">
@@ -41,9 +44,8 @@
             ?>
 
 <!---///////affichage de l'auteur , de modification ou suppression du film  admin////-->
-
+  
 		<div class ="oneMovieDetail">
-			<img src="assets/images/bobine.jpg" class ="bobine" alt="bobine"/>
 			<h2><?= htmlspecialchars($post['title']) ?></h2>	
 			<div id="affiche2"><?php echo "<img alt='affiche du film' src='".$post['image']."' />";?></div>
 
@@ -85,7 +87,7 @@
 			<p><span class="publishing">Durée du film <?= htmlspecialchars($post['duree']) ?></span></p><br>	
 			<p>Article écrit par <a href="index.php?action=information"><?= $post['author'] ?></a>
 			le <?= $post['date_creation_fr'] ?></p>
-			<img src="assets/images/bobine.jpg" class ="bobine2" alt="bobine"/>	
+	
 		</div>
 
 
@@ -97,8 +99,8 @@ if(isset($_SESSION['id']) && $_SESSION['id_group'] == 1 OR isset($_SESSION['id']
 		<h2><i class="far fa-comments"></i> Laissez un Commentaire</h2>
 		<form class= 'form' action="index.php?action=addComment&amp;post_id=<?= $_GET['post_id'];?>#ancrecom" method="POST">
 				
-			<div class="inputbasic>
-	            <label for="author" ></label>
+			<div class="inputbasic">
+	            <label for='author' ></label>
 	        <?php
 	     	if(isset($_SESSION['pseudo'])) : ?>
 	            <input type="text" name="author"  id="author" class="inputbasic" value="<?php echo htmlspecialchars($_SESSION['pseudo'])?>"/ required>
@@ -127,17 +129,14 @@ if(isset($_SESSION['id']) && $_SESSION['id_group'] == 1 OR isset($_SESSION['id']
 	
 <!--///////////////////////// boucle affichage commentaire admin ou visiteur ///////////-->
     <div class="container1">
-        <div>
-            <ul class="pagination1">
-              <li id="previous-page"><a href="javascript:void(0)" aria-label=Previous><span aria-hidden=true>&laquo;</span></a></li>
-            </ul>
-          </div>
+    
     <div class="page1">
 	<?php 
 	while ($comment = $comments->fetch()):?>
 	
 				<div id="ancrecom"></div>
-				<div class = "commentaires">
+			
+				<div class="triangle-right top">
 					<a href="javascript:void(0)" class="list-group-item active"></a>
 					<p><strong><i class="fas fa-user"></i>   <?= htmlspecialchars($comment['author']) ?></strong> le <?= htmlspecialchars($comment['comment_date_fr']) ?>
 					</p>
@@ -168,11 +167,16 @@ if(isset($_SESSION['id']) && $_SESSION['id_group'] == 1 OR isset($_SESSION['id']
 	            ?>
 
 				</div>	
-		
+	
 	<?php
 	endwhile;?>
 	</div>
 	</div>
+		    <div>
+         <ul class="pagination1">
+        <li id="previous-page"><a href="javascript:void(1)" aria-label=Previous><span aria-hidden=true>Précédente &laquo;</span></a></li>
+      </ul>
+          </div>
 	<?php $comments->closeCursor();?>
 
 

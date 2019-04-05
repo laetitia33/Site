@@ -1,13 +1,16 @@
 
 <?php $title = 'Informatique la Teste De Buch,liste des services'; ?>
 
-
-
-
-
-
 <?php ob_start(); ?>
-<!--///////////////////////// slider///////////////////////////////////////////////////-->
+<!--///////////////////////// slider pour les utlisateurs uniquement //////////////////////////////////////////-->
+<?php
+		if(isset($_SESSION['id']) && $_SESSION['id_group'] == 1) : ?>
+		
+	
+		<?php
+		
+		else
+		: ?>
 
 <div id="wowslider-container1">
 
@@ -34,7 +37,9 @@
 
 <div class="ws_shadow"></div>
 </div>	
-
+	  <?php
+         endif;
+         ?>
 <!--///////////////////////// message bienvenue////////////////////////////////////////-->
 <span id="welcome"></span>
 	<div class= "welcome" >
@@ -51,18 +56,18 @@
 			<p class = "publishDate">  <i class="fas fa-laptop"></i> Bonjour,<?php
 			setlocale(LC_TIME, 'fr','fr_FR','fr_FR@euro','fr_FR.utf8','fr-FR','fra');
 			date_default_timezone_set('Europe/Paris');
-			echo "Nous sommes le ".strftime("%d %B %Y")." " ."il est ".strftime( "%H:%M") ;?> 
-			,Verifiez la liste des services  <i class="fas fa-laptop"></i>       		
+			echo " nous sommes le ".strftime("%d %B %Y")." " ."il est ".strftime( "%H:%M") ;?> 
+			,verifiez la liste des services  <i class="fas fa-laptop"></i>       		
 			</p>
 			<?php
 		
 		else
 		: ?>
 
-			<p class = "publishDate"> <i class="fas fa-laptop"></i> Bonjour ,<?php
+			<p class = "publishDate"> <i class="fas fa-laptop"></i> Bonjour,<?php
 			setlocale(LC_TIME, 'fr','fr_FR','fr_FR@euro','fr_FR.utf8','fr-FR','fra');
 			date_default_timezone_set('Europe/Paris');
-			echo "Nous sommes le ".strftime("%d %B %Y")." " ."il est ".strftime( "%H:%M") ;?> , Veuillez parcourir la liste des services   <i class="fas fa-laptop"></i>         		
+			echo " nous sommes le ".strftime("%d %B %Y")." " ."il est ".strftime( "%H:%M") ;?> , veuillez parcourir la liste des services   <i class="fas fa-laptop"></i>         		
 			</p>
 			  <?php
          endif;

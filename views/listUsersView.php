@@ -23,7 +23,7 @@
 while ($user = $users->fetch()) :
 ?>
 
-<div class="commentaires">
+<div class="triangle">
     <a href="javascript:void(0)" class="list-group-item active"></a>
 
       

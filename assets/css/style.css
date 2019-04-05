@@ -1,4 +1,10 @@
-
+iframe {
+  width: 100%;
+  border: 0;
+  min-height: 80%;
+  height: 600px;
+  display: flex;
+}
 /*  bouton entrer */
 .hvr-radial-out {
   display: inline-block;
@@ -80,7 +86,7 @@ body{
     padding-bottom:100px; 
     color: #404d5b;
     background-color:silver;
-    font-size: 1em;
+    font-size: 0.9em;
     font-family: 'Raleway', Arial, sans-serif;
     text-align:center;
 
@@ -331,6 +337,7 @@ ul.navigation
 .navigation a{
     width: 100%;
 }
+
 
 nav a {
   color: white;
@@ -729,8 +736,8 @@ footer a:focus span {
     cursor: pointer;
 }
 
-.commentaires a:hover,
-.coms i:hover,
+.triangle-right a:hover,
+.trangle-right i:hover,
 #legal:hover {
     text-decoration: none;
     font-style: bold;
@@ -968,9 +975,9 @@ h2.pageList {
     width: 10px;
 }
 
-/*pagination pour film liste et com,users*/
-#page,
-.page1{
+/*pagination pour film liste et users*/
+#page
+{
     display: flex;
     display: -ms-flexbox;
     flex-wrap: wrap;
@@ -1048,6 +1055,14 @@ ul.pagination1{
     cursor:pointer;
     box-shadow:none;
     background-image:radial-gradient(top, black, #6899A4);
+    background-image: -moz-radial-gradient(top, black, #6899A4);
+    background-image: -webkit-radial-gradient(top, black, #6899A4);
+    background-image: -o-radial-gradient(top, black, #6899A4);
+    color:white;
+}
+
+.pagination a:focus,.pagination1 a:focus{
+   background-image:radial-gradient(top, black, #6899A4);
     background-image: -moz-radial-gradient(top, black, #6899A4);
     background-image: -webkit-radial-gradient(top, black, #6899A4);
     background-image: -o-radial-gradient(top, black, #6899A4);
@@ -1180,14 +1195,23 @@ ul.pagination1{
 }
 
 
-/* ------------ page de detail des films -------*/
+/* ------------ page de detail des services -------*/
 
-
+.page1
+{
+  display: flex;
+    display: -ms-flexbox;
+   flex-direction: column;
+    -ms-flex-direction:column;    
+    align-items:center;
+    margin-bottom: 2%;
+    margin-top: 4%;
+  }
 
 
 .coms{
     color:black;
-    font-style:oblique;
+    font-style:bold;
     margin-top:4%;
 }
 
@@ -1239,37 +1263,51 @@ ul.pagination1{
     transform: scale(1.25);
 }
 
-.commentaires {
-    text-align:left;
-    display: flex;
-    display: -ms-flexbox;
-    flex-direction: column;
-    -ms-flex-direction:column;
-    width: 50%;
-    color:black;
-    height: auto;
-    margin: auto;
-    margin-bottom: 2%;
-    padding-left: 3%;
-    border: 2px solid white;
-    -webkit-border-radius: 3px;
-    -webkit-border-radius: 14px;
-    -moz-border-radius: 3px;
-    -moz-border-radius: 14px;
-    -o-border-radius: 3px;
-    -o-border-radius: 14px;
-    -ms-border-radius: 3px;
-    -ms-border-radius: 14px;
-    border-radius: 3px;
-    border-radius: 14px;
-    background-color: silver;
-    box-shadow: 0 3px 10px #ccc;
-    -ms-box-shadow: 0 3px 10px #ccc;
-    -webkit-box-shadow: 0 3px 10px #ccc;
-    -moz-box-shadow: 0 3px 10px #ccc;
-    -o-box-shadow: 0 3px 10px #ccc;
+
+.triangle-right.top {
+    background: -webkit-gradient(linear, 0 0, 0 100%, from(#075698), to(#2e88c4));
+    background: -moz-linear-gradient(#075698, #2e88c4);
+    background: -o-linear-gradient(#075698, #2e88c4);
+    background: linear-gradient(#075698, #2e88c4);
 }
 
+.triangle-right {
+    width: 30%;
+    position: relative;
+    padding: 15px;
+    margin: 1em 0 3em;
+    color: #fff;
+    background: #075698;
+    background: -webkit-gradient(linear, 0 0, 0 100%, from(#2e88c4), to(#075698));
+    background: -moz-linear-gradient(#2e88c4, #075698);
+    background: -o-linear-gradient(#2e88c4, #075698);
+    background: linear-gradient(#2e88c4, #075698);
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    border-radius: 10px;
+
+}
+
+.triangle-right.top:after {
+    top: -20px;
+    right: 50px;
+    bottom: auto;
+    left: auto;
+    border-width: 20px 20px 0 0;
+    border-color: transparent #075698;
+}
+
+.triangle-right:after {
+    content: "";
+    position: absolute;
+    bottom: -20px;
+    left: 50px;
+    border-width: 20px 0 0 20px;
+    border-style: solid;
+    border-color: #075698 transparent;
+    display: block;
+    width: 0;
+}
 .oneMovieDetail h2{
     color :#2f2e33;
     font : 150% impact, futura, sans-serif;
@@ -1278,32 +1316,39 @@ ul.pagination1{
     text-align : center; 
 }
 
-.commentaires a {
+.triangle-right a {
     color: #9B0511;
     cursor:pointer;
 }
 
-.commentaires a:hover{
+.triangle-right a:hover{
     text-decoration: none;
     font-style: normal;
     color: black;
 }
 
-.commentaires i {
+.triangle-right i {
    text-align:right;
    
 }
 
-.reponse {
+.reponse a{
   display:flex;
   display: -ms-flexbox;
   justify-content: flex-end;
   -ms-flex-pack: justify;
   margin-right:3%;
   margin-bottom:3%;
-
+  text-decoration: none;
+  color:black;
+  font-style:normal;
 }
 
+
+.reponse a:hover {
+  color:red;
+  font-style:bold;
+}
 .news{
   
     transition: all 0.5s ease;
@@ -1312,6 +1357,7 @@ ul.pagination1{
     -o-transition: all 0.5s ease;
     -moz-transition: all 0.5s ease;
     font-size:1.2em;
+    top:2%;
     color :#2f2e33;
 
 }
@@ -1368,7 +1414,7 @@ legend p {
 }
 
 fieldset{
-    margin:5% auto 5%;
+    margin:5% auto 22%;
     width: 40%;    
     -ms-flex-direction:column;
     justify-content:center;
@@ -1570,9 +1616,18 @@ label.error {
 
 }
 
-#contact{
+#contact{  
     flex-direction: column;    
     background-color:#f0f0f0;
+
+}
+
+.container{   
+    text-align: center;
+    background-color: silver;
+    border-radius: 10px;
+    font-weight: bold;
+    color:black;
 
 }
 
@@ -1586,6 +1641,43 @@ label.error {
     display:none;
  }
 
+
+
+thead{
+      border: 3px solid #333;
+}
+
+tr{
+  border:2px solid grey;
+
+}
+
+#messageEnvoi{
+    margin-top:1%;   
+    text-align:center;
+    font-size:1.1em;
+    font-weight: bold;
+    -webkit-border-radius: 3px;
+    -webkit-border-radius: 14px;
+    -moz-border-radius: 3px;
+    -moz-border-radius: 14px;
+    -o-border-radius: 3px;
+    -o-border-radius: 14px;
+    -ms-border-radius: 3px;
+    -ms-border-radius: 14px;
+    border-radius: 3px;
+    border-radius: 14px;
+    color :black;
+    padding: 15px;
+    width: 99.5%;
+    box-shadow: 0 3px 10px #ccc;
+    -ms-box-shadow: 0 3px 10px #ccc;
+    -webkit-box-shadow: 0 3px 10px #ccc;
+    -moz-box-shadow: 0 3px 10px #ccc;
+    -o-box-shadow: 0 3px 10px #ccc;
+    background-color:silver ;
+ }
+ 
  /*-----page connxion/inscription ----*/
 
 /* on génère un élément :after lors du survol et du focus :*/
@@ -2091,6 +2183,7 @@ z-index:9999;
 
 ol {
 	counter-reset: repas;
+  background:white;
 	margin:0;
 	padding:0;
 } /* on initialise et nomme un compteur */
@@ -2101,7 +2194,7 @@ li.teamExpl{
   list-style-type: none;
   counter-increment: repas; /* on incrémente le compteur à chaque nouveau li */
   margin-bottom: 1%;
-  margin-top:4%;
+  margin-top:2%;
 }
 
 li.teamExpl:before {
@@ -2329,12 +2422,11 @@ li.teamExpl:before {
 
 /*------------- page info---------------------*/
 
-.pageInfo{
-    margin-top:5%;
-}
 
 iframe{
     width: 100%;
+    margin-top:2%;
+    margin-bottom:2%;
    
 }
 
@@ -2358,6 +2450,24 @@ iframe{
     color:#9B0511;
 }
 
+/*---------------- page liste des users---------*/
+.triangle{
+    position: relative;
+
+    width: 30%;
+    padding: 15px;
+    margin: 8px auto 8px;
+    color: #fff;
+    background: #075698;
+    background: -webkit-gradient(linear, 0 0, 0 100%, from(#2e88c4), to(#075698));
+    background: -moz-linear-gradient(#2e88c4, #075698);
+    background: -o-linear-gradient(#2e88c4, #075698);
+    background: linear-gradient(#2e88c4, #075698);
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    border-radius: 10px;
+}
+
 
 /*--------------- page liste commentaires ------*/
 
@@ -2373,7 +2483,7 @@ iframe{
 }
 
 .listcom i:hover{
-    color:silver;
+    color:black;
     -webkit-transform: scale(1.25);
     transform: scale(1.25);
   
@@ -2511,6 +2621,24 @@ iframe{
 
     }
 
+    /* tableau mail admin*/
+
+    td,th {
+    display: flex;
+    flex-direction: column;
+
+    padding: 5px;
+    text-align: center;
+    }
+
+
+    table {
+      display: table;
+      border-collapse: separate;
+      border-spacing: 2px;
+      border-color: grey;
+    }
+
     /*telechargement tarifs menu responsive*/   
     .tarifs{
 
@@ -2583,10 +2711,6 @@ iframe{
     }
     /* remplir les champs */
     .inputbasic {
-        width: 90%;
-    }
-    /* bloc des commentaires*/
-    .commentaires {
         width: 90%;
     }
     /* signalement des commentaires*/

@@ -49,7 +49,7 @@
     while ($comment = $comments->fetch()):
 
         ?>
-        <div class="commentaires">
+        <div class="triangle-right top">
             <a href="javascript:void(0)" class="list-group-item active"></a>
             <p><strong><?= htmlspecialchars($comment['author']) ?></strong> le <?= htmlspecialchars($comment['comment_date_fr']) ?></p>
             <p><?= nl2br(preg_replace('#^<br/>$#','',htmlspecialchars(substr($comment['comment'], 0, 400))));?><br/>

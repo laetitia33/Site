@@ -29,12 +29,6 @@
       endif;
       ?>
 
-      
-        <div>
-            <ul class="pagination1">
-              <li id="previous-page"><a href="javascript:void(0)" aria-label=Previous><span aria-hidden=true>&laquo;</span></a></li>
-            </ul>
-          </div>
       <div class="page1">
 
 
@@ -42,7 +36,7 @@
       while ($comment = $reportComments->fetch()):
       ?>
 
-        <div class="commentaires">
+        <div class="triangle-right top">
           <a href="javascript:void(0)" class="list-group-item active"></a>
             <p><strong><?= htmlspecialchars($comment['author']) ?></strong> le <?= htmlspecialchars($comment['comment_date_fr']) ?></p>
             <p><?= nl2br(preg_replace('#^<br/>$#','',htmlspecialchars(substr($comment['comment'], 0, 400))));?><br/>           
@@ -56,6 +50,9 @@
         endwhile;?>
       </div>        
       </div>
+          <ul class="pagination1">
+        <li id="previous-page"><a href="javascript:void(0)" aria-label=Previous><span aria-hidden=true>Précédente &laquo;</span></a></li>
+      </ul>
       <?php $reportComments->closeCursor(); ?>
 
 

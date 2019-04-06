@@ -23,7 +23,7 @@
 while ($user = $users->fetch()) :
 ?>
 
-<div class="triangle">
+<div class="triangle-right">
     <a href="javascript:void(0)" class="list-group-item active"></a>
 
       
@@ -31,7 +31,7 @@ while ($user = $users->fetch()) :
 
         <p>Enregistré le : <?= htmlspecialchars($user['registration_date']); ?></p>
 
-        <p>Adresse email : <?= htmlspecialchars($user['email']); ?></p>
+        <p>Adresse email : <br><?= htmlspecialchars($user['email']); ?></p>
 
         <div class ="reponse">
             <?php 
@@ -46,14 +46,13 @@ while ($user = $users->fetch()) :
 </div>
 <?php
 endwhile;?>
-</div>        
-</div>
-    <ul class="pagination1">
+    </div>        
+    </div>
+        <ul class="pagination1">
         <li id="previous-page"><a href="javascript:void(0)" aria-label=Previous><span aria-hidden=true>Précédente &laquo;</span></a></li>
-    </ul>
-<?php $users->closeCursor();
-?>
-
+      </ul>
+<?php $users->closeCursor(); ?>
+</div> 
 <?php $content = ob_get_clean(); ?>
 
 <!--///////////////////////////////// renvoi vers template //////////////////////////////////-->

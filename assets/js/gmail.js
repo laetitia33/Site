@@ -217,8 +217,3 @@
         return '';
       }
 
-
-//fermeture du message alerte
-$(document).ready(function(){
-    setTimeout(function(){$("#messageEnvoi").fadeOut('normal');}, 5000);
-});

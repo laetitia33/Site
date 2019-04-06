@@ -265,7 +265,7 @@ ul.navigation
 
 nav a {
   color: white;
-  padding: 15px 7px;
+  padding: 15px 5px;
   text-decoration: none;
  -webkit-transition: all 0.5s;
  -moz-transition: all 0.5s;
@@ -985,8 +985,10 @@ h2.pageList {
 
 }
 
-#page a
-.page1 a{
+#page a,
+.page1 a,
+.page2 a
+{
     text-decoration: none;  
 }
 
@@ -996,18 +998,20 @@ ul.pagination{
 }
 
 
-ul.pagination1{
+ul.pagination1,
+ul.pagination2{
 
     display:flex;
     display: -ms-flexbox;
     list-style-type: none;
     justify-content:  center;
-    padding:0px;
+    padding:25px;
 }
 
 
 .pagination a,
-.pagination1 a{
+.pagination1 a,
+.pagination2 a{
     padding:12px;
     color:#343434;
     color:white;
@@ -1038,7 +1042,8 @@ ul.pagination1{
 }
 
 .pagination a:hover,
-.pagination1 a:hover{
+.pagination1 a:hover,
+.pagination2 a:hover,{
  
     -webkit-transform: scale(0.55);
     transform: scale(0.55);
@@ -1052,7 +1057,7 @@ ul.pagination1{
     color:white;
 }
 
-.pagination a:focus,.pagination1 a:focus{
+.pagination a:focus,.pagination1 a:focus,.pagination2 a:focus{
    background-image:radial-gradient(top, black, #6899A4);
     background-image: -moz-radial-gradient(top, black, #6899A4);
     background-image: -webkit-radial-gradient(top, black, #6899A4);
@@ -1190,7 +1195,7 @@ ul.pagination1{
 /////////////////////  page    détails services/////////////////////////////////
 //////////////////////////////////////////////////////////////////////////////*/
 
-.page1
+.page1,.page2
 {
   display: flex;
     display: -ms-flexbox;
@@ -1206,6 +1211,7 @@ ul.pagination1{
     color:black;
     font-style:bold;
     margin-top:4%;
+
 }
 
 .oneServDetail{
@@ -1265,6 +1271,7 @@ ul.pagination1{
 }
 
 .triangle-right {
+    font-size:1em;
     width: 30%;
     position: relative;
     padding: 15px;
@@ -1324,7 +1331,10 @@ ul.pagination1{
    text-align:right;
    
 }
+.reponse{
 
+font-family: Tangerine,Arial,Roboto;
+}
 .reponse a{
   display:flex;
   display: -ms-flexbox;
@@ -1335,6 +1345,7 @@ ul.pagination1{
   text-decoration: none;
   color:black;
   font-style:normal;
+
 }
 
 
@@ -2400,25 +2411,6 @@ iframe{
   justify-content: center;
 }
 
-/*//////////////////////////////////////////////////////////////////////////////
-///////////////////// Liste users //////////////////////////////////////////////
-//////////////////////////////////////////////////////////////////////////////*/
-.triangle{
-    position: relative;
-    width: 30%;
-    padding: 15px;
-    margin: 8px auto 8px;
-    color: #fff;
-    background: #075698;
-    background: -webkit-gradient(linear, 0 0, 0 100%, from(#2e88c4), to(#075698));
-    background: -moz-linear-gradient(#2e88c4, #075698);
-    background: -o-linear-gradient(#2e88c4, #075698);
-    background: linear-gradient(#2e88c4, #075698);
-    -webkit-border-radius: 10px;
-    -moz-border-radius: 10px;
-    border-radius: 10px;
-}
-
 
 /*//////////////////////////////////////////////////////////////////////////////
 /////////////////////Liste commentaires/////////////////////////////////////////
@@ -2522,6 +2514,12 @@ iframe{
 
     }
 
+        
+    .service img {
+      
+        height: 180px; 
+     
+    }
 
     ul.navigation_mobile{
         padding:10px;
@@ -2553,14 +2551,16 @@ iframe{
     }
 
     ul.pagination,
-    ul.pagination1{
+    ul.pagination1,
+    ul.pagination2{
         margin-top:5%;
         margin-bottom:5%;
         margin:auto;
     }
 
     .pagination li,
-    .pagination1 li{
+    .pagination1 li
+    .pagination2 li{
         margin-top:9%;
         margin-bottom:9%;
         flex-direction: row;
@@ -2754,6 +2754,10 @@ iframe{
         -webkit-transform-origin:0 0;
     }
     
+    .triangle-right {   
+      width: 70%;
+    }
+
     .sliderPc{
       display:none;
     }

@@ -38,14 +38,14 @@
 
 <!--///////////////////////// boucle affichage commentaire admin ou visiteur ///////////-->
 
-<div class="container1">    
+<div class="page1">    
 <div class="oneServDetail">
   <?php 
   while ($comment = $comments->fetch()):?>
 
         <div id="ancrecom"></div>
       
-        <div class="triangle-right top">
+        <div class="triangle-right">
           <a href="javascript:void(0)" class="list-group-item active"></a>
           <p><strong><i class="fas fa-user"></i>   <?= htmlspecialchars($comment['author']) ?></strong> le <?= htmlspecialchars($comment['comment_date_fr']) ?>
           </p>
@@ -75,18 +75,18 @@
     </div>
   <?php
   endwhile;?>
-</div>
-</div> 
+  </div>
+  </div>
     <div>
-      <ul class="pagination1">
-        <li id="previous-page"><a href="javascript:void(1)" aria-label=Previous><span aria-hidden=true>Précédente &laquo;</span></a></li>
-      </ul>
-    </div>
+         <ul class="pagination1">
+          <li id="previous-page"><a href="javascript:void(1)" aria-label=Previous><span aria-hidden=true>Précédente &laquo;</span></a></li>
+        </ul>
+      </div>
   <?php $comments->closeCursor();?>
 
 
-<?php
 
+<?php 
 
 
 

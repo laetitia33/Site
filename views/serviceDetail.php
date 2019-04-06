@@ -52,11 +52,11 @@
 			<?php
 			if(isset($_SESSION['id']) && $_SESSION['id_group'] == 1): ?>
 				<div class='adminCtrl'>
-					<a href="index.php?action=adminUpdatePost&amp;post_id=<?= $post['id']; ?>#modif"><em><i class="fas fa-pen-square"> Modifier ce film </i></em></a>
+					<a href="index.php?action=adminUpdatePost&amp;post_id=<?= $post['id']; ?>#modif"><em><i class="fas fa-pen-square"> Modifier ce service</i></em></a>
 				</div>
 
 				<div class='adminCtrl'>
-               		<a href="index.php?action=deletePost&amp;post_id=<?= $post['id']; ?>" OnClick="return confirm('Voulez-vous vraiment supprimer ce film ?');"><em><i class="fas fa-trash-alt"> Supprimer ce film</i></em></a>
+               		<a href="index.php?action=deletePost&amp;post_id=<?= $post['id']; ?>" OnClick="return confirm('Voulez-vous vraiment supprimer ce film ?');"><em><i class="fas fa-trash-alt"> Supprimer ce service</i></em></a>
                	</div>
 
  			<?php
@@ -158,11 +158,11 @@ if(isset($_SESSION['id']) && $_SESSION['id_group'] == 1 OR isset($_SESSION['id']
 	endwhile;?>
 	</div>
 	</div>
-		    <div>
-         <ul class="pagination1">
-        <li id="previous-page"><a href="javascript:void(1)" aria-label=Previous><span aria-hidden=true>Précédente &laquo;</span></a></li>
-      </ul>
-          </div>
+		<div>
+	       <ul class="pagination1">
+	        <li id="previous-page"><a href="javascript:void(1)" aria-label=Previous><span aria-hidden=true>Précédente &laquo;</span></a></li>
+	      </ul>
+	    </div>
 	<?php $comments->closeCursor();?>
 
 

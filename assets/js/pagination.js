@@ -1,4 +1,5 @@
-//pagination liste des films
+
+//pagination liste des services
 
 
 var anumberOfItems = $('#page .list-group').length; 
@@ -80,16 +81,16 @@ $("#previous-page").on("click", function() {
   if(anumberOfItems ==0 ){
      $(".pagination").css("display","none");
   }
+
+
+
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-/////////////pagination pour commentaires, utilsateurs et commentaires signalés///////////////////////////////////
+/////////////pagination pour commentaires et commentaires signalés///////////////////////////////////
 
 
-
-
-
-var numberOfItems = $('.page1 .commentaires').length; 
+var numberOfItems = $('.page1 .triangle-right').length; 
 var limitPerPage = 2; 
-$('.page1 .commentaires:gt(' + (limitPerPage - 1) + ')').hide(); 
+$('.page1 .triangle-right:gt(' + (limitPerPage - 1) + ')').hide(); 
 var totalPages = Math.round(numberOfItems / limitPerPage); 
 $(".pagination1").append("<li class='current-page active'><a href='javascript:void(0)'> " + 1 + "</a></li> "); 
 
@@ -110,12 +111,12 @@ $(".pagination1 li.current-page").on("click", function() {
     var currentPage = $(this).index(); 
     $(".pagination1 li").removeClass('active'); 
     $(this).addClass('active'); 
-    $(".page1 .commentaires").hide(); 
+    $(".page1 .triangle-right").hide(); 
     var grandTotal = limitPerPage * currentPage; 
 
 
     for (var i = grandTotal - limitPerPage; i < grandTotal; i++) {
-      $(".page1 .commentaires:eq(" + i + ")").show(); 
+      $(".page1 .triangle-right:eq(" + i + ")").show(); 
     }
   }
 
@@ -130,12 +131,12 @@ $("#next-page").on("click", function() {
   } else {
     currentPage++; 
     $(".pagination1 li").removeClass('active'); 
-    $(".page1 .commentaires").hide(); 
+    $(".page1 .triangle-right").hide(); 
     var grandTotal = limitPerPage * currentPage; 
 
     //Parcourt le nombre total d'éléments en sélectionnant un nouvel ensemble d'éléments en fonction du numéro de page.
     for (var i = grandTotal - limitPerPage; i < grandTotal; i++) {
-      $(".page1 .commentaires:eq(" + i + ")").show(); 
+      $(".page1 .triangle-right:eq(" + i + ")").show(); 
     }
 
     $(".pagination1 li.current-page:eq(" + (currentPage - 1) + ")").addClass('active'); 
@@ -150,11 +151,11 @@ $("#previous-page").on("click", function() {
   } else {
     currentPage--; 
     $(".pagination1 li").removeClass('active');
-    $(".page1 .commentaires").hide(); 
+    $(".page1 .triangle-right").hide(); 
     var grandTotal = limitPerPage * currentPage; 
 
     for (var i = grandTotal - limitPerPage; i < grandTotal; i++) {
-      $(".page1 .commentaires:eq(" + i + ")").show(); 
+      $(".page1 .triangle-right:eq(" + i + ")").show(); 
     }
 
     $(".pagination1 li.current-page:eq(" + (currentPage - 1) + ")").addClass('active'); 
@@ -167,5 +168,4 @@ $("#previous-page").on("click", function() {
 if(numberOfItems ==0 ){
      $(".pagination1").css("display","none");
   }
-
 

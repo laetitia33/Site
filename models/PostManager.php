@@ -10,7 +10,7 @@ use \PDO;
 class PostManager extends Manager
 {
 
-    private $_id, $_title, $_author, $_content, $_date_creation, $_image, $_video, $_horaires, $_duree;
+    private $_id, $_title, $_author, $_content, $_date_creation, $_image;
 
 
     public function __construct()
@@ -29,25 +29,12 @@ class PostManager extends Manager
         return $this->_title;
     }
 
-    public function getHoraires()
-    {
-        return $this->_horaires;
-    }
- 
-    public function getDuree()
-    {
-        return $this->_duree;
-    }
 
     public function getImage()
     {
         return $this->_image;
     }
 
-    public function getVideo()
-    {
-        return $this->_video;
-    }
 
     public function getAuthor()
     {
@@ -86,12 +73,6 @@ class PostManager extends Manager
         }
     }
 
-    public function setVideo($video)
-    {
-        if(is_string($video)) {
-            $this->_video = $video;
-        }
-    }
 
     public function setAuthor($author)
     {
@@ -100,19 +81,6 @@ class PostManager extends Manager
         }
     }
 
-    public function setHoraires($horaires)
-    {
-        if(is_string($horaires)) {
-            $this->_horaires = $horaires;
-        }
-    }
-
-    public function setDuree($duree)
-    {
-        if(is_string($duree)) {
-            $this->_duree = $duree;
-        }
-    }
     public function setContent($content)
     {
         if(is_string($content)) {
@@ -127,28 +95,28 @@ class PostManager extends Manager
     /********************************************* GETTERS/ SETTERS *************************************************/
 
 
-//récupère le dernier film
+//récupère le dernier service
     public function getLastPost()
     {
         $db = $this->dbConnect();
 
-        $post = $db->query('SELECT id, title, image,TIME_FORMAT (duree,\'%H:%i\')AS duree, TIME_FORMAT (horaires,\'%H:%i\')AS horaires ,video,content,author, DATE_FORMAT(date_creation, \'%d/%m/%Y à %H:%i\') AS date_creation_fr FROM posts ORDER BY date_creation DESC LIMIT 0, 1');
+        $post = $db->query('SELECT id, title, image,content,author, DATE_FORMAT(date_creation, \'%d/%m/%Y à %H:%i\') AS date_creation_fr FROM posts ORDER BY date_creation DESC LIMIT 0, 1');
         return $post;
     }
 
 
-//récupère tous les films
+//récupère tous les services
     public function getAllPosts()
     {
         $db = $this->dbConnect();
 
-        $req = $db->query('SELECT  TIME_FORMAT (b.horaires,\'%H:%i\')AS horaires ,TIME_FORMAT (b.duree,\'%H:%i\')AS duree,b.id, b.title, b.content, b.author,b.video, b.image, DATE_FORMAT(b.date_creation, \'%d/%m/%Y à %Hh%imin\') AS date_creation_fr, (SELECT count(*) FROM comments c WHERE c.post_id = b.id) AS nbCommentaires FROM posts b ORDER BY date_creation DESC ');
+        $req = $db->query('SELECT  b.id, b.title, b.content, b.author, b.image, DATE_FORMAT(b.date_creation, \'%d/%m/%Y à %Hh%imin\') AS date_creation_fr, (SELECT count(*) FROM comments c WHERE c.post_id = b.id) AS nbCommentaires FROM posts b ORDER BY date_creation DESC ');
 
         return $req;
     }
 
 
-//nombre le nombre de films
+//nombre le nombre de services
     public function countPosts()
     {
         $db = $this->dbConnect();
@@ -158,64 +126,52 @@ class PostManager extends Manager
         return $postsTotal;
     }
 
-//recupere un film
+//recupere un service
     public function getPost($post_id)
     {
         $this->setId($post_id);
         $db = $this->dbConnect();
-        $req = $db->prepare('SELECT id, title,TIME_FORMAT (horaires,\'%H:%i\')AS horaires, image,video, TIME_FORMAT (duree,\'%H:%i\')AS duree,content,author, DATE_FORMAT(date_creation, \'%d/%m/%Y à %H:%i\') AS date_creation_fr FROM posts WHERE id = ?');
+        $req = $db->prepare('SELECT id, title, image,content,author, DATE_FORMAT(date_creation, \'%d/%m/%Y à %H:%i\') AS date_creation_fr FROM posts WHERE id = ?');
         $req->execute(array($this->getId()));
         $post = $req->fetch();
 
         return $post;
     }
 
-//creation d'un film
-    public function createPost($author, $title,$horaires,$duree, $image,$video, $content)
+//creation d'un service
+    public function createPost($author, $title, $image, $content)
     {
         $this->setAuthor($author);
-        $this->setTitle($title);
-        $this->setHoraires($horaires);
-        $this->setDuree($duree);
+        $this->setTitle($title);  
         $this->setImage($image);
-        $this->setVideo($video);
         $this->setContent($content);
         $db = $this->dbConnect();
 
-        $post = $db->prepare('INSERT INTO posts (author, title,horaires,duree,image,video, content, date_creation) VALUES ( ?,?,?,?,?, ?, ?, NOW())');
+        $post = $db->prepare('INSERT INTO posts (author, title,image, content, date_creation) VALUES ( ?,?,?,?, NOW())');
         $createPost = $post->execute(array(
             $this->getAuthor(),
             $this->getTitle(),
-            $this->getHoraires(),
-            $this->getDuree(),
             $this->getImage(),
-            $this->getVideo(),
             $this->getContent()
             ));
 
         return $createPost;
     }
 
-//modification du film
-  public function updatePost($post_id, $author, $title,$horaires,$duree, $image,$video, $content )
+//modification du service
+  public function updatePost($post_id, $author, $title, $image, $content )
     {
         $this->setId($post_id);
         $this->setAuthor($author);
         $this->setTitle($title);
-        $this->setHoraires($horaires);
-        $this->setDuree($duree);
         $this->setImage($image);
-        $this->setVideo($video);
         $this->setContent($content);           
         $db = $this->dbConnect();
 
-        $post = $db->prepare('UPDATE posts SET  title= :title, author= :author, video= :video, horaires= :horaires,duree= :duree,image= :image,content= :content WHERE id= :post_id');
+        $post = $db->prepare('UPDATE posts SET  title= :title, author= :author,image= :image,content= :content WHERE id= :post_id');
         $post->bindValue('author', $this->getAuthor(), PDO::PARAM_STR);
         $post->bindValue('title',$this->getTitle(), PDO::PARAM_STR);
-        $post->bindValue('horaires', $this->getHoraires(), PDO::PARAM_INT);
-        $post->bindValue('duree', $this->getDuree(), PDO::PARAM_INT);
         $post->bindValue('image', $this->getImage(), PDO::PARAM_INT);
-        $post->bindValue('video', $this->getVideo(), PDO::PARAM_INT);
         $post->bindValue('content',$this->getContent(), PDO::PARAM_STR);
         $post->bindValue('post_id', $this->getId(), PDO::PARAM_INT);
       
@@ -225,7 +181,7 @@ class PostManager extends Manager
     }
 
 
-//suppression d'un film
+//suppression d'un srvice
     public function deletePost($post_id)
     {
         $this->setId($post_id);

@@ -63,7 +63,7 @@ class UserController
     {
     	$usersTotal =$this->_user->countUsers();//connaitre le nombre total d'inscrits
         $users = $this->_user->getAllUsers();
-        $postsTotal = $this->_post->countPosts();//connaitre le nombre total de chapitres
+        $postsTotal = $this->_post->countPosts();//connaitre le nombre total de services
         $commentsTotal = $this->_comment->countComments();//connaitre le nombre total de commentaires
         $commentsReportTotal = $this->_comment->countCommentsReport();//connaitre le nombre total de commentaires
         require ('views/listUsersView.php');

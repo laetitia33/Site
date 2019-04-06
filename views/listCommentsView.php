@@ -30,7 +30,7 @@
        <?php
         else : ?>
 
-          <div class='listcom'><a href="index.php?action=deleteComments" OnClick="return confirm('Voulez-vous vraiment supprimer tous commentaires ?');" ><i class="fas fa-minus-circle"> Supprimer tous les commentaires</i></a></div>
+          <div class='listcom'><a href="index.php?action=deleteComments" OnClick="return confirm('Voulez-vous vraiment supprimer tous commentaires ?');" ><i class="fas fa-minus-circle"> Supprimer tous les commentaires </i></a></div>
 
          <?php
         endif;
@@ -54,7 +54,7 @@
             <p><strong><?= htmlspecialchars($comment['author']) ?></strong> le <?= htmlspecialchars($comment['comment_date_fr']) ?></p>
             <p><?= nl2br(preg_replace('#^<br/>$#','',htmlspecialchars(substr($comment['comment'], 0, 400))));?><br/>
                 <div class="reponse">
-                <em><a href="index.php?action=deleteComment&amp;post_id=<?= $comment['post_id'];?>&amp;id=<?= $comment['id'];?>" OnClick="return confirm('Voulez-vous vraiment supprimer le commentaire ?');" >Supprimer <i class="fas fa-minus-circle"></i></a></em>
+                <em><a href="index.php?action=deleteComment&amp;post_id=<?= $comment['post_id'];?>&amp;id=<?= $comment['id'];?>" OnClick="return confirm('Voulez-vous vraiment supprimer le commentaire ?');" >Supprimer&nbsp;<i class="fas fa-minus-circle"></i></a></em>
                 </div>
             </p>
         </div>

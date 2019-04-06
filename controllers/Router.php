@@ -1,4 +1,5 @@
 <?php
+require('controllers/LivreController.php');
 require('controllers/PostController.php');
 require('controllers/CommentController.php');
 require('controllers/AdminController.php');
@@ -7,6 +8,8 @@ require('controllers/ContactController.php');
 require('controllers/Autoload.php');
 require('controllers/viewController.php');
 
+
+use \controllers\LivreController;
 use \controllers\ContactController;
 use \controllers\UserController;
 use \controllers\PostController;
@@ -18,7 +21,7 @@ use \controllers\Autoload;
 
 class Routeur
 {
-        private $_postCtrl, $_commentCtrl, $_administrationCtrl, $_contactCtrl, $_userCtrl, $_templateCtrl,$_viewCtrl;
+        private $_livreCtrl,$_postCtrl, $_commentCtrl, $_administrationCtrl, $_contactCtrl, $_userCtrl, $_templateCtrl,$_viewCtrl;
 
 
 
@@ -31,6 +34,8 @@ class Routeur
             $this->_userCtrl = new \Laetitia_Bernardi\projet5\Controller\UserController();
             $this->_contactCtrl = new \Laetitia_Bernardi\projet5\Controller\ContactController();
             $this->_viewCtrl = new \Laetitia_Bernardi\projet5\Controller\viewController();
+            $this->_livreCtrl = new \Laetitia_Bernardi\projet5\Controller\LivreController();    
+
         }
 
 
@@ -48,36 +53,78 @@ class Routeur
                        $this->_administrationCtrl->administration();
                     }
                   
-        //redirection concernant les chapitres
+        //redirection concernant les service
 
-                    // ADMIN - Creation d'un film
+                    // ADMIN - Creation d'un service
                     elseif ($_GET['action'] == 'createPost')
                     {
-                        if ($_POST['author'] != NULL && $_POST['title'] != NULL && $_POST['horaires'] != NULL && $_POST['duree'] != NULL && $_POST['image'] != NULL && $_POST['video'] != NULL && $_POST['content'] != NULL )
+                        if ($_POST['author'] != NULL && $_POST['title'] != NULL  && $_POST['image'] != NULL  && $_POST['content'] != NULL )
                         {
                            
-                           $this->_administrationCtrl->postAdd($_POST['author'], $_POST['title'],$_POST['horaires'], $_POST['duree'],$_POST['image'],$_POST['video'], $_POST['content']);
+                           $this->_administrationCtrl->postAdd($_POST['author'], $_POST['title'],$_POST['image'], $_POST['content']);
                            
                         }
                      
                     }
 
-                    // page mail lire les mails reçus
+                    // ADMIN page mail lire les mails reçus
                     elseif ($_GET['action'] == 'email') 
                     {
                       
                         $this->_viewCtrl->mailView();
                     }
                     
+                    // ADMIN page livre d'or                   
+                    elseif ($_GET['action'] == 'gold') 
+                    {
+                      
+                        $this->_livreCtrl->gold();
+                    }
 
-                     // ADMIN - Page pour créer un film
+
+                  // ADMIN -  Affiche tous les messages du livre d'or
+                   elseif ($_GET['action'] == 'adminListMessages')
+                    {
+                        
+                        $this->_livreCtrl->adminListMessages();
+                    }
+
+
+                    // ADMIN - Ajoute un message
+                    elseif ($_GET['action'] == 'addMessage') 
+                    {
+
+                        if (!empty($_POST['author']) && !empty($_POST['comment'])) 
+                        {                      
+                        $this->_livreCtrl->addMessage($_POST['author'], $_POST['comment']);
+                        }
+                    }
+
+
+                    // ADMIN - Supprimer un message du livre d'or
+                    elseif ($_GET['action'] == 'deleteOneMessage')
+                    {
+                       
+                            $this->_livreCtrl->deleteOneMessage($_GET['id']);
+                        }
+                      
+                    //ADMIN  - supprimer tous les messages du livre d'or
+
+                    elseif ($_GET['action'] == 'deleteMessages')
+                    {           
+                          
+                           $this->_livreCtrl->deleteMessages();
+                          
+                    }
+
+                    // ADMIN - Page pour créer un service
                     elseif ($_GET['action'] == 'adminNewPost')
                     {
                      
                        $this->_administrationCtrl->adminNewPost();
                     }
 
-                    // ADMIN - Liste des films
+                    // ADMIN - Liste des service
                     elseif ($_GET['action'] == 'listPosts')
                     {
                        
@@ -86,14 +133,14 @@ class Routeur
 
                    // ADMIN - AGENDA
                                        
-                    if ($_GET['action'] == 'information')
+                    if ($_GET['action'] == 'rdv')
                     {
                         
-                        $this->_viewCtrl->info();
+                        $this->_viewCtrl->rdv();
                        
                     }       
 
-                    //ADMIN - film avec ses commentaires
+                    //ADMIN - service avec ses commentaires
                     elseif ($_GET['action'] == 'post') 
                     {
                         if (isset($_GET['post_id']) && $_GET['post_id'] > 0) 
@@ -111,26 +158,26 @@ class Routeur
                              
                         } else 
                         {
-                            throw new Exception('Erreur. Pas de chapitre séléctionné !');
+                            throw new Exception('Erreur. Pas de service séléctionné !');
                         }
                     }
              
-                    // ADMIN - page de MAJ d'un film
+                    // ADMIN - page de MAJ d'un service
                     elseif ($_GET['action'] == 'adminUpdatePost')
                     {
                        
                         $this->_administrationCtrl->adminUpdatePost();
                     }
 
-                    // ADMIN - Mise à jour d'un film
+                    // ADMIN - Mise à jour d'un service
                     elseif ($_GET['action'] == 'updatePost')
                     {
                         if (isset($_GET['post_id']) && $_GET['post_id'] > 0)
                         {
-                            if ($_POST['author'] != NULL && $_POST['title'] != NULL && $_POST['horaires'] != NULL && $_POST['duree'] != NULL && $_POST['image'] != NULL && $_POST['video'] != NULL  && $_POST['content'] != NULL )
+                            if ($_POST['author'] != NULL && $_POST['title'] != NULL  && $_POST['image'] != NULL   && $_POST['content'] != NULL )
                             {
                                 
-                                $this->_administrationCtrl->updatePost($_GET['post_id'], $_POST['author'], $_POST['title'],$_POST['horaires'],$_POST['duree'], $_POST['image'], $_POST['video'], $_POST['content']);
+                                $this->_administrationCtrl->updatePost($_GET['post_id'], $_POST['author'], $_POST['title'],$_POST['image'], $_POST['content']);
                             }
                           
                      
@@ -141,10 +188,10 @@ class Routeur
                         }
                         else
                         {
-                            throw new Exception('Aucun identifiant de chapitre envoyé !');
+                            throw new Exception('Aucun identifiant de service envoyé !');
                         }
                     }
-                    // ADMIN - suppression d'un film
+                    // ADMIN - suppression d'un service
                     elseif ($_GET['action'] == 'deletePost')
                     {
                         if (isset($_GET['post_id']) && $_GET['post_id'] > 0)
@@ -154,7 +201,7 @@ class Routeur
                         }
                         else
                         {
-                            throw new Exception('Aucun identifiant de chapitre envoyé !');
+                            throw new Exception('Aucun identifiant de service envoyé !');
                         }
                     }
           
@@ -167,7 +214,7 @@ class Routeur
                         $this->_administrationCtrl->adminListComments();
                     }
 
-                    // ADMIN - Ajoute un commentaire dans le film selectionné
+                    // ADMIN - Ajoute un commentaire dans le service selectionné
                     elseif ($_GET['action'] == 'addComment')
                     {
                         if (isset($_GET['post_id']) && $_GET['post_id'] > 0)
@@ -181,7 +228,7 @@ class Routeur
                         }
                         else
                         {
-                            throw new Exception('Aucun identifiant de chapitre envoyé !');
+                            throw new Exception('Aucun identifiant de service envoyé !');
                         }
                     }
 
@@ -207,7 +254,7 @@ class Routeur
                                 throw new Exception('Aucun identifiant de commentaire envoyé pour pouvoir le signaler!');
                             }
                         } else {
-                            throw new Exception('Aucun identifiant de chapitre envoyé pour revenir sur la page précédente!');
+                            throw new Exception('Aucun identifiant de service envoyé pour revenir sur la page précédente!');
                         }
                     }
 
@@ -225,7 +272,7 @@ class Routeur
                         }
                     }
 
-                    // ADMIN - Supprimer un commentaire dans la  page detail film
+                    // ADMIN - Supprimer un commentaire dans la  page detail service
                     elseif ($_GET['action'] == 'deleteOneComment')
                     {
                         if (isset($_GET['id']) && $_GET['id'] > 0)
@@ -282,7 +329,7 @@ class Routeur
                         $this->_administrationCtrl->approvedComments();
                     }
                    
-                    // ADMIN - Ajoute un commentaire dans le chapitre selectionné
+                    // ADMIN - Ajoute un commentaire dans le service selectionné
                     elseif ($_GET['action'] == 'addCommentAdmin')
                     {
                         if (isset($_GET['post_id']) && $_GET['post_id'] > 0)
@@ -296,7 +343,7 @@ class Routeur
                         }
                         else
                         {
-                            throw new Exception('Aucun identifiant de chapitre envoyé !');
+                            throw new Exception('Aucun identifiant de service envoyé !');
                         }
                     }
 
@@ -383,33 +430,32 @@ class Routeur
                 {
 
 
-                    // INSCRITS - page infos pratiques
-                    
-                    if ($_GET['action'] == 'information')
+                    // INSCRITS - page rdv
+                    if ($_GET['action'] == 'rdv')
                     {
                         
-                        $this->_viewCtrl->info();
+                        $this->_viewCtrl->rdv();
                        
                     }
 
-                    // INSCRITS - page information salles de cinemas
+                    // INSCRITS - contrôle à distance
 
-                    if ($_GET['action'] == 'cinemas')
+                    if ($_GET['action'] == 'vpn')
                     {
                         
-                        $this->_viewCtrl->cinemas();
+                        $this->_viewCtrl->vpn();
                        
                     }
 
 
-                    // INSCRITS - Accueil visiteurs /Liste des films
+                    // INSCRITS - Accueil visiteurs /Liste des service
                    if ($_GET['action'] == 'listPosts') 
                     {
                  
                         $this->_postCtrl->listPosts();
                     }
 
-                    // INSCRITS -  Affiche le film avec ses commentaires
+                    // INSCRITS -  Affiche le service avec ses commentaires
                     elseif ($_GET['action'] == 'post') 
                     {
                         if (isset($_GET['post_id']) && $_GET['post_id'] > 0)
@@ -486,6 +532,32 @@ class Routeur
                         $this->_viewCtrl->mailView();
                     }
                     
+                   
+                    // ADMIN page livre d'or                   
+                    elseif ($_GET['action'] == 'gold') 
+                    {
+                      
+                        $this->_livreCtrl->gold();
+                    }
+
+
+                  // ADMIN -  Affiche tous les messages du livre d'or
+                   elseif ($_GET['action'] == 'adminListMessages')
+                    {
+                        
+                        $this->_livreCtrl->adminListMessages();
+                    }
+
+
+                    // ADMIN - Ajoute un message
+                    elseif ($_GET['action'] == 'addMessage') 
+                    {
+
+                        if (!empty($_POST['author']) && !empty($_POST['comment'])) 
+                        {                      
+                        $this->_livreCtrl->addMessage($_POST['author'], $_POST['comment']);
+                        }
+                    }
 
                     // INSCRITS - envoi un mail
                     elseif ($_GET['action'] == 'addMail') 
@@ -502,7 +574,7 @@ class Routeur
                
                     }
 
-                    // INSCRITS - Ajoute un commentaire dans le film selectionné
+                    // INSCRITS - Ajoute un commentaire dans le service selectionné
                     elseif ($_GET['action'] == 'addComment') 
                     {
                         if (isset($_GET['post_id']) && $_GET['post_id'] > 0) 
@@ -556,33 +628,47 @@ class Routeur
                 {
 
 
-                    // page infos pratiques
+                    // page rdv
                     
-                    if ($_GET['action'] == 'information')
+                    if ($_GET['action'] == 'rdv')
                     {
                         
-                        $this->_viewCtrl->info();
+                        $this->_viewCtrl->rdv();
                        
                     }
 
-                    // page information salles de cinemas
+                    // page controle à distance
 
-                    if ($_GET['action'] == 'cinemas')
+                    if ($_GET['action'] == 'vpn')
                     {
                         
-                        $this->_viewCtrl->cinemas();
+                        $this->_viewCtrl->vpn();
                        
                     }
 
+                    // ADMIN page livre d'or                   
+                    elseif ($_GET['action'] == 'gold') 
+                    {
+                      
+                        $this->_livreCtrl->gold();
+                    }
 
-                    // Accueil visiteurs /Liste des films
+                    
+                  // ADMIN -  Affiche tous les messages du livre d'or
+                   elseif ($_GET['action'] == 'adminListMessages')
+                    {
+                        
+                        $this->_livreCtrl->adminListMessages();
+                    }
+
+                    // Accueil visiteurs /Liste des service
                    if ($_GET['action'] == 'listPosts') 
                     {
                  
                         $this->_postCtrl->listPosts();
                     }
 
-                    // Affiche le film avec ses commentaires
+                    // Affiche le service avec ses commentaires
                     elseif ($_GET['action'] == 'post') 
                     {
                         if (isset($_GET['post_id']) && $_GET['post_id'] > 0)
@@ -605,6 +691,19 @@ class Routeur
                         }
                     }
               
+       // INSCRITS - Ajoute un message
+                    elseif ($_GET['action'] == 'addMessage') 
+                    {
+                       
+                            if (!empty($_POST['author']) && !empty($_POST['comment'])) 
+                            {
+                      
+                                $this->_lireCtrl->addMessage( $_POST['author'], $_POST['comment']);
+                            } 
+                        
+                    }
+
+
                     // Page de connexion
                     elseif ($_GET['action'] == 'login')
                     {

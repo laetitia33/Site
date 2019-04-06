@@ -19,13 +19,13 @@ class ViewController{
 
 	
     //page informations
-  	public function info()
+  	public function rdv()
     {   
        $usersTotal =$this->_user->countUsers();//connaitre le nombre total d'inscrits
         $commentsReportTotal = $this->_comment->countCommentsReport();//connaitre le nombre total de commentaires signalés
-        $postsTotal = $this->_post->countPosts();//connaitre le nombre total de films
+        $postsTotal = $this->_post->countPosts();//connaitre le nombre total de services
         $commentsTotal  =$this ->_comment ->countComments();//connaitre le nombre total de commentaires
-        require('views/infoView.php');
+        require('views/rdv.php');
     }
 
 	//page contact
@@ -33,7 +33,7 @@ class ViewController{
 
         $usersTotal =$this->_user->countUsers();//connaitre le nombre total d'inscrits
         $commentsReportTotal = $this->_comment->countCommentsReport();//connaitre le nombre total de commentaires signalés
-        $postsTotal = $this->_post->countPosts();//connaitre le nombre total de films
+        $postsTotal = $this->_post->countPosts();//connaitre le nombre total de services
         $commentsTotal  =$this ->_comment ->countComments();//connaitre le nombre total de commentaires
 
        require ('views/contactView.php');
@@ -44,15 +44,25 @@ class ViewController{
     {
         $usersTotal =$this->_user->countUsers();//connaitre le nombre total d'inscrits
         $commentsReportTotal = $this->_comment->countCommentsReport();//connaitre le nombre total de commentaires signalés
-        $postsTotal = $this->_post->countPosts();//connaitre le nombre total de films
+        $postsTotal = $this->_post->countPosts();//connaitre le nombre total de services
         $commentsTotal  =$this ->_comment ->countComments();//connaitre le nombre total de commentaires
         require('views/loginView.php');
     }
 
-    //page salles de cinemas
-    public function cinemas()
+    //Controle à distance
+    public function vpn()
     {
-        require('views/cinemasView.php');
+        require('views/vpn.php');
     }
 
+
+    // Page livre d'or                 
+    public function gold()
+    {
+        $usersTotal =$this->_user->countUsers();//connaitre le nombre total d'inscrits
+        $commentsReportTotal = $this->_comment->countCommentsReport();//connaitre le nombre total de commentaires signalés
+        $postsTotal = $this->_post->countPosts();//connaitre le nombre total de services
+        $commentsTotal  =$this ->_comment ->countComments();//connaitre le nombre total de commentaires
+        require('views/livre.php');
+    }     
 }

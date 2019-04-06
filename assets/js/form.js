@@ -108,13 +108,9 @@ $('form[class="form"]').validate(
 
             title:'Veuillez entrer un titre ',
 
-            horaires:'Veuillez entrer un horaire ',
-
-            duree:'Veuillez entrer une durée ',
-
             author: 'Veuillez entrer un auteur ',
 
-            image :'veuillez entrer une affiche de film',
+            image :'veuillez entrer une image',
            
             content:'veuillez entrer un résumé',
 
@@ -127,8 +123,6 @@ $('form[class="form"]').validate(
             },
 
             object :'Veuillez entrer un sujet ',
-
-            video :'veuillez entrer le code de la vidéo',
 
             comment:'veuillez entrer un commentaire',
 

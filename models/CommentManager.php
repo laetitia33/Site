@@ -185,7 +185,7 @@ private $_id, $_post_id, $_author, $_comment, $_comment_date, $_reporting;
 
  
 
-//recupere les commentaires d'un film
+//recupere les commentaires d'un service
     public function getComments($post_id)
     {
         $this->setIdPost($post_id);

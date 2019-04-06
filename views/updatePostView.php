@@ -1,78 +1,62 @@
-<?php $title = 'Modification du film : ' . htmlspecialchars($post['title']) . ' '; ?>
+<?php $title = 'Modification du service : ' . htmlspecialchars($post['title']) . ' '; ?>
 
 <?php ob_start(); ?>
 <div id ="modif"></div>
 
-<h2 class='pageList'>Modifier le film: <?= htmlspecialchars($post['title']); ?></h2>
+<h2 class='pageList'>Modifier le service: <?= htmlspecialchars($post['title']); ?></h2>
 
-    <div class ="oneMovieDetail">
-        <img src="assets/images/bobine.jpg" class ="bobine" alt="bobine"/>   
+    <div class ="oneServDetail">
+
         <div id="affiche4"><?php echo "<img src='".$post['image']."' />";?></div>    
         <p>
             <p>Mis en ligne le <?= htmlspecialchars($post['date_creation_fr']) ?></p>
             <div class="news" >         
                 <p><?= htmlspecialchars_decode(nl2br(html_entity_decode($post['content'])));?></p>
             </div>
-        </p>
-        <img src="assets/images/bobine.jpg" class ="bobine2" alt="bobine"/>
-<form class ="form" action="index.php?action=updatePost&amp;post_id=<?= $_GET['post_id'];?>#films" method="POST">
         
-     </div>             
-        <div>
+
+    <form class ="form" action="index.php?action=updatePost&amp;post_id=<?= $_GET['post_id'];?>#films" method="POST">
+<div class="containerUpdate">           
+         </div>             
+            <div>
+                
+                <label for="author" ></label>
+                <p>Par : </p>
+                <input type="text" name="author" class="inputbasic" title ='Veuillez entrer un auteur' id="author"value=
+                    "<?php
+                    if (isset($_SESSION['pseudo'])) :
+                        echo htmlspecialchars($_SESSION['pseudo']);
+                    endif;
+                    ?>"
+                    required/>
+            </div>
             
-            <label for="author" ></label>
-            <p>Par : </p>
-            <input type="text" name="author" class="inputbasic" title ='Veuillez entrer un auteur' id="author"value=
-                "<?php
-                if (isset($_SESSION['pseudo'])) :
-                    echo htmlspecialchars($_SESSION['pseudo']);
-                endif;
-                ?>"
-                required/>
-        </div>
-        
-        <div >
-            <label for="title"></label>  
-             <p>Titre du film : </p>
-            <input type="text" name="title" class="inputbasic" id="title" title ='Veuillez entrer un titre ' value="<?php echo htmlspecialchars($post['title']) ;?>"/>
-        </div>
-  
-        <div>           
-            <label for="horaires"></label>
-             <p>Horaire de la séance : </p>          
-            <input id="horaires" type="time" name="horaires" title='Veuillez entrer un horaire' class="inputbasic" value="<?php echo htmlspecialchars($post['horaires']) ;?>" />  
-        </div>
+            <div >
+                <label for="title"></label>  
+                 <p>Titre : </p>
+                <input type="text" name="title" class="inputbasic" id="title" title ='Veuillez entrer un titre ' value="<?php echo htmlspecialchars($post['title']) ;?>"/>
+            </div>
+     
 
-        <div>
-            <label for="duree"></label>  
-            <p>Durée du film : </p>        
-            <input id="duree" type="time" name="duree" class="inputbasic" title='Veuillez entrer une durée' value="<?php echo htmlspecialchars($post['duree']) ;?>" />  
-        </div> 
+            <div>
+                <label for="image"></label> 
+                <p>Image : </p>         
+                <input type="text" name="image" class="inputbasic" id="image" title ='Veuillez entrer une image' value="<?php echo htmlspecialchars($post['image']) ;?>" />
+            </div>
 
-        <div>
-            <label for="image"></label> 
-            <p>Affiche du film : </p>         
-            <input type="text" name="image" class="inputbasic" id="image" title ='Veuillez entrer une affiche' value="<?php echo htmlspecialchars($post['image']) ;?>" />
-        </div>
 
-        <div>
-            <label for="video"></label> 
-            <p>Bande annonce  : </p>         
-            <input type="text" name="video" class="inputbasic" id="video" title ='Veuillez entrer le lien de la bande annonce' value="<?php echo htmlspecialchars($post['video']) ;?>" />
-        </div>
-
-        <p>Résumé : </p>   
-        <div class="inputbasic">            
-            <label for="content"></label>
-            <textarea class="editme" name="content" title='Veuillez entrer un résumé' id="content" ><p><?= htmlspecialchars_decode(nl2br(html_entity_decode($post['content'])));?></p></textarea>
+            <p>Résumé : </p>   
+            <div class="inputbasic">            
+                <label for="content"></label>
+                <textarea class="editme" name="content" title='Veuillez entrer un résumé' id="content" ><p><?= htmlspecialchars_decode(nl2br(html_entity_decode($post['content'])));?></p></textarea>
+                
+            </div>
             
-        </div>
-        
-        <div>
-            <input type="submit" value="envoyer" OnClick="return confirm('Voulez-vous vraiment modifier ce résumé ?');"></input>
-        </div>
-</form>
-
+            <div>
+                <input type="submit" value="envoyer" OnClick="return confirm('Voulez-vous vraiment modifier ce résumé ?');"></input>
+            </div>
+    </form>
+</div>
 <?php $content = ob_get_clean(); ?>
 
 <?php require('views/template.php'); ?>

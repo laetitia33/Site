@@ -45,13 +45,12 @@
 
 <!---///////affichage de l'auteur , de modification ou suppression du film  admin////-->
   
-		<div class ="oneMovieDetail">
+		<div class ="oneServDetail">
 			<h2><?= htmlspecialchars($post['title']) ?></h2>	
 			<div id="affiche2"><?php echo "<img alt='affiche du film' src='".$post['image']."' />";?></div>
 
 			<?php
 			if(isset($_SESSION['id']) && $_SESSION['id_group'] == 1): ?>
-				<p><span class="publishing"><i class="far fa-clock"></i> Tous les jours à <?= htmlspecialchars($post['horaires']) ?></span></p><br>
 				<div class='adminCtrl'>
 					<a href="index.php?action=adminUpdatePost&amp;post_id=<?= $post['id']; ?>#modif"><em><i class="fas fa-pen-square"> Modifier ce film </i></em></a>
 				</div>
@@ -63,7 +62,7 @@
  			<?php
         	
        		else : ?>
-				<p><span class="publishing"><i class="far fa-clock"></i> Tous les jours à <?= htmlspecialchars($post['horaires']) ?></span></p><br>
+			
 				  <?php
             endif;
             ?>
@@ -71,20 +70,8 @@
 			<div class="news" >	
 				<p><?= htmlspecialchars_decode(nl2br(html_entity_decode($post['content'])));?>	
 			</div>
-			<a class="btn" data-popup-open="popup-1" href="#">Voir la bande annonce</a>
-
-			<div class="popup" data-popup="popup-1">
-				<div class="popup-inner">
-				
-						<iframe src="https://www.youtube.com/embed/<?= htmlspecialchars($post['video']) ?>?rel=0"  allow="autoplay; encrypted-media"  allowfullscreen id="nofocusvideo"></iframe>
-
-						<p><a data-popup-close="popup-1" href="#">Close</a></p>
-						
-						<a class="popup-close" data-popup-close="popup-1" href="#">x</a>
-				</div>
-			</div>
-
-			<p><span class="publishing">Durée du film <?= htmlspecialchars($post['duree']) ?></span></p><br>	
+		
+	
 			<p>Article écrit par <a href="index.php?action=information"><?= $post['author'] ?></a>
 			le <?= $post['date_creation_fr'] ?></p>
 	
@@ -153,7 +140,6 @@ if(isset($_SESSION['id']) && $_SESSION['id_group'] == 1 OR isset($_SESSION['id']
 			     		<em><a id='validcom' href="index.php?action=report&amp;post_id=<?= $post['id']; ?>&amp;id=<?= $comment['id']; ?>" OnClick="return confirm('Souhaitez-vous signaler ce commentaire ?')";"><i class="fas fa-bell">  Signalez un abus</i></a></em>
                                         		       			
 			     	</div>
-
 				<?php
 	        	
 	       		else: ?>

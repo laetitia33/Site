@@ -44,7 +44,7 @@ else :;?>
 		//sinon se connecter pour prendre un rdv
 	else : ;
 	?>
-						      							
+		<br><br>				      							
 	    <em><i class="fas fa-ban"></i>  Vous devez être <a id='validcom' href="index.php?action=login">connecté ou inscrit</a><br>pour prendre un rendez vous</em>       			
 	 		  
 		       				
@@ -57,7 +57,7 @@ else :;?>
 		<a href="#" id="btntop"class="scroll-to"><i class="fa fa-chevron-up"></i></a>
 		<?php include_once 'views/include/footer.php' ?>			
 	</div>	
-	<script src="assets/js/meteo.js"></script>
+
 	<script src ="assets/js/script.js"></script>
 	
 </body>

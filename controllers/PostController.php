@@ -22,30 +22,30 @@ class PostController
         $this->_comment = new \Laetitia_Bernardi\projet5\Model\CommentManager();
         $this->_user = new \Laetitia_Bernardi\projet5\Model\UserManager();
     }
-// Page Afficher un chapitre + ses commentaires
+// Page Afficher un service + ses commentaires
     public function post($post_id,$commentReport)
     {   
-        $postsTotal = $this->_posts->countPosts();  //connaitre le nombre de total films
+        $postsTotal = $this->_posts->countPosts();  //connaitre le nombre de total services
         $commentsTotal=  $this->_comment->countComments(); //connaitre le nombre total de com 
         $commentReport=$commentReport;//affichage message confirmation signalé
         $commentsReportTotal = $this->_comment->countCommentsReport();//connaitre nombre total de coms signalés
-        $post = $this->_post->getPost($post_id);// recuperer le film selectionné
-        $comments = $this->_comment->getComments($post_id);//tous les commentaires du film selectionné  
+        $post = $this->_post->getPost($post_id);// recuperer le service selectionné
+        $comments = $this->_comment->getComments($post_id);//tous les commentaires du service selectionné  
         $usersTotal =$this->_user->countUsers();//connaitre le nombre total d'inscrits
 
-        require('views/filmDetail.php');
+        require('views/serviceDetail.php');
     }
 
 
-// Liste des chapitres( page d'accueil)
+// Liste des services( page d'accueil)
     public function listPosts()
     {
         $usersTotal =$this->_user->countUsers();//connaitre le nombre total d'inscrits      
-        $posts = $this->_posts->getAllPosts();//recupère tous les films
-        $postsTotal = $this->_posts->countPosts();  //connaitre le nombre de total de films   
+        $posts = $this->_posts->getAllPosts();//recupère tous les services
+        $postsTotal = $this->_posts->countPosts();  //connaitre le nombre de total de services   
         $commentsTotal  =$this ->_comment ->countComments();//connaitre le nombre de com 
         $commentsReportTotal = $this->_comment->countCommentsReport();//connaitre nombre total de coms signalés
-        require('views/filmList.php');
+        require('views/serviceList.php');
      
     }
 

@@ -6,7 +6,6 @@ require_once ('models/PostManager.php');
 require_once ('models/CommentManager.php');
 require_once ('models/UserManager.php');
 
-
 use \models\PostManager;
 use \models\CommentManager;
 use \models\UserManager;
@@ -37,21 +36,21 @@ class AdministrationController
     public function administration()
     {
         $usersTotal =$this->_user->countUsers();//connaitre le nombre total d'inscrits
-        $post = $this->_post->getLastPost();// affichage dernier film
+        $post = $this->_post->getLastPost();// affichage dernier service
         $comment = $this->_comment->getLastComment();//affichage dernier commentaire
-        $postsTotal = $this->_post->countPosts();//connaitre le nombre total de films
+        $postsTotal = $this->_post->countPosts();//connaitre le nombre total de service
         $commentsTotal = $this->_comment->countComments();//connaitre le nombre total de commentaires
         $commentsReportTotal = $this->_comment->countCommentsReport();//connaitre le nombre total de commentaires signalés
         
         require('views/adminView.php');
     }
 
-//page pour éditer un film
+//page pour éditer un service
     public function adminNewPost(){
 
         $usersTotal =$this->_user->countUsers();//connaitre le nombre total d'inscrits
         $commentsReportTotal = $this->_comment->countCommentsReport();//connaitre le nombre total de commentaires signalés
-        $postsTotal = $this->_post->countPosts();//connaitre le nombre total de films
+        $postsTotal = $this->_post->countPosts();//connaitre le nombre total de services
         $commentsTotal  =$this ->_comment ->countComments();//connaitre le nombre total de commentaires
         require('views/newPostView.php');
     }
@@ -61,7 +60,7 @@ class AdministrationController
 
     {
         $usersTotal =$this->_user->countUsers();//connaitre le nombre total d'inscrits
-        $postsTotal = $this->_post->countPosts();//connaitre le nombre total de films
+        $postsTotal = $this->_post->countPosts();//connaitre le nombre total de services
         $commentsReportTotal = $this->_comment->countCommentsReport();//connaitre le nombre total de commentaires signalés
         $commentsTotal  =$this ->_comment ->countComments();//connaitre le nombre total de commentaires
         $comments = $this->_comment->getAllComments();//recupere tous les commentaires
@@ -71,10 +70,10 @@ class AdministrationController
 
 
 
-// Approuver un commentaire en  retirerant le signalement (page du detail de chaque films)
+// Approuver un commentaire en  retirerant le signalement (page du detail de chaque services)
     public function approvedComment()
     {
-        $post = $this->_post->getPost($_GET['post_id']);//récuperer le film selectionné
+        $post = $this->_post->getPost($_GET['post_id']);//récuperer le service selectionné
         $reportComment = $this->_comment->approvedComment($_GET['id']);//approuver un commentaire en fonction de son id
         header('Location: index.php?action=adminCommentsReport');
     }
@@ -105,9 +104,6 @@ class AdministrationController
         require ('views/reportCommentsView.php');
     }
 
-
-
- 
  
  //supprime tous les commentaires(page de detail de la liste des commentaires)
     public function deleteComments()
@@ -146,7 +142,7 @@ class AdministrationController
         }
     }
 
-// Supprimer un commentaire dans la page article details
+// Supprimer un commentaire dans la page services details
     public function deleteOneComment($id_comment)
     {
         $deleteComment = $this->_comment->deleteComment($id_comment);
@@ -181,28 +177,30 @@ class AdministrationController
         }
     }
 
+
+
 //////////////////////////////////////////////////////////////////////////////////////////////
 /////////////////////////////////////////////////////////////////////////////////////////////
-//////////////////////////////////////CHAPITRES//////////////////////////////////////////////
+//////////////////////////////////////SERVICES//////////////////////////////////////////////
 
 
 
-// Ajouter un film (page de creation d'un film)
-    public function postAdd($author, $title,$horaires,$duree,$image,$video , $content )
+// Ajouter un service (page de creation d'un service)
+    public function postAdd($author, $title,$image , $content )
     {
-        $createPost = $this->_post->createPost($author, $title,$horaires,$duree,$image,$video, $content);
-         echo "<h1 style='color:#9A97A5;text-align:center;padding:35px;'>Film ajouté avec succès</h1>";
+        $createPost = $this->_post->createPost($author, $title,$image, $content);
+         echo "<h1 style='color:#9A97A5;text-align:center;padding:35px;'>Service ajouté avec succès</h1>";
         header('Refresh: 1; url= index.php?action=listPosts#episodes');
     }
 
 
-// Page de modification d'un film
+// Page de modification d'un service
     public function adminUpdatePost()
     {
         $commentsReportTotal = $this->_comment->countCommentsReport();//nombre de commentaires signalés
-        $postsTotal = $this->_post->countPosts();//nombre de films
+        $postsTotal = $this->_post->countPosts();//nombre de services
         $commentsTotal  =$this ->_comment ->countComments();//nombre de commentaires
-        $post = $this->_post->getPost($_GET['post_id']);//récupere un film selectionné
+        $post = $this->_post->getPost($_GET['post_id']);//récupere un service selectionné
         $usersTotal =$this->_user->countUsers();//connaitre le nombre total d'inscrits
 
         require ('views/updatePostView.php');
@@ -211,13 +209,13 @@ class AdministrationController
 
 
 
-// Modification d'un film (page de modification d'un film)
-      public function updatePost($post_id, $author, $title, $content,$horaires,$duree,$image,$video)
+// Modification d'un service (page de modification d'un service)
+      public function updatePost($post_id, $author, $title, $content,$image)
     {
-        $updatePost = $this->_post->updatePost($post_id, $author, $title, $content,$horaires,$duree,$image,$video);
+        $updatePost = $this->_post->updatePost($post_id, $author, $title, $content,$image);
 
         if ($updatePost === false) {
-            throw new Exception('Impossible de mettre à jour le film');
+            throw new Exception('Impossible de mettre à jour le service');
         } else {
             header('Location: index.php?action=listPosts');
         }
@@ -226,15 +224,15 @@ class AdministrationController
 
 
 
-// Supprimer un film (page de la liste des films admin , page du detail du film )
+// Supprimer un service (page de la liste des services admin , page du detail du service )
     public function deletePost($post_id)
     {
-        $deletePost = $this->_post->deletePost($post_id);//supprimé un film selectionné
+        $deletePost = $this->_post->deletePost($post_id);//supprimé un service selectionné
 
         if ($deletePost === false) {
-            throw new Exception('Impossible de supprimer le film');
+            throw new Exception('Impossible de supprimer le service');
         } elseif ($deleteComments === false) {
-            throw new Exception('Impossible de supprimer les commentaire du film');
+            throw new Exception('Impossible de supprimer les commentaire du service');
         } else {
             header('Location:index.php?action=listPosts');
         

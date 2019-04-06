@@ -12,16 +12,16 @@
 <?php
     while ($data = $post->fetch()):
             ?>
-        <h2 class='pageList'>Dernier film en ligne:</h2>
+        <h2 class='pageList'>Dernier service en ligne:</h2>
         <div class = "adminPost">
                 <h2><?= htmlspecialchars($data['title']) ?></h2>
                 <div id="affiche3"><?php echo "<img src='".$data['image']."' />";?></div>
-                <p><span class="publishing"><i class="far fa-clock"></i> Tous les jours à <?= htmlspecialchars($data['horaires']) ?></span></p><br>
+             
                                    
                 <div class="news" >
                     <p><?= htmlspecialchars_decode(nl2br(substr(html_entity_decode($data['content']), 0, 500).'...'));?></p>
                  </div>
-                <p><span class="publishing"> Durée du film <?= htmlspecialchars($data['duree']) ?></span></p>
+               
                 <a  class="input_read" href="index.php?action=post&amp;post_id=<?= $data['id']; ?>">Plus d'infos</a>
         </div>
  
@@ -55,7 +55,7 @@
     <div class="triangle">
         <div class="admin">
             <a  href="index.php?action=listPosts#episodes">
-                <p>Vous avez actuellement <?= htmlspecialchars($postsTotal['total_posts'])?> films sur ce site.</p>
+                <p>Vous avez actuellement <?= htmlspecialchars($postsTotal['total_posts'])?> services sur ce site.</p>
             </a>
         </div>
         <div class="admin">

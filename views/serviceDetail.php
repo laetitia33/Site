@@ -43,11 +43,11 @@
             endif;
             ?>
 
-<!---///////affichage de l'auteur , de modification ou suppression du film  admin////-->
+<!---///////affichage de l'auteur , de modification ou suppression du service  admin////-->
   
 		<div class ="oneServDetail">
 			<h2><?= htmlspecialchars($post['title']) ?></h2>	
-			<div id="affiche2"><?php echo "<img alt='affiche du film' src='".$post['image']."' />";?></div>
+			<div id="affiche2"><?php echo "<img alt='affiche du service src='".$post['image']."' />";?></div>
 
 			<?php
 			if(isset($_SESSION['id']) && $_SESSION['id_group'] == 1): ?>
@@ -56,7 +56,7 @@
 				</div>
 
 				<div class='adminCtrl'>
-               		<a href="index.php?action=deletePost&amp;post_id=<?= $post['id']; ?>" OnClick="return confirm('Voulez-vous vraiment supprimer ce film ?');"><em><i class="fas fa-trash-alt"> Supprimer ce service</i></em></a>
+               		<a href="index.php?action=deletePost&amp;post_id=<?= $post['id']; ?>" OnClick="return confirm('Voulez-vous vraiment supprimer ce service ?');"><em><i class="fas fa-trash-alt"> Supprimer ce service</i></em></a>
                	</div>
 
  			<?php

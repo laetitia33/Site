@@ -2,18 +2,15 @@
 namespace Laetitia_Bernardi\projet5\Controller;
 require_once ('models/PostManager.php');
 require_once ('models/CommentManager.php');
-
 class CommentController 
 {
     private $_comment;
     private $_post;
-
     public function __construct()
     {
         $this->_comment = new \Laetitia_Bernardi\projet5\Model\CommentManager();
         $this->_post = new \Laetitia_Bernardi\projet5\Model\PostManager();
     }
-
 // Ajouter un commentaire(page du detail de chaque service)
     public function addComment($post_id, $author, $comment)
     {
@@ -27,9 +24,6 @@ class CommentController
             header('Location: index.php?action=post&post_id=' . $post_id);
         }
     }
-
-
-
 // Signaler un commentaire
     public function reportingComment()
     {         
@@ -38,6 +32,4 @@ class CommentController
                        
         header('Location: index.php?action=post&post_id=' . $_GET['post_id'] ."&commentReport");
     }
-
-
 }

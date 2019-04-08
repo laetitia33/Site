@@ -37,7 +37,7 @@
     while ($data = $comment->fetch()): ?>
 
     <h2 class='pageList'>Dernier Commentaire:</h2>
-    <div class = "triangle">
+    <div class = "adminPost">
         <p><strong><?= htmlspecialchars($data['author']); ?></strong> le <?= htmlspecialchars($data['comment_date_fr']); ?></p>
 
         <div class="news" >
@@ -52,7 +52,7 @@
 
  <!--/////////////////////////LIENS INFORMATIONS ////////////////////////////////////-->
     <h2 class='pageList'>Informations</h2>
-    <div class="triangle">
+    <div class="adminPost">
         <div class="admin">
             <a  href="index.php?action=listPosts#episodes">
                 <p>Vous avez actuellement <?= htmlspecialchars($postsTotal['total_posts'])?> services sur ce site.</p>

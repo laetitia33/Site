@@ -5,6 +5,7 @@
 <html lang="fr" class='template'>
 
 		<?php include_once 'views/include/head.php';?>
+		
 <body>
 	<div id="volet_clos">
 		<div id="volet">
@@ -124,9 +125,77 @@
 		</div>
 		
 	</div>
+
 	<script type="text/javascript" src="assets/js/sliderResp/engine1/wowslider.js"></script>
 	<script type="text/javascript" src="assets/js/sliderResp/engine1/script.js"></script>
 	<script src ="assets/js/script.js"></script>
 	<script src ="assets/js/horloge.js"></script>
+<script>	
+//slider controle
+
+	$(function(){
+ $('#slider3')
+  .anythingSlider()
+  /* this code will make the caption appear when you hover over the panel
+    remove the extra statements if you don't have captions in that location */
+  .find('.panel')
+    .find('div[class*=caption]').css({ position: 'absolute' }).end()
+    .hover(function(){ showCaptions( $(this) ) }, function(){ hideCaptions( $(this) ); });
+
+  showCaptions = function(el){
+    var $this = el;
+    if ($this.find('.caption-top').length) {
+      $this.find('.caption-top')
+        .show()
+        .animate({ top: 0, opacity: 1 }, 400);
+    }
+    if ($this.find('.caption-right').length) {
+      $this.find('.caption-right')
+        .show()
+        .animate({ right: 0, opacity: 1 }, 400);
+    }
+    if ($this.find('.caption-bottom').length) {
+      $this.find('.caption-bottom')
+        .show()
+        .animate({ bottom: 0, opacity: 1 }, 400);
+    }
+    if ($this.find('.caption-left').length) {
+      $this.find('.caption-left')
+        .show()
+        .animate({ left: 0, opacity: 1 }, 400);
+    }
+  };
+  hideCaptions = function(el){
+    var $this = el;
+    if ($this.find('.caption-top').length) {
+      $this.find('.caption-top')
+        .stop()
+        .animate({ top: -50, opacity: 0 }, 350, function(){
+          $this.find('.caption-top').hide(); });
+    }
+    if ($this.find('.caption-right').length) {
+      $this.find('.caption-right')
+        .stop()
+        .animate({ right: -150, opacity: 0 }, 350, function(){
+          $this.find('.caption-right').hide(); });
+    }
+    if ($this.find('.caption-bottom').length) {
+      $this.find('.caption-bottom')
+        .stop()
+        .animate({ bottom: -50, opacity: 0 }, 350, function(){
+          $this.find('.caption-bottom').hide(); });
+    }
+    if ($this.find('.caption-left').length) {
+      $this.find('.caption-left')
+        .stop()
+        .animate({ left: -150, opacity: 0 }, 350, function(){
+          $this.find('.caption-left').hide(); });
+    }
+  };
+
+  // hide all captions initially
+  hideCaptions( $('#slider3 .panel') );
+});
+</script>
 </body>	
 </html>

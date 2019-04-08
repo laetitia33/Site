@@ -47,7 +47,7 @@
   
 		<div class ="oneServDetail">
 			<h2><?= htmlspecialchars($post['title']) ?></h2>	
-			<div id="affiche2"><?php echo "<img alt='affiche du service src='".$post['image']."' />";?></div>
+			<div id="affiche2"><?php echo "<img alt='affiche du service' src='".$post['image']."' />";?></div>
 
 			<?php
 			if(isset($_SESSION['id']) && $_SESSION['id_group'] == 1): ?>

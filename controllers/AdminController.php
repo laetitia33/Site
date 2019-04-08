@@ -154,7 +154,7 @@ class AdministrationController
         else
         {
          
-             header('Location: index.php?action=post&post_id=' . $_GET['post_id']);
+             header('Location: index.php?action=listpost&post_id=' . $_GET['post_id']);
             
         }
     }

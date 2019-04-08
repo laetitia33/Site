@@ -7,8 +7,6 @@ require('controllers/UserController.php');
 require('controllers/ContactController.php');
 require('controllers/Autoload.php');
 require('controllers/viewController.php');
-
-
 use \controllers\LivreController;
 use \controllers\ContactController;
 use \controllers\UserController;
@@ -17,14 +15,9 @@ use \controllers\CommentController;
 use \controllers\AdminController;
 use \controllers\viewController;
 use \controllers\Autoload;
-
-
 class Routeur
 {
         private $_livreCtrl,$_postCtrl, $_commentCtrl, $_administrationCtrl, $_contactCtrl, $_userCtrl, $_templateCtrl,$_viewCtrl;
-
-
-
         public function __construct()
         {
             \Laetitia_Bernardi\projet5\Controller\Autoload::register();
@@ -35,10 +28,7 @@ class Routeur
             $this->_contactCtrl = new \Laetitia_Bernardi\projet5\Controller\ContactController();
             $this->_viewCtrl = new \Laetitia_Bernardi\projet5\Controller\viewController();
             $this->_livreCtrl = new \Laetitia_Bernardi\projet5\Controller\LivreController();    
-
         }
-
-
         public function RouteRequest()
         {
         try{
@@ -54,7 +44,6 @@ class Routeur
                     }
                   
         //redirection concernant les service
-
                     // ADMIN - Creation d'un service
                     elseif ($_GET['action'] == 'createPost')
                     {
@@ -66,7 +55,6 @@ class Routeur
                         }
                      
                     }
-
                     // ADMIN page mail lire les mails reçus
                     elseif ($_GET['action'] == 'email') 
                     {
@@ -80,27 +68,20 @@ class Routeur
                       
                         $this->_livreCtrl->gold();
                     }
-
-
                   // ADMIN -  Affiche tous les messages du livre d'or
                    elseif ($_GET['action'] == 'adminListMessages')
                     {
                         
                         $this->_livreCtrl->adminListMessages();
                     }
-
-
                     // ADMIN - Ajoute un message
                     elseif ($_GET['action'] == 'addMessage') 
                     {
-
                         if (!empty($_POST['author']) && !empty($_POST['comment'])) 
                         {                      
                         $this->_livreCtrl->addMessage($_POST['author'], $_POST['comment']);
                         }
                     }
-
-
                     // ADMIN - Supprimer un message du livre d'or
                     elseif ($_GET['action'] == 'deleteOneMessage')
                     {
@@ -109,28 +90,24 @@ class Routeur
                         }
                       
                     //ADMIN  - supprimer tous les messages du livre d'or
-
                     elseif ($_GET['action'] == 'deleteMessages')
                     {           
                           
                            $this->_livreCtrl->deleteMessages();
                           
                     }
-
                     // ADMIN - Page pour créer un service
                     elseif ($_GET['action'] == 'adminNewPost')
                     {
                      
                        $this->_administrationCtrl->adminNewPost();
                     }
-
                     // ADMIN - Liste des service
                     elseif ($_GET['action'] == 'listPosts')
                     {
                        
                         $this->_postCtrl->listPosts();
                     }
-
                    // ADMIN - AGENDA
                                        
                     if ($_GET['action'] == 'rdv')
@@ -139,7 +116,6 @@ class Routeur
                         $this->_viewCtrl->rdv();
                        
                     }       
-
                     //ADMIN - service avec ses commentaires
                     elseif ($_GET['action'] == 'post') 
                     {
@@ -154,7 +130,6 @@ class Routeur
                                     $commentReport = false;
                                 }
                             $this->_postCtrl->post($_GET['post_id'],$commentReport);
-
                              
                         } else 
                         {
@@ -168,7 +143,6 @@ class Routeur
                        
                         $this->_administrationCtrl->adminUpdatePost();
                     }
-
                     // ADMIN - Mise à jour d'un service
                     elseif ($_GET['action'] == 'updatePost')
                     {
@@ -213,7 +187,6 @@ class Routeur
                         
                         $this->_administrationCtrl->adminListComments();
                     }
-
                     // ADMIN - Ajoute un commentaire dans le service selectionné
                     elseif ($_GET['action'] == 'addComment')
                     {
@@ -231,7 +204,6 @@ class Routeur
                             throw new Exception('Aucun identifiant de service envoyé !');
                         }
                     }
-
                     // ADMIN - Liste des commentaires signalés
                     elseif ($_GET['action'] == 'adminCommentsReport')
                     {
@@ -257,7 +229,6 @@ class Routeur
                             throw new Exception('Aucun identifiant de service envoyé pour revenir sur la page précédente!');
                         }
                     }
-
                     // ADMIN - Supprimer un commentaire
                     elseif ($_GET['action'] == 'deleteComment')
                     {
@@ -271,7 +242,6 @@ class Routeur
                             throw new Exception('Aucun identifiant de commentaire envoyé !');
                         }
                     }
-
                     // ADMIN - Supprimer un commentaire dans la  page detail service
                     elseif ($_GET['action'] == 'deleteOneComment')
                     {
@@ -299,7 +269,6 @@ class Routeur
                             throw new Exception('Aucun identifiant de commentaire envoyé !');
                         }
                     }
-
                     // ADMIN - Supprimer tous les commentaires signalés dans la  comment report
                     elseif ($_GET['action'] == 'deleteAllCommentReport')
                     {
@@ -314,14 +283,12 @@ class Routeur
                            $this->_administrationCtrl->deleteComments();
                           
                     }
-
                     // ADMIN - Approuver un commentaire 
                     elseif ($_GET['action'] == 'approvedComment')
                     {
                        
                         $this->_administrationCtrl->approvedComment();
                     }
-
                     // ADMIN - Approuver tous les commentaires
                     elseif ($_GET['action'] == 'approvedComments')
                     {
@@ -346,7 +313,6 @@ class Routeur
                             throw new Exception('Aucun identifiant de service envoyé !');
                         }
                     }
-
                     // ADMIN - Page de connexion
                     elseif ($_GET['action'] == 'login')
                     {
@@ -354,8 +320,6 @@ class Routeur
                         $this->_viewCtrl->login();
                        
                     }
-
-
                      // ADMIN - Inscription
                     elseif ($_GET['action'] == 'register') {
                         if (!empty($_POST['pseudo']) && !empty($_POST['password']) && !empty($_POST['password_confirm']) && !empty($_POST['email'])) {
@@ -386,8 +350,6 @@ class Routeur
                             $this->_userCtrl->logUser($_POST['pseudo'], $_POST['pass']);
                         }
                     }
-
-
                     // ADMIN - Deconnexion
                     elseif ($_GET['action'] == 'logout')
                     {
@@ -420,16 +382,11 @@ class Routeur
                     $this->_administrationCtrl->administration();
                 }
             }
-
-
-
 //INSCRITS
             elseif(isset($_SESSION['id']) && $_SESSION['id_group'] == "2")
             {
                 if (isset($_GET['action']) && !empty($_GET['action']))
                 {
-
-
                     // INSCRITS - page rdv
                     if ($_GET['action'] == 'rdv')
                     {
@@ -437,29 +394,23 @@ class Routeur
                         $this->_viewCtrl->rdv();
                        
                     }
-
                     // INSCRITS - contrôle à distance
-
                     if ($_GET['action'] == 'vpn')
                     {
                         
                         $this->_viewCtrl->vpn();
                        
                     }
-
-
                     // INSCRITS - Accueil visiteurs /Liste des service
                    if ($_GET['action'] == 'listPosts') 
                     {
                  
                         $this->_postCtrl->listPosts();
                     }
-
                     // INSCRITS -  Affiche le service avec ses commentaires
                     elseif ($_GET['action'] == 'post') 
                     {
                         if (isset($_GET['post_id']) && $_GET['post_id'] > 0)
-
                         {
                             
                                 if(isset($_GET['commentReport']))
@@ -468,7 +419,6 @@ class Routeur
                                 }else{
                                     $commentReport = false;
                                 }
-
                             $this->_postCtrl->post($_GET['post_id'],$commentReport);
                               
                         } else 
@@ -484,13 +434,11 @@ class Routeur
                         $this->_viewCtrl->login();
                        
                     }
-
                     // INSCRITS - Inscription
                     elseif ($_GET['action'] == 'register') {
                         if (!empty($_POST['pseudo']) && !empty($_POST['password']) && !empty($_POST['password_confirm']) && !empty($_POST['email'])) {
                             // Sécurité
                             $pseudo = htmlspecialchars($_POST['pseudo']);
-
                             $email = htmlspecialchars($_POST['email']);
                             // Hachage du mot de passe
                             $password_hache = password_hash($_POST['password'], PASSWORD_DEFAULT);
@@ -516,15 +464,12 @@ class Routeur
                             $this->_userCtrl->logUser($_POST['pseudo'], $_POST['pass']);
                         }
                     }
-
-
                     // INSCRITS - Deconnexion
                     elseif ($_GET['action'] == 'logout')
                     {
                      
                         $this->_userCtrl->logoutUser();
                     }
-
                     // INSCRITS - page mail
                     elseif ($_GET['action'] == 'email') 
                     {
@@ -539,26 +484,20 @@ class Routeur
                       
                         $this->_livreCtrl->gold();
                     }
-
-
                   // ADMIN -  Affiche tous les messages du livre d'or
                    elseif ($_GET['action'] == 'adminListMessages')
                     {
                         
                         $this->_livreCtrl->adminListMessages();
                     }
-
-
                     // ADMIN - Ajoute un message
                     elseif ($_GET['action'] == 'addMessage') 
                     {
-
                         if (!empty($_POST['author']) && !empty($_POST['comment'])) 
                         {                      
                         $this->_livreCtrl->addMessage($_POST['author'], $_POST['comment']);
                         }
                     }
-
                     // INSCRITS - envoi un mail
                     elseif ($_GET['action'] == 'addMail') 
                     {
@@ -573,7 +512,6 @@ class Routeur
                       
                
                     }
-
                     // INSCRITS - Ajoute un commentaire dans le service selectionné
                     elseif ($_GET['action'] == 'addComment') 
                     {
@@ -591,7 +529,6 @@ class Routeur
                             throw new Exception('Aucun identifiant de chapitre envoyé !');
                         }
                     }
-
                     // INSCRITS - Signaler un commentaire
                     elseif ($_GET['action'] == 'report') 
                     {
@@ -613,7 +550,6 @@ class Routeur
                     }
                    
                 }
-
                 // INSCRITS - Retourne à l'index.Accueil
                 else
                 {
@@ -622,12 +558,9 @@ class Routeur
                 }
             }
             else
-
             {
                 if (isset($_GET['action']) && !empty($_GET['action']))
                 {
-
-
                     // page rdv
                     
                     if ($_GET['action'] == 'rdv')
@@ -636,23 +569,19 @@ class Routeur
                         $this->_viewCtrl->rdv();
                        
                     }
-
                     // page controle à distance
-
                     if ($_GET['action'] == 'vpn')
                     {
                         
                         $this->_viewCtrl->vpn();
                        
                     }
-
                     // ADMIN page livre d'or                   
                     elseif ($_GET['action'] == 'gold') 
                     {
                       
                         $this->_livreCtrl->gold();
                     }
-
                     
                   // ADMIN -  Affiche tous les messages du livre d'or
                    elseif ($_GET['action'] == 'adminListMessages')
@@ -660,19 +589,16 @@ class Routeur
                         
                         $this->_livreCtrl->adminListMessages();
                     }
-
                     // Accueil visiteurs /Liste des service
                    if ($_GET['action'] == 'listPosts') 
                     {
                  
                         $this->_postCtrl->listPosts();
                     }
-
                     // Affiche le service avec ses commentaires
                     elseif ($_GET['action'] == 'post') 
                     {
                         if (isset($_GET['post_id']) && $_GET['post_id'] > 0)
-
                         {
                          
                             
@@ -682,7 +608,6 @@ class Routeur
                                 }else{
                                     $commentReport = false;
                                 }
-
                             $this->_postCtrl->post($_GET['post_id'],$commentReport);
                               
                         } else 
@@ -702,8 +627,6 @@ class Routeur
                             } 
                         
                     }
-
-
                     // Page de connexion
                     elseif ($_GET['action'] == 'login')
                     {
@@ -711,13 +634,11 @@ class Routeur
                         $this->_viewCtrl->login();
                        
                     }
-
                      // Inscription
                     elseif ($_GET['action'] == 'register') {
                         if (!empty($_POST['pseudo']) && !empty($_POST['password']) && !empty($_POST['password_confirm']) && !empty($_POST['email'])) {
                             // Sécurité
                             $pseudo = htmlspecialchars($_POST['pseudo']);
-
                             $email = htmlspecialchars($_POST['email']);
                             // Hachage du mot de passe
                             $password_hache = password_hash($_POST['password'], PASSWORD_DEFAULT);
@@ -736,16 +657,12 @@ class Routeur
                             throw new Exception('Tous les champs doivent être remplis !');
                         }
                     }
-
                     // Connexion
                       elseif ($_GET['action'] == 'log') {
                         if (!empty($_POST['pseudo']) && !empty($_POST['pass'])) {
                             $this->_userCtrl->logUser($_POST['pseudo'], $_POST['pass']);
                         }
                     }
-
-
-
                     // page mail
                     elseif ($_GET['action'] == 'email') 
                     {
@@ -753,7 +670,6 @@ class Routeur
                         $this->_viewCtrl->mailView();
                     }
                     
-
                     //envoi un mail
                     elseif ($_GET['action'] == 'addMail') 
                     {
@@ -768,11 +684,9 @@ class Routeur
                       
                
                     }
-
                    
                    
                 }
-
                 // Retourne à l'index.Accueil
                 else
                 {
@@ -780,7 +694,6 @@ class Routeur
                    $this->_postCtrl->listPosts();
                 }
             }
-
         }
         catch (Exception $e)
         {

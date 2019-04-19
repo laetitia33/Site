@@ -1,201 +1,67 @@
-<?php $title =  htmlspecialchars($post['title']) . ''; ?>
+<?php $title =  'Création de sites internet'; ?>
 
 
-<!--///////////////////////// phrase d'accueil///////////////////////////////////////////////////-->
+<!DOCTYPE html>
+<html lang="fr" class='template'>
+		<head>
+		<meta charset="utf-8">
+		<!-- feuille de style-->
+		<link rel="stylesheet" type="text/css" href="assets/css/style.css">
 
-
-
-
-
-
-<!--//////////////lien retour page précédente selon si visiteur ou admin//////////////////-->
-<?php ob_start(); ?>
-
-<div id="volet_clos">
-	<div id="volet">
-		<p>Par téléphone au <br> <i class="fas fa-phone-volume"></i><a href="tel:+0659982720"> 06 59 98 27 20 </a><br>du lundi au samedi de 8h à 19h <br>sans interruption  ou par <br><i class="fas fa-envelope"></i> <a href="index.php?action=email">E-mail</a></p>
-	<a href="#volet" class="ouvrir" aria-hidden="true">Contact </a>
-	<a href="#volet_clos" class="fermer" aria-hidden="true">fermer </a>
-	</div>
-</div>	
-
-<?php
+		<meta name="description" content="Assitance informatique,Conseil,Conception de sites,Formation !">
+		<meta name="viewport" content="width=device-width initial-scale=1">
+		<meta property="og:url" content="https://cinecinemadeparis.000webhostapp.com"/>
+		<meta property="og:title" content="Assistance informatique"/>
+		<meta property="og:type" content="website">
+		<meta property="og:image" content="assets/images/icone.png">
+		<meta name="Language" CONTENT="fr" />
 		
-		if($commentReport===true) : ?>
-			
-			 <div id="message">Ce commentaire a bien été signalé et sera vérifié par l'administrateur</div>
-		
-		<?php
-        endif;?>
-                    
-     
-		<?php
-			if(isset($_SESSION['id']) && $_SESSION['id_group'] == 1): ?>
-			<p><a class="news" href="index.php#adminView"><i class="fas fa-arrow-left">
-			Retour à votre tableau de bord</i></a></p>
-		 	<?php
-            
-           	else : ?>
-
-			<p><a class="news" href="index.php#welcome"><i class="fas fa-arrow-left">
-			Retour à la liste des services</i></a></p>
-			  <?php
-            endif;
-            ?>
-
-<!---///////affichage de l'auteur , de modification ou suppression du service  admin////-->
-  
-		<div class ="oneServDetail">
-			<h2><?= htmlspecialchars($post['title']) ?></h2>	
-			<div id="affiche2"><?php echo "<img alt='affiche du service' src='".$post['image']."' />";?></div>
-
-			<?php
-			if(isset($_SESSION['id']) && $_SESSION['id_group'] == 1): ?>
-				<div class='adminCtrl'>
-					<a href="index.php?action=adminUpdatePost&amp;post_id=<?= $post['id']; ?>#modif"><em><i class="fas fa-pen-square"> Modifier ce service</i></em></a>
-				</div>
-
-				<div class='adminCtrl'>
-               		<a href="index.php?action=deletePost&amp;post_id=<?= $post['id']; ?>" OnClick="return confirm('Voulez-vous vraiment supprimer ce service ?');"><em><i class="fas fa-trash-alt"> Supprimer ce service</i></em></a>
-               	</div>
-
- 			<?php
-        	
-       		else : ?>
-			
-				  <?php
-            endif;
-            ?>
-
-			<div class="news" >	
-				<p><?= htmlspecialchars_decode(nl2br(html_entity_decode($post['content'])));?>	
-			</div>
-		
+		<!--- police -->
+		<link href='http://fonts.googleapis.com/css?family=Questrial|Droid+Sans|Alice|Rancho|Roboto|Niconne|Marck+Script' rel='stylesheet' type='text/css'>
 	
-			<p>Article écrit par <a href="index.php?action=information"><?= $post['author'] ?></a>
-			le <?= $post['date_creation_fr'] ?></p>
+		<!--- font awesome-icones -->
+		<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.0/css/all.css" integrity="sha384-Mmxa0mLqhmOeaE8vgOSbKacftZcsNYDjQzuCOm6D02luYSzBG8vpaOykv9lFQ51Y" crossorigin="anonymous">
+		<link href="//netdna.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
+
+		<!-- icone-->
+		<link href="assets/images/icone.png" rel="icon" type="image/x-icon" />
+		
+		<!--jquery-->
+   		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+
+		<!--jquery-->
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/2.0.2/anime.min.js"></script>
+		
+
+		<title><?= isset($title) ? $title : 'Création de sites internet';?></title>
+	</head>
 	
+
+	<body>
+
+			<div id="content">
+				<div id="blocpage">	
+					<a id="films"></a>
+
+				
+
+
+
+
+				<a href="#" id="btntop"class="scroll-to"><i class="fa fa-chevron-up"></i></a>
+
+				<?php  include_once 'views/include/footer.php' ?>
+
+			<script src ="assets/js/script.js"></script>
+			<script src="assets/js/cookiechoices.js"></script>
+			<script src="assets/js/classie.js"></script>
+			<script src="assets/js/jquery-2.1.1.js"></script>
+			<script src="assets/js/velocity.min.js"></script>
+			<script src="assets/js/main.js"></script> <!-- Resource jQuery -->
+	
+
+			<script>document.addEventListener('DOMContentLoaded', function(event){cookieChoices.showCookieConsentBar('Ce site utilise des cookies pour vous offrir le meilleur service. En poursuivant votre navigation, vous acceptez l’utilisation des cookies.', 'J’accepte', 'En savoir plus', 'http://www.example.com/mentions-legales/');});</script>
+ 			</div>
 		</div>
-
-
-<!--/////////////////////////-écrire commentaires admin ou utilisateur //////////////////////////-->
-
-<?php 
-if(isset($_SESSION['id']) && $_SESSION['id_group'] == 1 OR isset($_SESSION['id']) && $_SESSION['id_group'] == 2 ): ?> 
-
-		<h2><i class="far fa-comments"></i> Laissez un Commentaire</h2>
-		<form class= 'form' action="index.php?action=addComment&amp;post_id=<?= $_GET['post_id'];?>#ancrecom" method="POST">
-				
-			<div class="inputbasic">
-	            <label for='author' ></label>
-	        <?php
-	     	if(isset($_SESSION['pseudo'])) : ?>
-	            <input type="text" name="author"  id="author" class="inputbasic" value="<?php echo htmlspecialchars($_SESSION['pseudo'])?>"/ required>
-			<?php
-	        	
-	       	else : ?>
-	       		<input type="text" name="author" class="inputbasic" id="author" placeholder="Indiquez votre nom" required/>
-	       	
-	       	<?php
-	         endif;
-	        ?>
-	                
-	        </div>
-
-				<div class="inputbasic">
-					<label for="comment"></label><br />
-					<textarea name="comment" id="comment"  placeholder="Entrez votre commentaire"></textarea>
-				</div>
-				
-				<div>
-					<input type="submit" id="submitCom"  value="Envoyez votre commentaire" />
-				</div>
-		
- 		</form>
-
-	
-<!--///////////////////////// boucle affichage commentaire admin ou visiteur ///////////-->
-    <div class="container1">
-    
-    <div class="page1">
-	<?php 
-	while ($comment = $comments->fetch()):?>
-	
-				<div id="ancrecom"></div>
-			
-				<div class="triangle-right top">
-					<a href="javascript:void(0)" class="list-group-item active"></a>
-					<p><strong><i class="fas fa-user"></i>   <?= htmlspecialchars($comment['author']) ?></strong> le <?= htmlspecialchars($comment['comment_date_fr']) ?>
-					</p>
-
-					<div class="coms"> 
-
-						<span id="confirmsignal"><p><?= nl2br(preg_replace('#^<br/>$#','',htmlspecialchars(substr($comment['comment'], 0, 400))));
-						?></p></span>				
-			    	</div>
-				<?php
-				if(isset($_SESSION['id']) && $_SESSION['id_group'] == 1) : ?>
-					<div class="reponse">     	
-			     		<em><a href="index.php?action=deleteOneComment&amp;post_id=<?= $post['id'];?>&amp;id=<?= $comment['id']; ?>#ancrecom" OnClick="return confirm('Voulez-vous vraiment supprimer ce commentaire ?');"><i class="fas fa-minus-circle"> Supprimer&nbsp;&nbsp;&nbsp; </i></a></em>
-			     		<em><a id='validcom' href="index.php?action=report&amp;post_id=<?= $post['id']; ?>&amp;id=<?= $comment['id']; ?>" OnClick="return confirm('Souhaitez-vous signaler ce commentaire ?')";"><i class="fas fa-bell">  Signalez un abus</i></a></em>
-                                        		       			
-			     	</div>
-				<?php
-	        	
-	       		else: ?>
-							
-		       				<div class="reponse">				
-		       				<em><a id='validcom' href="index.php?action=report&amp;post_id=<?= $post['id']; ?>&amp;id=<?= $comment['id']; ?>" OnClick="return confirm('Souhaitez-vous signaler ce commentaire ?')";"><i class="fas fa-bell">  Signalez un abus</i></a></em> 
-		       				     		  
-		       			</div>		       				
-			    <?php
-	            endif;
-	            ?>
-
-				</div>	
-	
-	<?php
-	endwhile;?>
-	</div>
-	</div>
-		<div>
-	       <ul class="pagination1">
-	        <li id="previous-page"><a href="javascript:void(1)" aria-label=Previous><span aria-hidden=true>Précédente &laquo;</span></a></li>
-	      </ul>
-	    </div>
-	<?php $comments->closeCursor();?>
-
-
-
-<?php 
-	//sinon se connecter pour laisser un commentaire
-else : ;
-?>
-					      							
-    <em><i class="fas fa-ban"></i>  Vous devez être <a id='validcom' href="index.php?action=login">connecté </a><br>pour laisser un commentaire</em>       			
- 		  
-	       				
-<?php 
-endif; 
-?>
-		
-<!--/////////////////////lien retour page précédente selon si visiteur ou admin///////////////////-->	
-
-		<?php
-			if(isset($_SESSION['id']) && $_SESSION['id_group'] == 1) : ?>
-				<p><a class="news" href="index.php#adminView"><i class="fas fa-arrow-left">
-				Retour à votre tableau de bord</i></a></p>
-		<?php
-            
-           	else : ?>
-
-				<p><a class="news" href="index.php#welcome"><i class="fas fa-arrow-left">
-				Retour à la liste des services</i></a></p>
-		<?php
-            endif;
-          ?>
-
-  <?php $content = ob_get_clean(); ?>
-
-<!--///////////////////////////////// renvoi vers template //////////////////////////////////-->
-<?php require('views/template.php'); ?>
+	</body>
+</html>

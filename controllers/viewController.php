@@ -1,5 +1,5 @@
 <?php
-namespace Laetitia_Bernardi\projet5\Controller;
+namespace Laetitia_Bernardi\site\Controller;
 
 
 class ViewController{
@@ -11,9 +11,9 @@ class ViewController{
 
     public function __construct()
     {
-        $this->_user = new \Laetitia_Bernardi\projet5\Model\UserManager();
-        $this->_post = new \Laetitia_Bernardi\projet5\Model\PostManager();
-        $this->_comment = new \Laetitia_Bernardi\projet5\Model\CommentManager();
+        $this->_user = new \Laetitia_Bernardi\site\Model\UserManager();
+        $this->_post = new \Laetitia_Bernardi\site\Model\PostManager();
+        $this->_comment = new \Laetitia_Bernardi\site\Model\CommentManager();
        
     }
 
@@ -54,15 +54,23 @@ class ViewController{
     {
         require('views/vpn.php');
     }
+  
 
+    public function gold($commentReport)
+      {
 
-    // Page livre d'or                 
-    public function gold()
-    {
+        $commentReport=$commentReport;//affichage message confirmation signalé
         $usersTotal =$this->_user->countUsers();//connaitre le nombre total d'inscrits
-        $commentsReportTotal = $this->_comment->countCommentsReport();//connaitre le nombre total de commentaires signalés
         $postsTotal = $this->_post->countPosts();//connaitre le nombre total de services
+        $commentsReportTotal = $this->_comment->countCommentsReport();//connaitre le nombre total de commentaires signalés
         $commentsTotal  =$this ->_comment ->countComments();//connaitre le nombre total de commentaires
+        $comments = $this->_comment->getAllComments();//recupere tous les commentaires
         require('views/livre.php');
-    }     
+      }
+    //ouverture des sites réalisés
+    public function site()
+    {
+        require('views/serviceDetail.php');
+    }
+  
 }

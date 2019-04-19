@@ -1,5 +1,5 @@
 <?php
-namespace Laetitia_Bernardi\projet5\Controller;
+namespace Laetitia_Bernardi\site\Controller;
 
 require_once('models/UserManager.php');
 require_once ('models/PostManager.php');
@@ -20,9 +20,9 @@ class UserController
 
     public function __construct()
     {
-        $this->_user = new \Laetitia_Bernardi\projet5\Model\UserManager();
-        $this->_post = new \Laetitia_Bernardi\projet5\Model\PostManager();
-        $this->_comment = new \Laetitia_Bernardi\projet5\Model\CommentManager();
+        $this->_user = new \Laetitia_Bernardi\site\Model\UserManager();
+        $this->_post = new \Laetitia_Bernardi\site\Model\PostManager();
+        $this->_comment = new \Laetitia_Bernardi\site\Model\CommentManager();
        
     }
 

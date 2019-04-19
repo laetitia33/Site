@@ -1,6 +1,6 @@
 <?php
 
-namespace Laetitia_Bernardi\projet5\Controller;
+namespace Laetitia_Bernardi\site\Controller;
 
 
 class Autoload

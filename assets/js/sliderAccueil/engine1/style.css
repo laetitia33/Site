@@ -18,7 +18,7 @@
 }
 #welcome{
 	position:absolute;
-	z-index:9999;
+
 	font-size:3em;
 }
 #wowslider-container1 { 
@@ -376,7 +376,7 @@
 }#wowslider-container1 .ws-title{
 	font: 1.8em 'Gurajada', serif;
 	position: absolute;
-	left: 2em;
+	left: 4em;
 	margin-right:10em;
 	z-index: 50;
 
@@ -389,6 +389,7 @@
 #wowslider-container1 .ws-title div,#wowslider-container1 .ws-title span{
 	display:inline-block;
 	padding: 0.1em 0.6em;
+	margin-left:2%;
 	background-color: #1A2223;
 	color: #bcbabe;
 }

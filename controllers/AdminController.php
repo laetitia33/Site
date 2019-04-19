@@ -1,6 +1,6 @@
 <?php
 
-namespace Laetitia_Bernardi\projet5\Controller;
+namespace Laetitia_Bernardi\site\Controller;
 
 require_once ('models/PostManager.php');
 require_once ('models/CommentManager.php');
@@ -20,9 +20,9 @@ class AdministrationController
 
     public function __construct()
     {
-        $this->_post = new \Laetitia_Bernardi\projet5\Model\PostManager();
-        $this->_comment = new \Laetitia_Bernardi\projet5\Model\CommentManager();
-        $this->_user = new \Laetitia_Bernardi\projet5\Model\UserManager();
+        $this->_post = new \Laetitia_Bernardi\site\Model\PostManager();
+        $this->_comment = new \Laetitia_Bernardi\site\Model\CommentManager();
+        $this->_user = new \Laetitia_Bernardi\site\Model\UserManager();
        
     }
 
@@ -95,6 +95,7 @@ class AdministrationController
 // Liste des commentaires signalés (page des commentaires signalés admin)
     public function adminCommentsReport()
     {
+      
         $usersTotal =$this->_user->countUsers();//connaitre le nombre total d'inscrits
         $commentsReportTotal = $this->_comment->countCommentsReport();//connaitre le nombre total de commentaires signalés
         $postsTotal = $this->_post->countPosts();//connaitre le nombre total de films
@@ -111,6 +112,17 @@ class AdministrationController
         $deleteComments = $this->_comment->deleteAllComments();
           echo "<h1 style='color:#9A97A5;text-align:center;padding:35px;'>Tous les commentaires supprimés avec succès</h1>";     
         header('Refresh: 1; url=index.php?action=adminListComments#deleteCom' );
+        
+   
+    }
+
+
+     //supprime tous les commentaires(page de detail de la liste des commentaires)
+    public function deleteCommentsLivreGold()
+    {
+        $deleteComments = $this->_comment->deleteAllComments();
+          echo "<h1 style='color:#9A97A5;text-align:center;padding:35px;'>Tous les commentaires supprimés avec succès</h1>";     
+        header('Refresh: 1; url=index.php?action=gold' );
         
    
     }
@@ -142,6 +154,27 @@ class AdministrationController
         }
     }
 
+
+// Supprimer un commentaire dans le livre d'or
+    public function deleteCommentGold($id_comment)
+    {
+        $deleteComment = $this->_comment->deleteComment($id_comment);
+
+        if($deleteComment === false)
+        {
+            throw new Exception('Impossible de supprimer le commentaire' );
+        }
+        else
+        {
+          
+            header('Location:index.php?action=gold' );
+            
+        }
+    }
+
+
+
+
 // Supprimer un commentaire dans la page services details
     public function deleteOneComment($id_comment)
     {
@@ -154,7 +187,7 @@ class AdministrationController
         else
         {
          
-             header('Location: index.php?action=listpost&post_id=' . $_GET['post_id']);
+             header('Location: index.php?action=listpost');
             
         }
     }

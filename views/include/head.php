@@ -13,7 +13,7 @@
 		<meta name="Language" CONTENT="fr" />
 		
 		<!--- police -->
-		<link href='http://fonts.googleapis.com/css?family=Questrial|Droid+Sans|Alice|Rancho|Roboto|Niconne' rel='stylesheet' type='text/css'>
+		<link href='http://fonts.googleapis.com/css?family=Questrial|Droid+Sans|Alice|Rancho|Roboto|Niconne|Marck+Script' rel='stylesheet' type='text/css'>
 		<!--type neon nom entreprise-->
 		<link href="https://uvc.one/upload/iblock/5b2/5b2a90b62e7e14ca24ec45683f4a7961.css" rel="stylesheet">
 
@@ -21,14 +21,11 @@
 		<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.0/css/all.css" integrity="sha384-Mmxa0mLqhmOeaE8vgOSbKacftZcsNYDjQzuCOm6D02luYSzBG8vpaOykv9lFQ51Y" crossorigin="anonymous">
 		<link href="//netdna.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
 
-
 		<!-- icone-->
 		<link href="assets/images/icone.png" rel="icon" type="image/x-icon" />
-
 		
 		<!--jquery-->
    		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
-
 
    		<!--jquery horloge-->
 		<script src="http://cdnjs.cloudflare.com/ajax/libs/moment.js/2.0.0/moment.min.js"></script>
@@ -55,8 +52,19 @@
 	 	<script src="assets/js/slider_controle/jquery.anythingslider.min.js"></script>
  		<script src="assets/js/slider_controle/jquery.anythingslider.fx.min.js"></script>
 
-		<!--modale-------------------->
-		 <link rel="stylesheet" href="assets/js/modaleServ/animate.min.css">
+		<!--Ajouter ce site aux favoris-->
+		<script language="JavaScript">
+		function favoris() {
+			if ( navigator.appName != 'Microsoft Internet Explorer' )
+			{ window.sidebar.addPanel("<a href="javascript:void(favoris());">Assitance InformatiqueBassi d'Arcachon</a>","http://www.tonsite.com",""; }
+			else { window.external.AddFavorite("http://www.tonsite.com","le nom du site"); } 
+		</script>
+
+		<!--fenetre de confirmation-->
+		<link data-require="sweet-alert@*" data-semver="0.4.2" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/1.1.3/sweetalert.css" />
+		<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+
+	
 
 		<title><?= isset($title) ? $title : 'Assistance informatique';?></title>
 	</head>

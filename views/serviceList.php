@@ -2,6 +2,8 @@
 <?php $title = 'Informatique la Teste De Buch,liste des services'; ?>
 
 <?php ob_start(); ?>
+
+
 <!--///////////////////////// slider pour les utlisateurs uniquement //////////////////////////////////////////-->
 <?php
 		if(isset($_SESSION['id']) && $_SESSION['id_group'] == 1) : ?>
@@ -18,8 +20,8 @@
 	 	<a href='#welcome' class='hvr-radial-out'>En savoir plus</a>
 	<ul>
 		<li><img src="assets/js/sliderAccueil/data1/images/image4.jpg" alt="Vous avez un problème en informatique ? ...," title="Vous avez un problème en informatique ? ...," id="wows1_0"/></li>
-		<li><img src="assets/js/sliderAccueil/data1/images/image5.jpg" alt="..vous souhaitez créer un site ? , ..." title="..vous souhaitez créer un site ? , ..." id="wows1_1"/></li>
-		<li><img src="assets/js/sliderAccueil/data1/images/image10.jpg" alt=".. Apprendre les bases de l'informatique ?.. " title=".. Apprendre les bases de l'informatique ?.. " id="wows1_2"/></li>
+		<li><img src="assets/js/sliderAccueil/data1/images/image5.jpg" alt="..vous souhaitez créer un site ? , ..." title=" ..vous souhaitez créer un site ? , ..." id="wows1_1"/></li>
+		<li><img src="assets/js/sliderAccueil/data1/images/image10.jpg" alt=".. Apprendre les bases de l'informatique ?.. " title=" .. Apprendre les bases de l'informatique ?.. " id="wows1_2"/></li>
 		<li><img src="assets/js/sliderAccueil/data1/images/image19.jpg" alt="..Réaliser un projet personnel ? " title="..Réaliser un projet personnel ? " id="wows1_4"/></li>
 		<li><img src="assets/js/sliderAccueil/data1/images/image16.jpg" alt="jquery image carousel" title="dans une ambiance sereine et décontractée,  à domicile" id="wows1_3"/></a></li>
 		
@@ -57,7 +59,7 @@
 			setlocale(LC_TIME, 'fr','fr_FR','fr_FR@euro','fr_FR.utf8','fr-FR','fra');
 			date_default_timezone_set('Europe/Paris');
 			echo " nous sommes le ".strftime("%d %B %Y")." " ."il est ".strftime( "%H:%M") ;?> 
-			,verifiez la liste des services  <i class="fas fa-laptop"></i>       		
+			,verifiez la liste des services et des commentaires <i class="fas fa-laptop"></i>       		
 			</p>
 			<?php
 		
@@ -72,6 +74,8 @@
 			  <?php
          endif;
          ?>
+
+
 
 
 <!-- ///////////////////////////message fixe contact //////////////////////////////////////////////////////-->
@@ -95,6 +99,7 @@
 </div>
 <!--///////////// pagination ////////////////////////////////////////////////////-->
 
+
 <p class ='comSignal'></p>
 <div id="page">		
 	<?php 
@@ -104,22 +109,67 @@
 			
         		<a href="javascript:void(0)" class="list-group-item active"></a>
       
-					<a href="index.php?action=post&amp;post_id=<?= $data['id']; ?>#news">
 						<div class="service"><?php echo "<img alt ='images des services proposés' src= '".$data['image']."' />";?>								
 						</div>
-					</a>
+				
 					<h2><?= htmlspecialchars($data['title']) ?></h2>
 					   <div class='texte'><?= htmlspecialchars_decode(nl2br(substr(html_entity_decode($data['content']), 0, 500).'....'));?></div>
 					 <br>
+<!---MODALE-////////////// detail du service ///////-->
 
+<section class="cd-section">
+		
 
-						<a class="input_read" href="index.php?action=post&amp;post_id=<?= $data['id']; ?>#news">En savoir plus</a>
-						<div class="coms">
+		<div class="cd-modal-action">
+			<a href="#0" class="btn" data-type="modal-trigger">En savoir plus</a>
+			<span class="cd-modal-bg"></span>
+		</div> <!-- cd-modal-action -->
 
+		<div class="cd-modal">
+			<div class="cd-modal-content">
+					<div class ="oneServDetail">				
 
-					
-													 	
-					<?php 
+				<h2><?= htmlspecialchars($data['title']) ?></h2>	
+				<div id="affiche2"><?php echo "<img alt='affiche du service' src='".$data['image']."' />";?></div>
+
+				<?php
+				if(isset($_SESSION['id']) && $_SESSION['id_group'] == 1): ?>
+					<div class='adminCtrl'>
+						<a href="index.php?action=adminUpdatePost&amp;post_id=<?= $data['id']; ?>#modif"><em><i class="fas fa-pen-square"> Modifier ce service</i></em></a>
+					</div>
+
+					<div class='adminCtrl'>
+	               		<a href="index.php?action=deletePost&amp;post_id=<?= $data['id']; ?>" OnClick="return confirm('Voulez-vous vraiment supprimer ce service ?');"><em><i class="fas fa-trash-alt"> Supprimer ce service</i></em></a>
+	               	</div>
+
+	 			<?php
+	        	
+	       		else : ?>
+				
+					  <?php
+	            endif;
+	            ?>
+
+				<div class="news" >	
+					<p><?= htmlspecialchars_decode(nl2br(html_entity_decode($data['content'])));?>	
+				</div>
+
+		
+		
+
+		</div>
+
+			</div> <!-- cd-modal-content -->
+		</div> <!-- cd-modal -->
+
+		<a href="#0" class="cd-modal-close">Close</a>
+	</section> <!-- .cd-section -->
+
+	
+
+			<div class="coms">
+
+			<?php 
 					if(isset($_SESSION['id']) && $_SESSION['id_group'] == 1) : ?>
 				
 					<a href="index.php?action=adminUpdatePost&amp;post_id=<?= $data['id']; ?>#modif"><em><i class="fas fa-pen-square"> Modifier ce service</i></em></a><br>
@@ -142,7 +192,9 @@
 	
 		$posts->closeCursor();
 		;?>
-	
+
+
+
 <?php $content = ob_get_clean(); ?>
 
 <!--///////////////////////////////// renvoi vers template //////////////////////////////////-->

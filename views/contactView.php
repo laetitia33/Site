@@ -136,6 +136,7 @@ Formation à domicile.</textarea>
 <html lang="fr" class='template'>
   <?php include_once 'views/include/head.php';?>
 
+
 <!------emails à envoyer coté client ou emails reçus coté serveur ---->
      
 
@@ -150,16 +151,18 @@ Formation à domicile.</textarea>
 
       <a id="films"></a>
  
-      <?php
+  
 
-      if($_GET['action'] == 'sendEmail'){echo ("<div id='message'>Message envoyé avec succès</div>");}
-                    
-     ?>
+<form class ="form"  method="post" action="index.php?action=addMail" > 
+<?php
 
- <form class ="form"  method="post" action="index.php?action=addMail" > 
-    <?php
-
-      if($_GET['action'] == 'addMail'){echo ("<div id ='message'>Message envoyé avec succès</div>");}
+     if($_GET['action'] == 'addMail'){echo ("<script type='text/javascript' > 
+ 
+            swal({
+              title: 'Envoyé!',
+              text: 'Votre message a bien été envoyé!',
+              icon: 'success'
+            })</script>");}
                     
      ?>
 
@@ -188,11 +191,9 @@ Formation à domicile.</textarea>
 
     <div class="g-recaptcha" data-theme="light" data-sitekey="6Leae5kUAAAAANbvHn1qo9K0BZ61pXtAOn1CwN7f" ></div>
 
- 
 
-
-
-             <input type="submit" class="submit" value ="Envoyez votre message &#xf1d8"  OnClick="return confirm('Souhaitez-vous envoyer ce message ?');"/>
+             <input type="submit" class="submit" value ="Envoyez votre message &#xf1d8" OnClick="return envoi();"/>
+            
             
     </fieldset>
 </form>
@@ -216,7 +217,8 @@ Formation à domicile.</textarea>
         <script src="assets/js/cookiechoices.js"></script>
         <script src="assets/js/classie.js"></script>
         <script>document.addEventListener('DOMContentLoaded', function(event){cookieChoices.showCookieConsentBar('Ce site utilise des cookies pour vous offrir le meilleur service. En poursuivant votre navigation, vous acceptez l’utilisation des cookies.', 'J’accepte', 'En savoir plus', 'http://www.example.com/mentions-legales/');});</script>
-  
+
+
 </body>
 </html>
 

@@ -2,6 +2,7 @@
 
 <?php ob_start(); ?>
 
+     
     <div id ="reportcom"></div>
     <h2 class ='pageList'>Commentaire(s) signalé(s)</h2>
 
@@ -9,10 +10,9 @@
 
       <?php
       if(htmlspecialchars($commentsReportTotal['total_comments_report'])> 0): ;?>
-        <div class='listcom'><a href="index.php?action=deleteAllCommentReport" OnClick="return confirm('Voulez-vous vraiment supprimer tous commentaires signalés ?');" ><i class="fas fa-minus-circle"> Supprimer tous les commentaires signalés</i></a></div>
+        <div class='listcom'><a href="index.php?action=deleteAllCommentReport" class="deletecommSignAll" ><i class="fas fa-minus-circle"> Supprimer tous les commentaires signalés</i></a></div>
                          
-         
-                          
+                     
       <?php
       else : ?>
 
@@ -24,7 +24,7 @@
 
       <?php
       if(htmlspecialchars($commentsReportTotal['total_comments_report']) > 0) : ;?>
-        <div class='listcom'><a href="index.php?action=approvedComments" OnClick="return confirm('Souhaitez-vous approuver tous les commentaires signalés ?');" ><i class="fas fa-bell-slash"> Approuver tous les commentaires</i></a></div><br>
+        <div class='listcom'><a href="index.php?action=approvedComments" class="okcommSignAll" ><i class="fas fa-bell-slash"> Approuver tous les commentaires</i></a></div><br>
       <?php 
       endif;
       ?>
@@ -41,8 +41,8 @@
             <p><strong><?= htmlspecialchars($comment['author']) ?></strong> le <?= htmlspecialchars($comment['comment_date_fr']) ?></p>
             <p><?= nl2br(preg_replace('#^<br/>$#','',htmlspecialchars(substr($comment['comment'], 0, 400))));?><br/>           
               <div class="reponse">
-                <em><a href="index.php?action=approvedComment&amp;post_id=<?= $comment['post_id'];?>&amp;id=<?= $comment['id'];?>#reportcom"OnClick="return confirm('Souhaitez-vous approuver ce commentaire ?');">Approuver <i class="fas fa-bell-slash"></i></a></em>
-                <em><a href="index.php?action=deleteOneCommentInReport&amp;post_id=<?= $comment['post_id'];?>&amp;id=<?= $comment['id'];?>#deleteCom" OnClick="return confirm('Voulez-vous vraiment supprimer le commentaire ?');">Supprimer <i class="fas fa-minus-circle"></i></a></em>
+                <em><a href="index.php?action=approvedComment&amp;id=<?= $comment['id'];?>#reportcom" class='okcommSign'>Approuver <i class="fas fa-bell-slash"></i></a></em>
+                <em><a href="index.php?action=deleteOneCommentInReport&amp;id=<?= $comment['id'];?>#deleteCom" class ='deletecommSign'>Supprimer <i class="fas fa-minus-circle"></i></a></em>
             </div>
             </p>
         </div>

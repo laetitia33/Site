@@ -5,6 +5,7 @@ if(isset($_SESSION['id']) && $_SESSION['id_group'] == 1)
     ?>
  <div class="wrapper">
 	<div class="header">
+		<a href="javascript:void(favoris());">Ajouter ce site à vos favoris</a>
 		<p>Par téléphone au <i class="fas fa-phone-volume"></i><a href="tel:+0659982720"> 06 59 98 27 20 </a>du lundi au samedi de 8h à 19h sans interruption  ou par <i class="fas fa-envelope"></i> <a href="index.php?action=email">E-mail</a></p>
 	</div>
 	<div class="nav">
@@ -35,6 +36,7 @@ elseif(isset($_SESSION['id']) && $_SESSION['id_group'] == 2)
 
  <div class="wrapper">
 	<div class="header">
+		<a href="javascript:void(favoris());">Ajouter ce site à vos favoris</a>
 		<p>Par téléphone au <i class="fas fa-phone-volume"></i><a href="tel:+0659982720"> 06 59 98 27 20 </a>du lundi au samedi de 8h à 19h sans interruption  ou par <i class="fas fa-envelope"></i> <a href="index.php?action=email">E-mail</a></p>
 	</div>
 	<div class="nav">
@@ -65,6 +67,7 @@ else
     ?>
  <div class="wrapper">
 	<div class="header">
+		<a href="javascript:void(favoris());">Ajouter ce site à vos favoris</a>
 		<p>Par téléphone au <i class="fas fa-phone-volume"></i><a href="tel:+0659982720"> 06 59 98 27 20 </a>du lundi au samedi de 8h à 19h sans interruption  ou par <i class="fas fa-envelope"></i> <a href="index.php?action=email">E-mail</a></p>
 	</div>
 	<div class="nav">

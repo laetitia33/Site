@@ -1,6 +1,6 @@
 <?php
 
-namespace Laetitia_Bernardi\projet5\Model;
+namespace Laetitia_Bernardi\site\Model;
 use \PDO;
 
 

@@ -3,7 +3,7 @@
 
 
 var anumberOfItems = $('#page .list-group').length; 
-var alimitPerPage = 2; 
+var alimitPerPage = 4; 
 $('#page .list-group:gt(' + (alimitPerPage - 1) + ')').hide(); 
 var atotalPages = Math.round(anumberOfItems / alimitPerPage); 
 $(".pagination").append("<li class='current-page active'><a href='javascript:void(0)'> " + 1 + "</a></li> "); 

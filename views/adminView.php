@@ -22,7 +22,6 @@
                     <p><?= htmlspecialchars_decode(nl2br(substr(html_entity_decode($data['content']), 0, 500).'...'));?></p>
                  </div>
                
-                <a  class="input_read" href="index.php?action=post&amp;post_id=<?= $data['id']; ?>">Plus d'infos</a>
         </div>
  
         <?php

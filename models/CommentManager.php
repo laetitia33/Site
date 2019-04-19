@@ -1,5 +1,5 @@
 <?php
-namespace Laetitia_Bernardi\projet5\Model;
+namespace Laetitia_Bernardi\site\Model;
 
 use \DateTime;
 use \PDO;
@@ -8,7 +8,7 @@ class CommentManager extends Manager
 {
 
 
-private $_id, $_post_id, $_author, $_comment, $_comment_date, $_reporting;
+private $_id, $_author, $_comment, $_comment_date, $_reporting;
 
 
    public function __construct()
@@ -20,12 +20,6 @@ private $_id, $_post_id, $_author, $_comment, $_comment_date, $_reporting;
     public function getIdComment()
     {
         return $this->_id_comment;
-    }
-
- 
-    public function getIdPost()
-    {
-        return $this->_post_id;
     }
 
 
@@ -61,16 +55,7 @@ private $_id, $_post_id, $_author, $_comment, $_comment_date, $_reporting;
             $this->_id_comment = $id_comment;
         }
     }
- 
-    public function setIdPost($post_id)
-    {
-        $post_id = (int) $post_id;
 
-        if ($post_id > 0) {
-            $this->_post_id = $post_id;
-        }
-    }
- 
     public function setAuthor($author)
     {
         if(is_string($author)) {
@@ -109,7 +94,7 @@ private $_id, $_post_id, $_author, $_comment, $_comment_date, $_reporting;
     public function getAllComments()
     {
         $db = $this->dbConnect();
-        $comments = $db->query('SELECT id, post_id, author, comment, reporting, DATE_FORMAT(comment_date, \'%d/%m/%Y à %H:%i\') AS comment_date_fr FROM comments ORDER BY comment_date ');
+        $comments = $db->query('SELECT id, author, comment, reporting, DATE_FORMAT(comment_date, \'%d/%m/%Y à %H:%i\') AS comment_date_fr FROM comments ORDER BY comment_date DESC');
         return $comments;
     }
 
@@ -129,7 +114,7 @@ private $_id, $_post_id, $_author, $_comment, $_comment_date, $_reporting;
     public function getReportComments()
     {
         $db = $this->dbConnect();
-        $reportComments = $db->query('SELECT id, post_id, author, comment, reporting, DATE_FORMAT(comment_date, \'%d/%m/%Y à %H:%i\') AS comment_date_fr FROM comments WHERE reporting= 1 ORDER BY comment_date ');
+        $reportComments = $db->query('SELECT id,  author, comment, reporting, DATE_FORMAT(comment_date, \'%d/%m/%Y à %H:%i\') AS comment_date_fr FROM comments WHERE reporting= 1 ORDER BY comment_date DESC');
         return $reportComments;
     }
 
@@ -185,29 +170,17 @@ private $_id, $_post_id, $_author, $_comment, $_comment_date, $_reporting;
 
  
 
-//recupere les commentaires d'un service
-    public function getComments($post_id)
-    {
-        $this->setIdPost($post_id);
-
-        $db = $this->dbConnect();
-        $comments = $db->prepare('SELECT id, author, comment, reporting, DATE_FORMAT(comment_date, \'%d/%m/%Y à %Hh%imin\') AS comment_date_fr FROM comments WHERE post_id = ? ORDER BY comment_date DESC LIMIT 0,6');
-        $comments->execute(array($this->getIdPost()));
-
-        return $comments;
-    }
 
 //envoi d'un commentaire
-    public function createComment($post_id, $author, $comment)
+    public function createComment($author, $comment)
     {
-        $this->setIdPost($post_id);
+       
         $this->setAuthor($author);
         $this->setComment($comment);
         $db = $this->dbConnect();
         $set_timezone = $db->query('SET time_zone = "+02:00"');
-        $comments = $db->prepare('INSERT INTO comments (post_id, author, comment, comment_date) VALUES( ?, ?, ?, NOW())');
+        $comments = $db->prepare('INSERT INTO comments ( author, comment, comment_date) VALUES( ?, ?, NOW())');
         $createComment = $comments->execute(array(
-            $this->getIdPost(),
             $this->getAuthor(),
             $this->getComment()
         ));

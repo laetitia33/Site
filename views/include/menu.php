@@ -22,7 +22,7 @@ if(isset($_SESSION['id']) && $_SESSION['id_group'] == 1)
 				<li><a class="btn" href="index.php?action=adminListUsers"><i class="fas fa-users"></i> Liste des utilisateurs (<?= $usersTotal['total_users']?>)</a></li>
 				<li><a class="btn" href="index.php?action=gold"><i class="fas fa-book-open"></i>  Livre d'or</a></li>
 				<li><a class="btn" href="index.php?action=email"><i class="fas fa-envelope"></i> boite mails</a></li>
-				<li><a class ="btn" href="index.php?action=logout" OnClick="return confirm('Souhaitez-vous vous déconnecter?')"; ><i class="fas fa-sign-out-alt"></i> Déconnexion</a></li>
+				<li><a class ="btn deco" href="index.php?action=logout"><i class="fas fa-sign-out-alt"></i> Déconnexion</a></li>
 			</ul>
 		</nav>
 	</div>
@@ -44,6 +44,9 @@ elseif(isset($_SESSION['id']) && $_SESSION['id_group'] == 2)
 
 		<nav>	
 			<ul class="navigation">
+				<li><div class ='font-effect-3d-float'>
+					Laetitia Bernardi 
+				</div></li>
 				<li><div class ='tarifs'>
 					<a href="assets/images/tarifs.jpg" download><i class="fas fa-download"></i> Télécharger tarifs </a>
 				</div></li>
@@ -54,7 +57,7 @@ elseif(isset($_SESSION['id']) && $_SESSION['id_group'] == 2)
 				<li><a class="btn" href="index.php?action=vpn"><i class="fas fa-hand-paper"></i>  Contrôle à distance</a></li>
 				<li><a class="btn" href="index.php?action=gold"><i class="fas fa-book-open"></i>  Livre d'or</a></li>
 				<li><a class="btn" href="index.php?action=email"><i class="far fa-envelope"></i>  Contactez-nous</a></li>
-				<li><a class ="btn" href="index.php?action=logout" OnClick="return confirm('Souhaitez-vous vous déconnecter?')"; "><i class="fas fa-sign-out-alt"></i> Déconnexion</a></li>
+				<li><a class ="btn deco" href="index.php?action=logout"><i class="fas fa-sign-out-alt"></i> Déconnexion</a></li>
 			</ul>
 		</nav>
 	</div>
@@ -71,7 +74,8 @@ else
 		<p>Par téléphone au <i class="fas fa-phone-volume"></i><a href="tel:+0659982720"> 06 59 98 27 20 </a>du lundi au samedi de 8h à 19h sans interruption  ou par <i class="fas fa-envelope"></i> <a href="index.php?action=email">E-mail</a></p>
 	</div>
 	<div class="nav">
-	<div class ="navi">		
+	<div class ="navi">
+
 		<nav>	
 			<ul class="navigation">
 			<li><div class ='font-effect-3d-float'>
@@ -80,12 +84,12 @@ else
 				<li><div class ='tarifs'>
 					<a href="assets/images/tarifs.jpg" download><i class="fas fa-download"></i> Télécharger tarifs </a>
 				</div></li>
-				<li><a class="btn" href="index.php"><i class="fas fa-home"></i> Accueil</a></li>
+				<li><a class="btn " href="index.php"><i class="fas fa-home"></i> Accueil</a></li>
 				<li><a class="btn" id ='serv'href="index.php#welcome"><i class="fas fa-wrench"></i> Liste des Services</a></li>
 				<li><a class="btn" href="index.php?action=rdv"><i class="fas fa-calendar-alt"></i>  Prenez rendez-vous en ligne</a>
 				</li>	
 				<li><a class="btn" href="index.php?action=login"><i class="fas fa-sign-in-alt"></i>  Inscription/connexion</a></li>
-				<li><a class="btn" href="index.php?action=gold"><i class="fas fa-book-open"></i>  Livre d'or</a></li>
+				<li c><a class="btn" href="index.php?action=gold"><i class="fas fa-book-open"></i>  Livre d'or</a></li>
 				<li><a class="btn" href="index.php?action=email"><i class="fas fa-envelope"></i>  Contactez-nous</a></li>
 			
 			</ul>

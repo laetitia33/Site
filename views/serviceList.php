@@ -121,6 +121,8 @@
 		
 
 		<div class="cd-modal-action">
+
+
 			<a href="#0" class="btn" data-type="modal-trigger">En savoir plus</a>
 			<span class="cd-modal-bg"></span>
 		</div> <!-- cd-modal-action -->

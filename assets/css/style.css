@@ -10,13 +10,20 @@ body{
 .template{
     min-height:100%; 
     position:relative; 
-    padding-bottom:100px; 
-    color: #404d5b;
-    background-color:silver;
+    padding-bottom:100px;
+    color:white;
+     /*color: #404d5b;
+    background-color:silver;*/
+    background-image: linear-gradient(black,rgba(0, 0, 255, 0.5), rgba(255, 255, 0, 0.5)),
+                  url("../images/fond.jpg");
+    background-size:cover;
     font-size: 0.9em;
     font-family: 'Raleway', Arial, sans-serif;
     text-align:center;
 
+}
+.header{
+  background:black;
 }
 
 #blocpagecommentaires{       
@@ -113,6 +120,7 @@ body{
     position: fixed; 
     top: 30%; 
     left: 0;
+    z-index: 9998;
 }
 
 
@@ -214,12 +222,16 @@ a[href^="#welcome"] {
     padding-top:1.5%;
     padding-bottom:1.1%;
     margin:0px;
-    background:rgba(0,0,0,0.5);
+    /*background:rgba(0,0,0,0.5);*/
+    background:grey;
     height: auto;   
     right:0px;
     left:0px;
     top:0px; 
-
+  overflow: hidden;
+  -webkit-transition: height 0.3s;
+  -moz-transition: height 0.3s;
+  transition: height 0.3s;
 }
 
 
@@ -231,10 +243,10 @@ a[href^="#welcome"] {
     z-index: 100;
     padding-top:0;
     padding-bottom:0;
-    background-image:radial-gradient(top, black, #2f2e33);
-    background-image: -moz-radial-gradient(top, black, #2f2e33);
-    background-image: -webkit-radial-gradient(top, black, #2f2e33);
-    background-image: -o-radial-gradient(top, black, #2f2e33); 
+    background-image:radial-gradient(top, grey, #2f2e33);
+    background-image: -moz-radial-gradient(top, grey, #2f2e33);
+    background-image: -webkit-radial-gradient(top, grey, #2f2e33);
+    background-image: -o-radial-gradient(top, grey, #2f2e33); 
 }
 
 ul.navigation
@@ -520,7 +532,7 @@ nav a:visited{
 /* bouton scroll du bas vers le haut */
 .scroll-to {
     position: fixed;
-    z-index: 200;
+    z-index: 100;
     display: none;
     background-color: rgba(15, 15, 16, 0.8);
     -webkit-border-radius: 2px;
@@ -532,13 +544,39 @@ nav a:visited{
     -o-transition: all .7s ease-in-out;
     -ms-transition: all .7s ease-in-out;
     transition: all .7s ease-in-out;
-}
-
-#btntop {
+    -webkit-transform: scale(1);
+    -moz-transform: scale(1);
+    -ms-transform: scale(1);
+    -o-transform: scale(1);
+    transform: scale(1);
+    -webkit-animation: cd-bounce-in 0.3s linear;
+    -moz-animation: cd-bounce-in 0.3s linear;
+    animation: cd-bounce-in 0.3s linear;
     right: 25px;
     bottom: 25px;
-    padding: 9px 11px 11px 10px;
+    padding: 9px 11px 11px 10px; 
 }
+
+@keyframes cd-bounce-in{
+  0%{
+    opacity: 0;
+    transform: scale(0.3) translate3d(0,0,0);
+  }
+  50%{
+    opacity: 0.9;
+    transform: scale(1.1);
+  }
+  80%{
+    opacity: 1;
+    transform: scale(0.89);
+  }
+  100%{
+    opacity: 1;
+    transform: scale(1) translate3d(0,0,0);
+  }
+
+}
+
 .scroll-to i {
     font-size: 2em;
     color: rgba(255, 255, 255, 0.8);
@@ -820,13 +858,20 @@ footer img:hover {
 }
 
 
-h1{
-    margin-top:5%;
-    font-size:3em;
+.welcome h1{
+    margin:5% auto 0;
+    font-size:2em;
+    background:black;
+    width:30%;
+ 
+}
+
+h1.title{
+ font-size:1em;
 }
 
 h2.pageList {
-
+    margin:auto ;
     font-variant: small-caps slashed-zero;
     font-size : 250%;
 
@@ -937,8 +982,11 @@ h2.pageList {
 /*  fin modale  */
 .publishDate{    
     font-size:1.2em;
-    margin-bottom:3%;
-    color :#42312a;
+    margin:0 auto 3%;
+    /*color :#42312a;*/
+    color:white;
+    background:black;
+    width:30%;
 }
 
 /* separateur services */
@@ -1170,7 +1218,6 @@ a {
 }
 @media only screen and (min-width: 1170px) {
   .cd-modal .cd-modal-content {
-    top:2em;
     padding: 6em 20%;
   }
   .cd-modal p {
@@ -1213,7 +1260,7 @@ a {
    background: linear-gradient(90deg, grey 0%, skyblue 100%);
   position: absolute;
   z-index:300;
-  left: 100%;
+  left: 40%;
   top: 0;
   width: 100%;
   height:100%;
@@ -1967,6 +2014,7 @@ input.inputLivre:focus {
 //////////////////////////////////////////////////////////////////////////////*/
 legend p {
     font-style:oblique;
+    color:black;
 
 }
 
@@ -2193,7 +2241,7 @@ label.error {
 
 .g-recaptcha {
 
-  margin: 0 auto;
+  margin: 0 auto ;
   width: 304px;
 }
 
@@ -2242,39 +2290,6 @@ tr{
 ///////////////////// Page connexion/ Inscription ///////////////////////////////
 //////////////////////////////////////////////////////////////////////////////*/
 
-/* on génère un élément :after lors du survol et du focus :*/
-
-.card .toggle:hover:after,
-.card .toggle:focus:after {
-   content: attr(aria-label);  
-  position: relative;
-  top: -6em;
-  left: 50%;
-    transform: translateX(-50%); 
-  z-index: 1; 
-  white-space: nowrap; 
-  padding: 2px 2px;
-     background:rgba(0,0,0,.4);
-     box-shadow:0 1px 0 rgba(255,255,255,.4);
-  color: #fff;
-  border-radius: 4px;
-  font-size: 1rem;
-   -webkit-transform: translateX(-10px);
-  transform: translateX(-10px);
-    border-width: 10px 10px 10px 0;
-  border-color: transparent #e1e1e1 transparent transparent;
-  border-style: solid;  -webkit-transform: translateX(-10px);
-  transform: translateX(-10px);
-  -webkit-transition-property: transform;
-  transition-property: transform;
-  font-family:fontawesome;
-}
-    
-
-/* pas de contour durant le :focus */
-[aria-label]:focus {
-  outline: none;
-}
 
 
 /* Scroll To Bottom */
@@ -2748,23 +2763,444 @@ z-index:9999;
   display: inline-block;
  }
 
+/*/////////////// explications /////////////////////////*/
 
 
-ol {
-	counter-reset: repas;
+/**fenetres encadrement*/
+
+.grid {
+  position: relative;
+  margin: 7% auto;
+  padding: 1em 0 4em;
+  max-width: 1000px;
+  list-style: none;
+  text-align: center;
+}
+
+/* Common style */
+.grid figure {
+  position: relative;
+  float: left;
+  overflow: hidden;
+  margin: 10px 1%;
+  min-width: 320px;
+  max-width: 480px;
+  max-height: 360px;
+  width: 48%;
+  background: #3085a3;
+  text-align: center;
+  cursor: pointer;
+}
+
+.grid figure img {
+  position: relative;
+  display: block;
+  min-height: 100%;
+  max-width: 100%;
+
+}
+
+.grid figure figcaption {
+  padding: 2em;
+  color: #fff;
+  font-size: 1.25em;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+}
+
+.grid figure figcaption::before,
+.grid figure figcaption::after {
+  pointer-events: none;
+}
+
+.grid figure figcaption,
+.grid figure figcaption > a {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width:80%;
+  height: 70%;
+  margin:auto;
+}
+
+/* Anchor will cover the whole item by default */
+/* For some effects it will show as a button */
+.grid figure figcaption > a{
+  z-index: 1000;
+  text-indent: 200%;
+  white-space: nowrap;
+  font-size: 0;
+  opacity: 0;
+}
+
+.grid figure h2 {
+  word-spacing: -0.15em;
+  font-weight: 300;
+}
+
+.grid figure h2 span {
+  font-weight: 800;
+}
+
+.grid figure h2,
+.grid figure p {
+  margin: 0;
+}
+
+.grid figure p {
+  letter-spacing: 1px;
+  font-size: 68.5%;
+}
+
+/*---------------*/
+/***** Layla *****/
+/*---------------*/
+
+figure.effect-layla {
+  background: #18a367;
+}
+
+figure.effect-layla img {
+  height: 390px; 
+  filter: brightness(60%);
+  -webkit-filter: brightness(60%);
+
+}
+
+figure.effect-layla figcaption {
+  padding: 3em;
+}
+
+figure.effect-layla figcaption::before,
+figure.effect-layla figcaption::after {
+  position: absolute;
+  content: '';
+  opacity: 0;
+}
+
+figure.effect-layla figcaption::before {
+  top: 50px;
+  right: 30px;
+  bottom: 50px;
+  left: 30px;
+  border-top: 1px solid #fff;
+  border-bottom: 1px solid #fff;
+  -webkit-transform: scale(0,1);
+  transform: scale(0,1);
+  -webkit-transform-origin: 0 0;
+  transform-origin: 0 0;
+}
+
+figure.effect-layla figcaption::after {
+  top: 30px;
+  right: 50px;
+  bottom: 30px;
+  left: 50px;
+  border-right: 1px solid #fff;
+  border-left: 1px solid #fff;
+  -webkit-transform: scale(1,0);
+  transform: scale(1,0);
+  -webkit-transform-origin: 100% 0;
+  transform-origin: 100% 0;
+}
+
+figure.effect-layla h2 {
+  padding-top: 26%;
+  -webkit-transition: -webkit-transform 0.35s;
+  transition: transform 0.35s;
+  text-shadow: #000000 1px 1px, #000000 -1px 1px, #000000 -1px -1px, #000000 1px -1px;
+}
+
+figure.effect-layla p {
+  padding: 0.5em 2em;
+  text-transform: none;
+  opacity: 0;
+  -webkit-transform: translate3d(0,-10px,0);
+  transform: translate3d(0,-10px,0);
+  text-shadow: #000000 1px 1px, #000000 -1px 1px, #000000 -1px -1px, #000000 1px -1px;
+}
+
+figure.effect-layla img,
+figure.effect-layla h2 {
+  -webkit-transform: translate3d(0,-30px,0);
+  transform: translate3d(0,-30px,0);
+}
+
+figure.effect-layla img,
+figure.effect-layla figcaption::before,
+figure.effect-layla figcaption::after,
+figure.effect-layla p {
+  -webkit-transition: opacity 0.35s, -webkit-transform 0.35s;
+  transition: opacity 0.35s, transform 0.35s;
+}
+
+figure.effect-layla:hover img {
+  opacity: 1;
+
+}
+
+figure.effect-layla:hover figcaption::before,
+figure.effect-layla:hover figcaption::after {
+  opacity: 1;
+  -webkit-transform: scale(1);
+  transform: scale(1);
+}
+
+figure.effect-layla:hover h2,
+figure.effect-layla:hover p {
+  opacity: 1;
+  -webkit-transform: translate3d(0,0,0);
+  transform: translate3d(0,0,0);
+}
+
+figure.effect-layla:hover figcaption::after,
+figure.effect-layla:hover h2,
+figure.effect-layla:hover p,
+figure.effect-layla:hover img {
+  -webkit-transition-delay: 0.15s;
+  transition-delay: 0.15s;
+}
+
+/*bouton ouverture modale*/
+.position {
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+  margin-top: 15%;
+}
+
+#workarea {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: #1e1a3e;
+  font-family: Raleway;
+}
+
+#personal {
+  color:white;
+  text-decoration:none;
+  position:absolute;
+  bottom:15px;
+  right:2%;
+}
+/*    start code for the actual button:         */
+
+
+/*   
+    Spot is the span on the inside of the href that
+    fills the parent and makes the hover and link work
+    for the entire div
+*/
+
+.spot {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+}
+/*
+    This is the outer svg wrapper that the SVG itself will 
+    fill. Multiple svg-wrapper classes can be put side by side.
+*/
+
+.svg-wrapper {
+  margin-top: 0;
+  position: relative;
+  width: 150px;
+  /*make sure to use same height/width as in the html*/
+  height: 40px;
+  display: inline-block;
+  border-radius: 3px;
+  margin-left: 5px;
+  margin-right: 5px
+}
+/*
+  This is where we define the fill, color, thickness,
+  and stroke pattern of the SVG when there is no hover.
+  The dasharray and offset together define the line position
+  under the words. Here's also where the transition speed is set.
+*/
+
+#shape {
+  stroke-width: 13px;
+  fill: transparent;
+  stroke: #009FFD;
+  stroke-dasharray: 85 400;
+  stroke-dashoffset: -220;
+  transition: 1s all ease;
+}
+/* 
+    Pushing the text up into the SVG. Without this the
+    text would be below the div's.
+*/
+
+#text {
+  margin-top: -35px;
+  text-align: center;
+}
+
+#text a {
+  color: white;
+  text-decoration: none;
+  font-weight: 100;
+  font-size: 1.1em;
+}
+
+#demo01,#demo02{
+  padding:6px;
+  text-shadow: #000000 1px 1px, #000000 -1px 1px, #000000 -1px -1px, #000000 1px -1px;
+  background:-webkit-linear-gradient(bottom right, rgba(0,0,0,0.25), rgba(255,255,255,0.5)) no-repeat;
+  background:-o-linear-gradient(bottom right, rgba(0,0,0,0.25), rgba(255,255,255,0.5)) no-repeat;
+  background:linear-gradient(to top left, rgba(0,0,0,0.25), rgba(255,255,255,0.5)) no-repeat;
+  color:white;
+  border:1px solid white;
+}
+
+
+#demo01:hover,#demo02:hover{
+  background:-webkit-linear-gradient(bottom right, rgba(0,0,0,0.25), rgba(255,255,255,0.5)) no-repeat;
+  background:-o-linear-gradient(bottom right, rgba(0,0,0,0.25), rgba(255,255,255,0.5)) no-repeat;
+  background:linear-gradient(to top left, rgba(0,0,0,0.25), rgba(255,255,255,0.5)) no-repeat;
+  color:white;
+  border:none;
+
+}
+/* 
+    Changing the shape on hover. I change the color of the stroke,
+make it thinner, then set it to again wrap around the entire parent element.
+*/
+
+.svg-wrapper:hover #shape {
+  stroke-dasharray: 50 0;
+  stroke-width: 13px;
+  stroke-dashoffset: 0;
+  stroke: #06D6A0;
+}
+/* ouverture modale */
+  #btn-close-modal {
+    width:100%;
+    text-align: center;
+    cursor:pointer;
+    color:#fff;
+  }
+
+.modal-content{
+  margin-top:2%;
+}
+
+
+/*dans explications*/
+#animatedModal,#modal-02{
+   /* background: linear-gradient(#011031,#B63C37,#011031) ;*/
+ background: linear-gradient(15.55turn, #011031, #B63C37, #011031);
+}
+ol { 
+
+    display: grid;
+    counter-reset: repas;
+    background: white;
+    margin:auto ;
+    padding: 0;
+    width:99.5%;
+    height:100%;
+    border:2px solid grey;
+} 
+
+.grid2 {
+  display: grid;
+  width: 50%;
+  margin:2% auto 2%;
+   
+}
+
+.blurBox2 {
+  grid-row: 1 / 1;
+  grid-column: 1 / 1;
+  filter: blur(3px);
+  animation: pulses 2s infinite;
+}
+
+
+@keyframes pulses {
+    0% {background: linear-gradient(-45deg, red, green, yellow);}
+    25% {background: linear-gradient(-45deg, green, yellow, red);}
+    50% {background: linear-gradient(-45deg, yellow, red, green);}
+    75% {background: linear-gradient(-45deg, red, green, yellow);}
+    100% {background: linear-gradient(-45deg, green, yellow, red);}
+}
+
+
+.inputBox2 {
+  grid-row: 1 / 1;
+  grid-column: 1 / 1;
+  margin: 3px;
+  background: #0F0F0F;
+  border-radius: 5px;
+  z-index: 1;
+}
+
+.input1b {
+
+  padding: 5px;
+  border: 1px solid gray;
+  border-radius: 3px;
+}
+
+.input2b {
+
+  padding: 5px;
+  border: 1px solid gray;
+  border-radius: 3px; 
+}
+
+h2.vpn{
   background:white;
-	margin:0;
-	padding:0;
-} /* on initialise et nomme un compteur */
+  border:2px solid grey;
+  border-radius:30px;
+  width:30%;
+  margin:auto;
+}
+
+p.dateTime{
+  border:2px solid grey;
+  color:blue;
+  font-style: oblique;
+  border-radius:40px;
+  background: silver;
+}
 
 li.teamExpl{
-
+  color:black;
+  text-align:center;
+  background:linear-gradient(to top left ,rgba(0,0,0,0.25), rgba(255,255,255,0.5)) no-repeat;
+  box-shadow:0 0 35px black;
+  padding: 2em 0  2em 0;
   justify-content: center;
   list-style-type: none;
   counter-increment: repas; /* on incrémente le compteur à chaque nouveau li */
   margin-bottom: 1%;
   margin-top:2%;
+  -webkit-backface-visibility:visible;
+  backface-visibility: visible;
+
 }
+li.teamExpl p{
+  text-shadow:none;
+  font-size:0.8em;
+  text-align:center;
+  transform:none;
+  transition:none;
+  text-transform:none;
+  -webkit-backface-visibility:visible;
+  backface-visibility: visible;
+  transform-origin: none;
+  visibility:visible;
+  opacity:1;
+  padding-top:1em;
+}
+
 
 li.teamExpl:before {
   content: counter(repas); /* on affiche le compteur */
@@ -2776,6 +3212,7 @@ li.teamExpl:before {
   font-weight: bold;
   font-size: 0.8em;
   color: white;   
+
 }
 /*----bouton controle telechargement--*/
 @-webkit-keyframes hvr-pulse-shrink {
@@ -2791,12 +3228,12 @@ li.teamExpl:before {
   }
 }
 .hvr-pulse-shrink {
-  width: 30%;
+  width: 48%;
   margin:55px auto 55px;
   -webkit-transform: perspective(1px) translateZ(0);
   transform: perspective(1px) translateZ(0);
   box-shadow: 0 0 1px rgba(0, 0, 0, 0);
-  padding:10px;
+  padding:40px;
   color:#343434;
   color:white;
   text-decoration:none;
@@ -2819,6 +3256,7 @@ li.teamExpl:before {
   -webkit-transition: .3s ease-in-out;
   transition: .3s ease-in-out;
   cursor:pointer;
+  font-size:0.9em;
 }
 
 .hvr-pulse-shrink:hover, .hvr-pulse-shrink:focus, .hvr-pulse-shrink:active {
@@ -2833,9 +3271,8 @@ li.teamExpl:before {
   -webkit-animation-direction: alternate;
   animation-direction: alternate;
   box-shadow:none;
-
-
 }
+
 .hvr-pulse-shrink:before {
   content: "";
   position: absolute;
@@ -2844,6 +3281,7 @@ li.teamExpl:before {
   left: 0;
   right: 0;
   bottom: 0;
+  border-radius: 10px;
   background: #2098D1;
   -webkit-transform: scale(0);
   transform: scale(0);
@@ -2861,6 +3299,13 @@ li.teamExpl:before {
 }
 
 /* ----- fin bouton telechargement---*/
+
+
+
+
+
+
+
 
 
 /*//////////////////////////////////////////////////////////////////////////////
@@ -2982,7 +3427,6 @@ iframe{
     transition: .3s ease-in-out;
 
 }
-
 .listcom i:hover{
     color:black;
     -webkit-transform: scale(1.25);
@@ -3015,7 +3459,30 @@ iframe{
         margin-top:2%;
         margin-bottom:2%;
         color:white;
+    
     }
+
+
+    a#toggler{
+      font-size:9px;
+    }
+
+    #toggler{
+      
+      right:0px;
+      background:grey;
+      border-radius:100%;
+      position:fixed;
+      z-index:99999;
+      top:5%; 
+    }
+
+      #toggler:hover{
+
+      background:skyblue;
+      
+    }
+
 
     nav a:before{
         background-color: transparent;
@@ -3030,66 +3497,75 @@ iframe{
     nav a#toggler:before,nav a#toggler:hover:before,nav a#toggler:active:before{
         padding:none;
         background-color: transparent;
+
     }
 
     .nav {
         display:none;
     }
-
     .navigation_mob  {
         display:block;
-        z-index:9999999;
-        top:0px;
-        left:0px;
+        z-index:99999999;
         -webkit-box-shadow: 0 0px 10px silver;
         -moz-box-shadow: 0 0px 10px silver;
         -o-box-shadow: 0 0px 10px silver;
         -ms-box-shadow: 0 0px 10px silver;
-        box-shadow: 0 0px 10px silver;
-        height:auto;
-        z-index: 200 ;
+        box-shadow: 0 0px 10px silver; 
+        z-index: 200 ;       
         width: 100%; 
         -webkit-box-shadow: 0 0px 10px silver;
         -moz-box-shadow: 0 0px 10px silver;
         -o-box-shadow: 0 0px 10px silver;
         -ms-box-shadow: 0 0px 10px silver;
         box-shadow: 0 0px 10px silver;
-        padding-top:0.5%;
-        padding-bottom:0.1%;
         margin:0px;
-        background:rgba(0,0,0,0.5);
-        height: auto;   
+        background:grey;
+        height:auto;
         right:0px;
         left:0px;
-        top:0px; 
+        top:0px;
+        position:fixed; 
+     
     }
 
     nav a{
         padding:0px;
-
+        color:white;  
     }
-
         
     .service img {
       
-        height: 180px; 
-     
+        height: 180px;      
     }
 
-    ul.navigation_mobile{
+    ul.navigation_mobile {
         padding:10px;
         margin-top:0px;
         top:0px;
+        margin-bottom:100%;
     }
 
     .navigation_mobile ul{
         display:block;
         flex-direction: column;        
         justify-content:  space-around;
+
+ 
     }
 
     .navigation_mobile li {
         list-style-type: none;
+        padding: 1em;
+        border-bottom: 1px solid #FFF;
+        font-size:21.6px;
+        font-family: Raleway;
+       text-align: left;
+       overflow: auto;
+    }
+
+    .navigation_mobile a {
+      color:white;        
+
 
     }
 
@@ -3189,6 +3665,11 @@ iframe{
        
 
     }
+    /*reflet du ruban dans page livre d'or*/
+
+    .glow{
+      display:none;
+    }
 
     /* affiche film dans film detail*/
     #affiche2 img{
@@ -3196,7 +3677,7 @@ iframe{
         filter: contrast(150%);
     }
 
-    .oneMovieDetail p{
+    .oneServDetail p{
         font-size:0.7em;
     }
 
@@ -3213,11 +3694,7 @@ iframe{
        width: 97%; 
     }
 
-    iframe{
-     
-        width:460px;
-        height:315px; 
-    }    
+
 
     .popup-inner{
         width: 500px;
@@ -3262,12 +3739,7 @@ iframe{
 
 @media screen and (max-width:600px) {
 
-  iframe{
-     
-        width:280px;
-        height:315px; 
-    }
- 
+   
     .containerGold{
       width: 90%;
     }   
@@ -3303,6 +3775,7 @@ iframe{
     }
 
     .sliderTab{
+
       display:block;
     }
     /* ombre page contact*/
@@ -3312,6 +3785,10 @@ iframe{
 
     #volet_clos,#volet_clos1{
       display:none;
+    }
+
+    #rdv360Iframe{
+
     }
     
   }
@@ -3323,14 +3800,38 @@ iframe{
     }  
 }
 
+
+@media screen and (max-width: 50em) {
+  .content {
+    padding: 0 10px;
+    text-align: center;
+  }
+  .grid figure {
+    display: inline-block;
+    float: none;
+  
+    width: 100%;
+  }
+
+
+}
+
+
+@media screen and (max-width:504px) {
+
+.grid figure figcaption,
+.grid figure figcaption > a {
+width: 75%;
+  
+  
+}
+
+}
+
+
 @media screen and (max-width:420px) {
 
-    iframe{
-     
-        width:200px;
-        height:315px; 
-    }    
-
+ 
     .popup-inner{
         width:210px ;
     }
@@ -3356,3 +3857,32 @@ iframe{
   
 }
 
+
+@media screen and (max-width:380px) {
+  .navigation_mobile li{
+
+    font-size: 18.6px;
+      }
+  .grid figure figcaption,
+  .grid figure figcaption > a {
+    width: 70%;
+    font-size:1.2em;
+      
+    }
+}
+
+
+@media screen and (max-width:350px) {
+  .navigation_mobile li{
+
+    font-size: 15.6px;
+  }
+.grid figure figcaption,
+.grid figure figcaption > a {
+width:65%;
+  font-size:1.2em;
+  
+}
+
+
+}

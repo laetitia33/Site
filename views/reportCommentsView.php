@@ -1,8 +1,7 @@
 <?php $title = 'Commentaires signalés'; ?>
 
 <?php ob_start(); ?>
-
-     
+   
     <div id ="reportcom"></div>
     <h2 class ='pageList'>Commentaire(s) signalé(s)</h2>
 

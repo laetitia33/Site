@@ -53,7 +53,7 @@
             </div>
             
             <div>
-                <input type="submit" value="envoyer" OnClick="return confirm('Voulez-vous vraiment modifier ce résumé ?');"></input>
+                <input type="submit" value="envoyer" class='modServ'></input>
             </div>
     </form>
 </div>

@@ -115,7 +115,7 @@ Formation à domicile.</textarea>
         </div>
       </div>
     </div>
-<a href="#" id="btntop"class="scroll-to"><i class="fa fa-chevron-up"></i></a>
+<a href="#" class="scroll-to"><i class="fa fa-chevron-up"></i></a>
 
     
     <?php include_once 'views/include/footer.php' ?>  
@@ -127,7 +127,9 @@ Formation à domicile.</textarea>
     <script src="assets/js/gmail.js"></script>
     <script src="https://apis.google.com/js/client.js?onload=handleClientLoad"></script>
     <script src ="assets/js/script.js"></script>
-  
+    <script src="assets/js/animateButton/js/main.js"></script>
+
+
 </body>
 </html>
 
@@ -200,7 +202,7 @@ Formation à domicile.</textarea>
 
 
 
-<a href="#" id="btntop"class="scroll-to"><i class="fa fa-chevron-up"></i></a>
+<a href="#" class="scroll-to"><i class="fa fa-chevron-up"></i></a>
 
     
     <?php include_once 'views/include/footer.php' ?>  
@@ -217,7 +219,7 @@ Formation à domicile.</textarea>
         <script src="assets/js/cookiechoices.js"></script>
         <script src="assets/js/classie.js"></script>
         <script>document.addEventListener('DOMContentLoaded', function(event){cookieChoices.showCookieConsentBar('Ce site utilise des cookies pour vous offrir le meilleur service. En poursuivant votre navigation, vous acceptez l’utilisation des cookies.', 'J’accepte', 'En savoir plus', 'http://www.example.com/mentions-legales/');});</script>
-
+        <script src="assets/js/animateButton/js/main.js"></script>
 
 </body>
 </html>

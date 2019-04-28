@@ -69,7 +69,6 @@ class AdministrationController
     }
 
 
-
 // Approuver un commentaire en  retirerant le signalement (page du detail de chaque services)
     public function approvedComment()
     {
@@ -85,8 +84,8 @@ class AdministrationController
     {
         
         $reportComments = $this->_comment->approvedComments();
-        echo "<h1 style='color:#9A97A5;text-align:center;padding:35px;'>Tous les commentaires approuvés avec succès</h1>";        
-        header('Refresh: 1; url=index.php?action=adminCommentsReport#reportcom' );
+            
+        header('Location:index.php?action=adminCommentsReport#reportcom' );
         
         
     }
@@ -95,13 +94,14 @@ class AdministrationController
 // Liste des commentaires signalés (page des commentaires signalés admin)
     public function adminCommentsReport()
     {
-      
+        
         $usersTotal =$this->_user->countUsers();//connaitre le nombre total d'inscrits
         $commentsReportTotal = $this->_comment->countCommentsReport();//connaitre le nombre total de commentaires signalés
         $postsTotal = $this->_post->countPosts();//connaitre le nombre total de films
         $commentsTotal  =$this ->_comment ->countComments();//connaitre le nombre total de commentaires
         $reportComments = $this->_comment->getReportComments();//récuperer les commentaires signalés
-        
+   
+
         require ('views/reportCommentsView.php');
     }
 
@@ -110,19 +110,19 @@ class AdministrationController
     public function deleteComments()
     {
         $deleteComments = $this->_comment->deleteAllComments();
-          echo "<h1 style='color:#9A97A5;text-align:center;padding:35px;'>Tous les commentaires supprimés avec succès</h1>";     
-        header('Refresh: 1; url=index.php?action=adminListComments#deleteCom' );
+
+        header('Location:index.php?action=adminListComments#deleteCom' );
         
    
     }
 
 
-     //supprime tous les commentaires(page de detail de la liste des commentaires)
+//supprime tous les commentaires(page de detail de la liste des commentaires)
     public function deleteCommentsLivreGold()
     {
         $deleteComments = $this->_comment->deleteAllComments();
-          echo "<h1 style='color:#9A97A5;text-align:center;padding:35px;'>Tous les commentaires supprimés avec succès</h1>";     
-        header('Refresh: 1; url=index.php?action=gold' );
+
+             header('Location:index.php?action=gold' );          
         
    
     }
@@ -131,8 +131,8 @@ class AdministrationController
     public function deleteAllCommentReport()
     {
         $deleteAllCommentReport = $this->_comment->deleteCommentsReport();
-          echo "<h1 style='color:#9A97A5;text-align:center;padding:35px;'>Tous les commentaires signalés supprimés avec succès</h1>";     
-        header('Refresh: 1; url=index.php?action=adminCommentsReport#reportcom' );
+       
+        header('Location:index.php?action=adminCommentsReport#reportcom');
         
    
     }
@@ -150,7 +150,7 @@ class AdministrationController
         {
           
             header('Location:index.php?action=adminListComments#deleteCom' );
-            
+    
         }
     }
 
@@ -171,9 +171,6 @@ class AdministrationController
             
         }
     }
-
-
-
 
 // Supprimer un commentaire dans la page services details
     public function deleteOneComment($id_comment)
@@ -210,8 +207,6 @@ class AdministrationController
         }
     }
 
-
-
 //////////////////////////////////////////////////////////////////////////////////////////////
 /////////////////////////////////////////////////////////////////////////////////////////////
 //////////////////////////////////////SERVICES//////////////////////////////////////////////
@@ -222,8 +217,8 @@ class AdministrationController
     public function postAdd($author, $title,$image , $content )
     {
         $createPost = $this->_post->createPost($author, $title,$image, $content);
-         echo "<h1 style='color:#9A97A5;text-align:center;padding:35px;'>Service ajouté avec succès</h1>";
-        header('Refresh: 1; url= index.php?action=listPosts#episodes');
+ 
+        header('Location: index.php?action=listPosts#episodes');
     }
 
 
@@ -240,8 +235,6 @@ class AdministrationController
     }
 
 
-
-
 // Modification d'un service (page de modification d'un service)
       public function updatePost($post_id, $author, $title, $content,$image)
     {
@@ -253,8 +246,6 @@ class AdministrationController
             header('Location: index.php?action=listPosts');
         }
     }
-
-
 
 
 // Supprimer un service (page de la liste des services admin , page du detail du service )

@@ -177,7 +177,7 @@ class Routeur
                     // ADMIN - Liste des commentaires signalés+ signalement de la suppression
                     elseif ($_GET['action'] == 'adminCommentsReport')
                     {
-                      
+                       
                        $this->_administrationCtrl->adminCommentsReport();
                     }
                     //  ADMIN - Signaler un commentaire
@@ -251,9 +251,10 @@ class Routeur
                     }
                     // ADMIN - Supprimer tous les commentaires signalés dans la  comment report
                     elseif ($_GET['action'] == 'deleteAllCommentReport')
-                    {
-                            $this->_administrationCtrl->deleteAllCommentReport();
-                    }
+                    { 
+                     
+                            $this->_administrationCtrl->deleteAllCommentReport($deleteAllCommentReports);
+                    }  
        
                     // ADMIN - Supprimer tous les commentaires
                        elseif ($_GET['action'] == 'deleteComments')

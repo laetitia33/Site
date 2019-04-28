@@ -2,7 +2,7 @@
 		<meta charset="utf-8">
 		<!-- feuille de style-->
 		<link rel="stylesheet" type="text/css" href="assets/css/style.css">
-		<link rel="stylesheet" type="text/css" href="assets/css/horloge.css">
+
 
 		<meta name="description" content="Assitance informatique,Conseil,Conception de sites,Formation !">
 		<meta name="viewport" content="width=device-width initial-scale=1">
@@ -27,7 +27,7 @@
 		<!--jquery-->
    		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
 
-   		<!--jquery horloge-->
+   		<!--jquery slider page vpn-->
 		<script src="http://cdnjs.cloudflare.com/ajax/libs/moment.js/2.0.0/moment.min.js"></script>
 
 		<!--jquery-->
@@ -52,6 +52,9 @@
 	 	<script src="assets/js/slider_controle/jquery.anythingslider.min.js"></script>
  		<script src="assets/js/slider_controle/jquery.anythingslider.fx.min.js"></script>
 
+		<link rel="stylesheet" type="text/css" href="assets/js/menu/css/component.css" />
+
+
 		<!--Ajouter ce site aux favoris-->
 		<script language="JavaScript">
 		function favoris() {
@@ -63,9 +66,24 @@
 		<!--fenetre de confirmation-->
 		<link data-require="sweet-alert@*" data-semver="0.4.2" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/1.1.3/sweetalert.css" />
 		<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+		
 
-	
 
+		<!--tooltip-->
+		<link rel="stylesheet" type="text/css" href="assets/js/tooltipLogin/component.css" />
+
+		<!--bouton animé responsive-->
+		<link rel="stylesheet" type="text/css" href="assets/js/animateButton/css/demo.css" />
+		<link rel="stylesheet" type="text/css" href="assets/js/animateButton/css/component.css" />
+		<!--[if IE]>
+		<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+		<![endif]-->
+		<script src="assets/js/animateButton/js/segment.min.js"></script>
+		<script src="assets/js/animateButton/js/ease.min.js"></script>
+
+		<link rel="stylesheet" href="assets/js/modaleVpn/animate.min.css">
+
+		
 		<title><?= isset($title) ? $title : 'Assistance informatique';?></title>
 	</head>
 	

@@ -37,7 +37,34 @@
  
  </div>
   <div class="card alt">
-    <div class="toggle" aria-label="&#xf0d9; Inscription,cliquez ici"></div>
+    <div class="toggle"></div>
+
+<div class="content">
+    <div class="grid1">
+    <div class="grid__item">
+                        <div class="tooltip tooltip--amras" data-type="amras">
+                            <div class="tooltip__trigger" role="tooltip" aria-describedby="info-amras"><div class="toggle"></div>
+                                <span class="tooltip__trigger-text"></span>
+                            </div>
+                            <div class="tooltip__base">
+                                <svg class="tooltip__shape" width="100%" height="100%" viewBox="0 0 400 300">
+                                    <path class="path-amras-2" d="M 293,106 A 90.1,90.1 0 0 1 203,197 90.1,90.1 0 0 1 112,106 90.1,90.1 0 0 1 203,16.2 90.1,90.1 0 0 1 293,106 Z"/>
+                                    <path class="path-amras-3" d="M 324,66.2 A 46.9,46.9 0 0 1 277,113 46.9,46.9 0 0 1 230,66.2 46.9,46.9 0 0 1 277,19.3 46.9,46.9 0 0 1 324,66.2 Z"/>
+                                    <path class="path-amras-1" d="M 180,111 A 67.2,67.2 0 0 1 112,178 67.2,67.2 0 0 1 45.9,111 67.2,67.2 0 0 1 112,43.5 67.2,67.2 0 0 1 180,111 Z"/>
+                                    <path class="path-amras-4" d="M 371,98.6 A 52.7,52.7 0 0 1 318,152 52.7,52.7 0 0 1 266,98.6 52.7,52.7 0 0 1 318,45.9 52.7,52.7 0 0 1 371,98.6 Z"/>
+                                    <path class="path-amras-9" d="M 375,167 A 66.8,55.1 0 0 1 308,222 66.8,55.1 0 0 1 241,167 66.8,55.1 0 0 1 308,112 66.8,55.1 0 0 1 375,167 Z"/>
+                                    <path class="path-amras-5" d="M 187,199 A 52,52 0 0 1 136,251 52,52 0 0 1 84.1,199 52,52 0 0 1 136,147 52,52 0 0 1 187,199 Z"/>
+                                    <path class="path-amras-6" d="M 287,217 A 66.8,66.8 0 0 1 221,284 66.8,66.8 0 0 1 154,217 66.8,66.8 0 0 1 221,150 66.8,66.8 0 0 1 287,217 Z"/>
+                                    <path class="path-amras-7" d="M 132,168 A 53.9,53.9 0 0 1 78.7,222 53.9,53.9 0 0 1 24.8,168 53.9,53.9 0 0 1 78.7,114 53.9,53.9 0 0 1 132,168 Z"/>
+                                    <path class="path-amras-8" d="M 343,211 A 48.7,48.7 0 0 1 295,260 48.7,48.7 0 0 1 246,211 48.7,48.7 0 0 1 295,163 48.7,48.7 0 0 1 343,211 Z"/>
+                                </svg>
+                                <div class="tooltip__content" id="info-amras"><i class="fas fa-pencil-alt"></i>&nbsp;
+Inscription,cliquez ici</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
     <h1 class="title">Inscription
       <div class="close"></div>
     </h1>

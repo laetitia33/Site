@@ -161,6 +161,7 @@
 .anythingSlider-default .anythingControls .anythingNavWindow {
 	overflow: hidden;
 	float: left;
+	filter:none;
 }
 
 /* Autoplay Start/Stop button */
@@ -222,6 +223,7 @@
 	position: relative;
 	width: 100%;
 	height: 100%;
+
 }
 /* anythingSlider base (original element) */
 .anythingSlider .anythingBase {
@@ -293,7 +295,10 @@
 	-o-transition-duration: 0s;
 	-moz-transition-duration: 0s;
 	-webkit-transition-duration: 0s;
+
 }
 
-
+.anythingSlider .anythingWindow{
+	 filter: brightness(180%);
+}
 

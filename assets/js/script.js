@@ -1,4 +1,26 @@
 
+//deconnexion
+$('.deco').click(function(e){
+    e.preventDefault();
+    var link = $(this).attr('href');
+swal({
+          title: "Souhaitez-vous vous déconnecter?",
+          icon: "warning",
+          buttons: [
+            'Non',
+            'Oui'
+          ],
+          dangerMode: true,
+        }).then(function(isConfirm) {
+          if (isConfirm) {
+
+              window.location.href = link;
+
+           } else {
+            swal("Annulé", "Déconnexion annulée:)", "error");
+          }
+});
+});
 
 //supprimé tous les commentaires signalés
 $('.deletecommSignAll').click(function(e){
@@ -14,11 +36,17 @@ swal({
           dangerMode: true,
         }).then(function(isConfirm) {
           if (isConfirm) {
+          swal({
+    title: 'Tous les commentaires signalés supprimés avec succès',
+    icon: 'success',
+    icon: 'success'
+})
+.then(() => {
+window.location.href = link;})
 
-              window.location.href = link;
 
            } else {
-            swal("Annulé", "les commentaires n'ont pas été'supprimé :)", "error");
+            swal("Annulé", "les commentaires signalés n'ont pas été supprimés :)", "error");
           }
 });
 });
@@ -38,15 +66,20 @@ swal({
           dangerMode: true,
         }).then(function(isConfirm) {
           if (isConfirm) {
+          swal({
+    title: 'Tous les commentaires approuvés avec succès',
+    icon: 'success',
+    icon: 'success'
+})
+.then(() => {
+window.location.href = link;})
 
-              window.location.href = link;
 
            } else {
             swal("Annulé", "les commentaires n'ont pas été approuvés :)", "error");
           }
 });
 });
-
 
 
 
@@ -62,13 +95,19 @@ swal({
             'Oui'
           ],
           dangerMode: true,
-        }).then(function(isConfirm) {
+ }).then(function(isConfirm) {
           if (isConfirm) {
+          swal({
+    title: 'Commentaire approuvé avec succès',
+    icon: 'success',
+    icon: 'success'
+})
+.then(() => {
+window.location.href = link;})
 
-              window.location.href = link;
 
            } else {
-            swal("Annulé", "le commentaire n'a pas été approuvé :)", "error");
+            swal("Annulé", "Ce commentaire n 'a pas été approuvé' :)", "error");
           }
 });
 });
@@ -86,13 +125,19 @@ swal({
             'Oui'
           ],
           dangerMode: true,
-        }).then(function(isConfirm) {
+}).then(function(isConfirm) {
           if (isConfirm) {
+          swal({
+    title: 'Ce commentaire signalé a été supprimé avec succès',
+    icon: 'success',
+    icon: 'success'
+})
+.then(() => {
+window.location.href = link;})
 
-              window.location.href = link;
 
            } else {
-            swal("Annulé", "le commentaire n'a pas été supprimé :)", "error");
+            swal("Annulé", "Ce commentaire signalé n 'a pas été supprimé' :)", "error");
           }
 });
 });
@@ -109,19 +154,22 @@ swal({
             'Oui'
           ],
           dangerMode: true,
-        }).then(function(isConfirm) {
+}).then(function(isConfirm) {
           if (isConfirm) {
-
-              window.location.href = link;
-           
+          swal({
+    title: 'Commentaire supprimé avec succès',
+    icon: 'success',
+    icon: 'success'
+})
+.then(() => {
+window.location.href = link;})
 
 
            } else {
-            swal("Annulé", "le commentaire n'a pas été supprimé :)", "error");
+            swal("Annulé", "Ce commentaire n'a as été supprimé :)", "error");
           }
 });
 });
-
 //supprimer tous les commentaires                    
 $('.deletecommAll').click(function(e){
     e.preventDefault();
@@ -134,13 +182,19 @@ swal({
             'Oui'
           ],
           dangerMode: true,
-        }).then(function(isConfirm) {
+}).then(function(isConfirm) {
           if (isConfirm) {
+          swal({
+    title: 'Tous les commentaires  supprimés avec succès',
+    icon: 'success',
+    icon: 'success'
+})
+.then(() => {
+window.location.href = link;})
 
-              window.location.href = link;
 
            } else {
-            swal("Annulé", "les commentaires n'ont pas été supprimé :)", "error");
+            swal("Annulé", "les commentaires n'ont pas été supprimés :)", "error");
           }
 });
 });
@@ -330,39 +384,21 @@ $(document).ready(function() {
       });
     });
   
-//faire apparaitre et disparaitre le menu en responsive
-  $(function() {
-    $('#show_menu').click(function() {
-      $('#mainmobil').first().show('slow', function showNextOne() {
-        $(this).next('#mainmobil').show('slow', showNextOne);
-      });    
-    });
-    $('#closemenu').click(function() {
-      $('#mainmobil').first().hide('slow', function hideNextOne() {
-        $(this).next('#mainmobil').hide('slow', hideNextOne);
 
-      });
-          
-    });
-  });
-
-
-
-//ancre vers l'acceuil
-
+//ancre du bas vers lehaut de la page
 $(document).ready(function(){
     // Condition d'affichage du bouton
     $(window).scroll(function(){
         if ($(this).scrollTop() > 100){
 
-            $('#btntop').fadeIn();
+            $('.scroll-to ').show();   
         }
         else{
-            $('#btntop').fadeOut();
+            $('.scroll-to ').hide();  
         }
     });
     // Evenement au clic
-    $('#btntop').click(function(){
+    $('.scroll-to ').click(function(){
         $('html, body').animate({scrollTop : 0},800);
         return false;
     });
@@ -382,12 +418,10 @@ function fixDiv() {
 $(window).scroll(fixDiv);
 fixDiv();
 
-/*fermeture du message alerte
-$(document).ready(function(){
-    setTimeout(function(){$("#message").fadeOut('normal');}, 5000);
-});*/
 
 
+  
+//menu responsive
 //menu responsive
 // On attend que la page soit chargée 
 jQuery(document).ready(function()
@@ -395,14 +429,12 @@ jQuery(document).ready(function()
    // On cache la zone de texte
    jQuery('#toggle').hide();
    // toggle() lorsque le lien avec l'ID #toggler est cliqué
-   jQuery('a#toggler').click(function()
+   jQuery('#menu-icon-wrapper').click(function()
   {
       jQuery('#toggle').toggle(400);
       return false;
    });
 });
-
-
 
 //ouverture de la meteo page information
 

@@ -82,7 +82,7 @@
             elseif(isset($_SESSION['id']) && $_SESSION['id_group'] == 2) : ?>
               
               <div class="reponse">       
-              <em><a href="index.php?action=report&amp;id=<?= $comment['id']; ?>" class='validcom' OnClick="return confirm('Souhaitez-vous signaler ce commentaire ?')";"><i class="fas fa-bell">  Signalez un abus</i></a></em>
+              <em><a href="index.php?action=report&amp;id=<?= $comment['id']; ?>" class='validcom'><i class="fas fa-bell">  Signalez un abus</i></a></em>
                         
 
                 </div>                  
@@ -155,7 +155,7 @@ if(isset($_SESSION['id']) && $_SESSION['id_group'] == 1 OR isset($_SESSION['id']
 else : ;
 ?>
                               
-    <em><i class="fas fa-ban"></i>  Vous devez être <a id='validcom' href="index.php?action=login">connecté </a><br>pour laisser un message</em>            
+    <em><i class="fas fa-ban"></i>  Vous devez être <a id='validcom' href="index.php?action=login">connecté </a><br>pour laisser un message</em><br>
       
                 
 <?php 

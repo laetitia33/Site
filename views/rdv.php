@@ -54,11 +54,13 @@ else :;?>
 
 
 <?php endif;?>
-		<a href="#" id="btntop"class="scroll-to"><i class="fa fa-chevron-up"></i></a>
+		<a href="#" class="scroll-to"><i class="fa fa-chevron-up"></i></a>
 		<?php include_once 'views/include/footer.php' ?>			
 	</div>	
 
 	<script src ="assets/js/script.js"></script>
+	<script src="assets/js/animateButton/js/main.js"></script>
+
 	
 </body>
 </html>

@@ -28,8 +28,8 @@
 	text-align:left; /* reset align=center */
 	font-size: 10px;
 	text-shadow: none; /* fix some user styles */
-
-	/* reset box-sizing (to boostrap friendly) */
+	filter:brightness(280%);
+		/* reset box-sizing (to boostrap friendly) */
 	-webkit-box-sizing: content-box;
 	-moz-box-sizing: content-box;
 	box-sizing: content-box; 

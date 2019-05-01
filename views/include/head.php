@@ -84,6 +84,8 @@
 		<link rel="stylesheet" href="assets/js/modaleVpn/animate.min.css">
 
 		
+
+
 		<title><?= isset($title) ? $title : 'Assistance informatique';?></title>
 	</head>
 	

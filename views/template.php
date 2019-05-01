@@ -4,7 +4,7 @@
 	<?php include_once 'views/include/head.php';?>
 
 	<body>
-
+		<?php include_once 'views/include/background4.php'; ?>
 		<header>
 			<?php include_once 'views/include/menu.php'; ?>
 			<?php  include_once 'views/include/menu_responsive.php'; ?>

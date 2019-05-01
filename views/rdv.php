@@ -4,6 +4,8 @@
 <html lang="fr" class='template'>
 	<?php include_once 'views/include/head.php';?>
 <body>
+	<?php include_once 'views/include/background3.php'; ?>
+
 	<div id="volet_clos">
 		<div id="volet">
 			<p>Par téléphone au <br> <i class="fas fa-phone-volume"></i><a href="tel:+0659982720"> 06 59 98 27 20 </a><br>du lundi au samedi de 8h à 19h <br>sans interruption  ou par <br><i class="fas fa-envelope"></i> <a href="index.php?action=email">E-mail</a></p>

@@ -6,6 +6,8 @@
 
 		<?php include_once 'views/include/head.php';?>
 <body>
+	<?php include_once 'views/include/background3.php'; ?>
+
 	<div id="volet_clos">
 		<div id="volet">
 			<p>Par téléphone au <br> <i class="fas fa-phone-volume"></i><a href="tel:+0659982720"> 06 59 98 27 20 </a><br>du lundi au samedi de 8h à 19h <br>sans interruption  ou par <br><i class="fas fa-envelope"></i> <a href="index.php?action=email">E-mail</a></p>
@@ -23,11 +25,12 @@
 
 
 <div class="container1">
-	<div class="content1">
+	<div class="content1">    	
 		<div class="grid">
 			<figure class="effect-layla">
 				<img src="assets/images/vpn/image2.jpg" alt="controle à distance"/>
 				<figcaption>
+					<?php include_once 'views/include/background2.php'; ?>
 					<div>
 						<h2><span>Mode d'emploi de contrôle à distance</span></h2>
 						<p>Cliquez ici <i class="fas fa-arrow-down"></i></p>
@@ -45,6 +48,7 @@
       
         <!--DEMO01-->
         <div id="animatedModal">
+
             <!--THIS IS IMPORTANT! to close the modal, the class name has to match the name given on the ID -->
             <div  id="btn-close-modal" class="close-animatedModal"> 
                 X FERMER
@@ -55,8 +59,9 @@
 				   <div class="grid2">
 
 				      <div class="blurBox2"></div>
-				      <div class="inputBox2">  <div class='cache'>	
+				      <div class="inputBox2">  <div class='cache'>
 				       	<ol >
+
 							<li class ="teamExpl"><p>Attendez la validation du rendez-vous en ligne par mail.</p></li>
 							<li class ="teamExpl"><p>Un rendez-vous vous sera donné .A l'heure signalée ,cliquez sur le lien ci -dessous pour exécuter l’application sur votre ordinateur.</p>
 							<p class='dateTime'>	<?php
@@ -72,12 +77,16 @@
                 <!--Your modal content goes here-->
             </div>
 				    </div>
-						</figcaption>			
-						</figure>
+						</figcaption>
+						
+							</figure>
 							<figure class="effect-layla">
-								<img src="assets/images/vpn/image4.jpg" alt="installation logiciel"/>
+								<img src="assets/images/vpn/image4.jpg" alt="installation logiciel"/>						
+
 								<figcaption>
 									<div>
+									<?php include_once 'views/include/background.php'; ?>
+
 										<h2><span>Comment installer le logiciel ?</span></h2>
 										<p>Cliquez ici <i class="fas fa-arrow-down"></i></p>
 							    		<div class="svg-wrapper">
@@ -96,8 +105,8 @@
 								            <div  id="btn-close-modal" class="close-modal-02"> 
 								                X FERMER
 								            </div>
-								            
-								            <div class="modal-content">
+								          
+								            <div class="modal-content">  
 								            	<div class ="sliderTab">
 
 								<div id="wowslider-container1">

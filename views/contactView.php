@@ -20,6 +20,7 @@
       <?php include_once 'views/include/menu.php'; ?>
       <?php include_once 'views/include/menu_responsive.php'; ?>
   </header>
+      <?php include_once 'views/include/background3.php'; ?>
 
     <div class="container">
       <h1>Boite de réception</h1>
@@ -150,6 +151,7 @@ Formation à domicile.</textarea>
       <?php include_once 'views/include/menu.php'; ?>
       <?php include_once 'views/include/menu_responsive.php'; ?>
   </header>
+      <?php include_once 'views/include/background3.php'; ?>
 
       <a id="films"></a>
  

@@ -1,5 +1,150 @@
 
 /*//////////////////////////////////////////////////////////////////////////////
+//////////////////background1////////////////////////////////////////////////
+//////////////////////////////////////////////////////////////////////////////*/
+.svg1 {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+ 
+}
+
+.path {
+  animation: draw 14s infinite;
+  animation-timing-function: linear;
+}
+
+.path-2 {
+  animation: draw 14s infinite;
+  animation-delay: 1s;
+  animation-timing-function: linear;
+}
+
+@keyframes draw {
+  0% {
+  }
+  100% {
+    stroke-dashoffset: 0;
+    stroke-opacity: 1;
+  }
+}
+
+
+/*//////////////////////////////////////////////////////////////////////////////
+///////////////////background2/////////////////////////////////////////////////
+//////////////////////////////////////////////////////////////////////////////*/
+
+.svg2 {
+  position: absolute;
+  top: 25%;
+  left: 25%;
+  transform: translate(-50%, -50%);
+
+}
+
+.path {
+  animation: draw 9.5s infinite;
+  animation-timing-function: linear;
+}
+
+@keyframes draw {
+  0% {
+  }
+  50% {
+    stroke-dashoffset: 0;
+    stroke-opacity: 1;
+  }
+}
+/*//////////////////////////////////////////////////////////////////////////////
+//////////////////background3 ////////////////////////////////////////////////
+//////////////////////////////////////////////////////////////////////////////*/
+
+.svg3 {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index:-1;
+}
+
+.path1 {
+  animation: draw 10s infinite;
+  animation-timing-function: linear;
+}
+
+.path1-2 {
+  animation: draw 10s infinite;
+  animation-delay: 1s;
+  animation-timing-function: linear;
+}
+
+@keyframes draw {
+  0% {
+  }
+  100% {
+    stroke-dashoffset: 0;
+    stroke-opacity: 1;
+  }
+}
+
+
+@keyframes draw {
+  0% {
+  }
+  100% {
+    stroke-dashoffset: 0;
+    stroke-opacity: 1;
+  }
+}
+
+/*//////////////////////////////////////////////////////////////////////////////
+//////////////////background4////////////////////////////////////////////////
+//////////////////////////////////////////////////////////////////////////////*/
+
+.svg4 {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+    z-index:-1;
+
+}
+.path1 {
+  animation: draw 30s infinite;
+  animation-timing-function: linear;
+}
+.path1-01 {
+  animation-delay: 0s;
+}
+.path1-02 {
+  animation-delay: 1s;
+}
+.path1-03 {
+  animation-delay: 2s;
+}
+.path1-04 {
+  animation-delay: 3s;
+}
+.path1-05 {
+  animation-delay: 4s;
+}
+
+
+
+@keyframes draw {
+  0% {
+  }
+  100% {
+    stroke-dashoffset: 0;
+    stroke-opacity: 1;
+  }
+}
+
+
+
+
+/*//////////////////////////////////////////////////////////////////////////////
 ///////////////////// TEMPLATE/////////////////////////////////////////////////
 //////////////////////////////////////////////////////////////////////////////*/
 body{
@@ -14,7 +159,7 @@ body{
     color:white;
      /*color: #404d5b;
     background-color:silver;*/
-    background-image: linear-gradient(black,rgba(0, 0, 255, 0.5), rgba(255, 255, 0, 0.5)),
+    background-image: linear-gradient(pink,#8D7C90  , rgba(255, 255, 0, 0.5)),
                   url("../images/fond.jpg");
     background-size:cover;
     font-size: 0.9em;
@@ -22,6 +167,8 @@ body{
     text-align:center;
 
 }
+
+
 .header{
   background:black;
 }
@@ -1039,6 +1186,9 @@ h2.pageList {
     text-decoration: none;  
 }
 
+.pageInfo em{
+  color:black;
+}
 ul.pagination{
     padding-left:0px;
     top:0px;

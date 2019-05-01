@@ -106,6 +106,7 @@
     </div>
 </div>
 </div>
+
  
   <?php $comments->closeCursor();?>
 
@@ -155,7 +156,7 @@ if(isset($_SESSION['id']) && $_SESSION['id_group'] == 1 OR isset($_SESSION['id']
 else : ;
 ?>
                               
-    <em><i class="fas fa-ban"></i>  Vous devez être <a id='validcom' href="index.php?action=login">connecté </a><br>pour laisser un message</em><br>
+    <em style="color:black;"><i class="fas fa-ban"></i>  Vous devez être <a id='validcom' href="index.php?action=login">connecté </a><br>pour laisser un message</em><br>
       
                 
 <?php 

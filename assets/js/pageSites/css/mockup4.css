@@ -5,6 +5,11 @@
 	padding-top: 58%; /* ratio of image * 100 */
 	overflow: hidden;
 	position: relative;
+	-webkit-box-shadow: 0 0px 10px silver;
+    -moz-box-shadow: 0 0px 10px silver;
+    -o-box-shadow: 0 0px 10px silver;
+    -ms-box-shadow: 0 0px 10px silver;
+    box-shadow: 0 0px 10px silver;
 }
 
 
@@ -18,7 +23,7 @@
 .mockup::after {
 	content: '';
 	position: absolute;
-	background: rgba(51,71,89,0.5);
+
 	top: 0;
 	left: 0;
 	width: 100%;
@@ -44,21 +49,29 @@
 }
 
 .screen {
-	width: 609px;
-	height: 360px;
-	top: -9px;
-	right: 180px;
-	-webkit-transform: matrix3d(0.452711184975633, 0.139863853789781, 0, -0.000095269465775677, -0.00319943882448498, 0.673512589529646, 0, 0.000049453592261685, 0, 0, 1, 0, 382, 8, 0, 1);
-	transform: matrix3d(0.452711184975633, 0.159999993789781, 0, -0.000095269465775677, -0.00119943882448498, 0.693512589529646, 0, 0.00009453592261685, 0, 0, 1, 0, 382, 8, 0, 1);
+ transform: matrix3d(0.944785, 0.006505, 0, -0.000014, 
+                    0.158239, 0.993454, 0, 0.000308, 
+                    0, 0, 1, 0, 
+                    45.295227, 26.527721, 0, 1);
+ transform-origin: -268px -21px 0px;
+ width: 370px;
+ height: 195px;
+top: 11px;
+left:230px; 
 }
 
 .mobile {
-	width: 144px;
-	height: 236px;
-	top: 364px;
-	right: 519px;
-	-webkit-transform: matrix3d(0.442778970432011, 0.112834189093484, 0, -0.000053669440509915, -0.344035499291785, 0.346595156594271, 0, -0.000094674614416115, 0, 0, 1, 0, 105, 15, 0, 1);
-	transform: matrix3d(0.442778970432011, 0.112834189093484, 0, -0.000053669440509915, -0.344035499291785, 0.346595156594271, 0, -0.000094674614416115, 0, 0, 1, 0, 105, 15, 0, 1);
+
+	 transform: matrix3d(2.596905, 0.366854, 0, 0.001095, 
+                    -0.489191, 1.233096, 0, -0.000794, 
+                    0, 0, 1, 0, 
+                    -619.24257, -167.828211, 0, 1);
+ transform-origin: -754px -283px 0px;
+top: 214px;
+ width: 55px;
+ height: 90px;
+right:125px;
+
 }
 
 .slideshow {
@@ -90,7 +103,7 @@
 .slideshow img {
 	width: 100%;
 	height:100%;
-	filter:brightness(50%); 
+
 }
 
 .slideshow__item.in--next {
@@ -187,6 +200,10 @@
 
 @media screen and (max-width:915px) {
 
+.wrap {
+display:none;
+
+}
 
 	
 

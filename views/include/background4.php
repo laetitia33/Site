@@ -4,7 +4,7 @@
     ?>
 
 
-<svg class='svg4'width="100%" height="auto"  viewBox="0 0 2400 1600" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<svg class='svg4'width="100%" height="auto"  viewBox="0 0 2400 1600">
   <defs>
     <linearGradient id="linear" x1="0%" y1="0%" x2="100%" y2="0%">
       <stop offset="0%"   stop-color="#148BB1"/>

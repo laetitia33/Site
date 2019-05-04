@@ -3,7 +3,7 @@
 
     ?>
 
-<svg class='svg2'width="1024px" height="1024px" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<svg class='svg2'width="1024px" height="1024px" viewBox="0 0 1024 1024" version="1.1" >
     <defs>
         <rect id="path-1" x="489" y="428" width="28" height="28" rx="3"></rect>
         <mask id="mask-2" maskContentUnits="userSpaceOnUse" maskUnits="objectBoundingBox" x="0" y="0" width="28" height="28" fill="white">

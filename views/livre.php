@@ -2,6 +2,8 @@
 <?php $title = 'Informatique la Teste De Buch,liste des services'; ?>
 
 <?php ob_start(); ?>
+  
+
 
 <div id="volet_clos">
   <div id="volet">
@@ -30,7 +32,8 @@
                       
 
 ?>
-    
+  
+
      <!--/////////////////// indique s'il y a des commentaires ////////////////////-->
 <div id="ancrecom"></div><br><br>
 <?php if(isset($_SESSION['id']) && $_SESSION['id_group'] == 1): ?>        
@@ -52,6 +55,8 @@
     endif;
 ?>
  
+
+
 <!--///////////////////////// boucle affichage commentaire admin ou visiteur ///////////-->
 
 <div class="page1">    
@@ -107,9 +112,8 @@
 </div>
 </div>
 
- 
-  <?php $comments->closeCursor();?>
 
+  <?php $comments->closeCursor();?>
 
 
 <?php 
@@ -156,7 +160,7 @@ if(isset($_SESSION['id']) && $_SESSION['id_group'] == 1 OR isset($_SESSION['id']
 else : ;
 ?>
                               
-    <em style="color:black;"><i class="fas fa-ban"></i>  Vous devez être <a id='validcom' href="index.php?action=login">connecté </a><br>pour laisser un message</em><br>
+    <em style="color:black;font-size:1.5em"><i class="fas fa-ban"></i>  Vous devez être <a id='validcom' href="index.php?action=login">connecté </a><br>pour laisser un message</em><br>
       
                 
 <?php 

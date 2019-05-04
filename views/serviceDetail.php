@@ -57,20 +57,31 @@
 		<link rel="stylesheet" type="text/css" href="assets/js/pageSites/css/mockup4.css" />
 		<script src="assets/js/pageSites/js/modernizr.custom.js"></script>
 
+		<!--presentation sites-->
+
+
 
 		<title><?= isset($title) ? $title : 'Création de sites internet';?></title>
 	</head>
+
+
 <body class="demo-3">
 		<div id="container" class="container intro-effect-sliced">
 			<!-- Top Navigation -->
-		
-			<header class="header">
+		<!-- background etoiles animées-->																		
+		  	<div id='stars'></div>
+  			<div id='stars2'></div>
+  			<div id='stars3'></div>
+
+
+			<header class="header">					
 				<div class="bg-img"><img src="assets/images/creation3.jpg" alt="Background Image" /></div>
 				<div class="title">
 					<nav class="codrops-demos">
+						<a href="index.php">Accueil</a>
 						<a href="#réalisés">Projets réalisés</a>
-			
-					</nav>
+						<a href="index.php?action=email" target="_blank">Me contacter</a>
+	 				</nav>
 					<h1>Création de sites internet</h1><br>
 				<p class="subline">Diplomée de la 3w academie en tant que Développeuse intégratrice en réalisation d’applications web </p>
 				<p><img src="assets/images/logo/3w.png" class='3w' alt="logo 3w" /></p>	
@@ -84,16 +95,17 @@
 					&nbsp;&nbsp;<i class="fab fa-github fa-3x"style="color:#14191E;"></i>
 					&nbsp;&nbsp;<i class="fas fa-database fa-3x "style="color:grey;"></i>
 					&nbsp;&nbsp;<img class='logoLangage' src="assets/images/logo/jquery.png" alt="jquery" /></p><br>
-					<p>Tous les sites sont conçus en responsive design de manière a pouvoir les lire sur tous suports. smartphones, tablettes, tv,pc</p>
+					<p>Tous les sites sont conçus en responsive design de manière a pouvoir les lire sur tous suports. smartphones, tablettes, tv,pc</p><br><br><br>
 				</div>
 				<div class="bg-img"><img src="assets/images/creation3.jpg" alt="Background Image" /></div>
 			</header>
 			
 			<button data-info="Entrer"  class="trigger " ><span ></span></button>
-
+			<a href='index.php'>Retour à l'accueil du site</a>
 		
 			<article class="content">
-				
+		    	
+
 				<!--slideshow-->
 				<div><div id="wrap" class="wrap">
 				<div class="mockup">
@@ -122,32 +134,65 @@
 				</div>
 				<div>
 
-					
-				<h2 id='réalisés'><hr>Liste des projets réalisés</hr></h2>
 		
-
-
-
-
-
-
-
-
-
+				<h2 id='réalisés'><hr>Liste des projets réalisés</h2><hr>
 			</article>
 
+			<!--background animé-->
+		<div id="large-header" class="large-header" >     
+		  <canvas id="demo-canvas"></canvas>
 
-			
+		</div>	
+	<div id="carousel">
+			<figure id="spinner">
+			<figure>
+			  <img src="assets/js/pageSites/img/large/1.png"alt="A danseur in brisé (a leap with the legs together) on a blue background">
+			    <figcaption>Anton Ploom</figcaption>
+			</figure>
+			<figure>
+			  <img src="assets/js/pageSites/img/large/2.png" alt="">
+			    <figcaption>Annija Kopshtale</figcaption>
+			</figure>
+			<figure>
+			  <img src="assets/js/pageSites/img/large/3.png" alt="">
+			    <figcaption>Daria Elmakova</figcaption>
+			  </figure>
+			   <figure>
+			     <img src="assets/js/pageSites/img/large/4.PNG" alt="">
+			<figcaption>Margaret Rodchenkova</figcaption>
+			</figure>
+			<figure>
+			  <img src="assets/js/pageSites/img/large/5.PNG" alt="">
+			<figcaption>Marta Ozolina</figcaption>
+			</figure>
+		
+			</div>
+			<span style=float:left class='ss-icon' onclick="galleryspin('-')">&lt;PRE</span>
+			<span style=float:right class='ss-icon' onclick="galleryspin('')">&gt;NEXT</span>
+			  <p class ='carouselP'>
+			Commandes: curseur gauche et droite ou cliquez sur les flèches pour faire pivoter, Z ou cliquez pour basculer le zoom sur l'image au premier plan, C ou survolez pour afficher / masquer la légende.</p>
+
+		<a href="#" class="scroll-to"><i class="fa fa-chevron-up"></i></a>
+		<?php  include_once 'views/include/footer.php' ?>
+       
 		</div><!-- /container -->
 
-				<a href="#" class="scroll-to"><i class="fa fa-chevron-up"></i></a>
+
+
+
 				<script src ="assets/js/classie.js"></script>
-				<script src ="assets/js/script.js"></script>
+				<script src ="assets/js/pageSites/script2.js"></script>
 				<script src="assets/js/cookiechoices.js"></script>
+							<script src="assets/js/background/js/TweenLite.min.js"></script>
+				<script src="assets/js/background/js/EasePack.min.js"></script>
+				<script src="assets/js/background/js/rAF.js"></script>
+				<script src="assets/js/background/js/demo-1.js"></script>
 				<script>document.addEventListener('DOMContentLoaded', function(event){cookieChoices.showCookieConsentBar('Ce site utilise des cookies pour vous offrir le meilleur service. En poursuivant votre navigation, vous acceptez l’utilisation des cookies.', 'J’accepte', 'En savoir plus', 'http://www.example.com/mentions-legales/');});</script>
 
 				<script src="assets/js/pageSites/js/classie.js"></script>
 				<script src="assets/js/pageSites/js/main.js"></script>
+
+			<!--presentation site-->		
 			<script>
 			(function() {
 				new Slideshow( document.getElementById( 'slideshow-1' ) );

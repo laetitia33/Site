@@ -168,7 +168,10 @@ body{
 
 }
 
-
+a#validcom{
+  color:blue;
+  cursor:pointer;
+}
 .header{
   background:black;
 }
@@ -213,6 +216,7 @@ body{
     text-decoration: none;
     left:223px;
     z-index:9999;
+    cursor:pointer;
 }
 
 #volet {
@@ -235,6 +239,8 @@ body{
     -ms-transform: rotate(270deg);
     -moz-radius: 0 0 8px 8px;
     border-radius: 0 0 8px 8px;
+    cursor:pointer;
+
 }
 
 #volet a.fermer {
@@ -872,7 +878,7 @@ footer a:focus span {
 }
 
 #legalnotice {
-
+z-index:1;
     max-width:50%;
     width:90%;
     max-height:70%;
@@ -1183,11 +1189,13 @@ h2.pageList {
 .page1 a,
 .page2 a
 {
+
     text-decoration: none;  
 }
 
 .pageInfo em{
   color:black;
+  font-size:1.5em;
 }
 ul.pagination{
     padding-left:0px;
@@ -1574,6 +1582,9 @@ a {
     color:black;
 }
 
+.texte a{
+    color:blue;
+}
 /* boutons en savoir plus */
 .input_read{  
  
@@ -3780,7 +3791,7 @@ iframe{
 
     .pageInfo li ,.pageInfo p{
 
-        font-size:0.7em;
+        font-size:0.9em;
     }
     
    

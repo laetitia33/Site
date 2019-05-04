@@ -81,9 +81,11 @@
 		<script src="assets/js/animateButton/js/segment.min.js"></script>
 		<script src="assets/js/animateButton/js/ease.min.js"></script>
 
+		<!--modale vpn-->
 		<link rel="stylesheet" href="assets/js/modaleVpn/animate.min.css">
 
-		
+		<!--livre d'or pages-->
+
 
 
 		<title><?= isset($title) ? $title : 'Assistance informatique';?></title>

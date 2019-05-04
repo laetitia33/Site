@@ -2,7 +2,7 @@
 <?php
 
     ?>
-<svg class='svg3'width="100%" height="auto" viewBox="0 0 2400 1600" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<svg class='svg3'width="100%" height="auto" viewBox="0 0 2400 1600" >
   <g id="paths" transform="translate(36.000000, 0.000000)" class="path1" stroke="#02b3e4" stroke-width="4" stroke-width="2" fill="none" fill-rule="evenodd" stroke-linecap="butt" stroke-linejoin="round" fill="none" stroke-opacity="1" stroke-dasharray="30,150" stroke-dashoffset="2000">
     <g id="C23" transform="translate(176.000000, 0.000000)">
       <polyline id="path" points="52 92 84 92 116 60 116 0"></polyline>

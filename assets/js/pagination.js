@@ -1,36 +1,37 @@
 
-//pagination liste des services
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////livre d'or///////////////////////////////////
 
 
-var anumberOfItems = $('#page .list-group').length; 
-var alimitPerPage = 4; 
-$('#page .list-group:gt(' + (alimitPerPage - 1) + ')').hide(); 
+var anumberOfItems = $('.paperContentPage .pag').length; 
+var alimitPerPage = 6; 
+$('.paperContentPage .pag:gt(' + (alimitPerPage - 1) + ')').hide(); 
 var atotalPages = Math.round(anumberOfItems / alimitPerPage); 
-$(".pagination").append("<li class='current-page active'><a href='javascript:void(0)'> " + 1 + "</a></li> "); 
+$(".pagination3").append("<li class='current-page active'><a href='javascript:void(0)'> " + 1 + "</a></li> "); 
 
 for (var i = 2; i <= atotalPages; i++) {
-  $(".pagination").append("<li class='current-page'><a href='javascript:void(0)'>" + i + "</a></li> "); 
+  $(".pagination3").append("<li class='current-page'><a href='javascript:void(0)'>" + i + "</a></li> "); 
 }
 
 // bouton next
-$(".pagination").append("<li id='next-page'><a href='javascript:void(0)' aria-label=Next><span aria-hidden=true>&raquo Suivante </span></a></li>");
+$(".pagination3").append("<li id='next-page'><a href='javascript:void(0)' aria-label=Next><span aria-hidden=true>&raquo Suivante </span></a></li>");
 
 //// Fonction qui affiche les nouveaux éléments en fonction du numéro de page sur lequel l'utilisateur a cliqué
-$(".pagination li.current-page").on("click", function() {
+$(".pagination3 li.current-page").on("click", function() {
   // Vérifie si le numéro de page sur lequel l'utilisateur a cliqué est la page en cours d'affichage
   if ($(this).hasClass('active')) {
     return false; 
   } else {
     var acurrentPage = $(this).index(); 
-    $(".pagination li").removeClass('active'); 
+    $(".pagination3 li").removeClass('active'); 
     $(this).addClass('active');
-    $("#page .list-group").hide(); 
+    $(".paperContentPage .pag").hide(); 
     var agrandTotal = alimitPerPage * acurrentPage; 
 
 //Parcourt le nombre total d'éléments en sélectionnant un nouvel ensemble d'éléments en fonction du numéro de page.
    
     for (var i = agrandTotal - alimitPerPage; i < agrandTotal; i++) {
-      $("#page .list-group:eq(" + i + ")").show(); 
+      $(".paperContentPage .pag:eq(" + i + ")").show(); 
     }
   }
 
@@ -39,48 +40,51 @@ $(".pagination li.current-page").on("click", function() {
 
 //Fonction permettant de passer à la page suivante lorsque les utilisateurs cliquent sur l'id de la page suivante (bouton de la page suivante)
 $("#next-page").on("click", function() {
-  var acurrentPage = $(".pagination li.active").index(); 
+  var acurrentPage = $(".pagination3 li.active").index(); 
   if (acurrentPage === atotalPages) {
     return false; 
   } else {
     acurrentPage++; 
-    $(".pagination li").removeClass('active'); 
-    $("#page .list-group").hide(); 
+    $(".pagination3 li").removeClass('active'); 
+    $(".paperContentPage .pag").hide(); 
     var agrandTotal = alimitPerPage * acurrentPage; 
 
 
     for (var i = agrandTotal - alimitPerPage; i < agrandTotal; i++) {
-      $("#page .list-group:eq(" + i + ")").show(); 
+      $(".paperContentPage .pag:eq(" + i + ")").show(); 
     }
 
-    $(".pagination li.current-page:eq(" + (acurrentPage - 1) + ")").addClass('active'); 
+    $(".pagination3 li.current-page:eq(" + (acurrentPage - 1) + ")").addClass('active'); 
   }
 });
 
 
 //Fonction permettant de naviguer vers la page précédente lorsque les utilisateurs cliquent sur l'id de la page précédente (bouton de la page précédente)
 $("#previous-page").on("click", function() {
-  var acurrentPage = $(".pagination li.active").index(); 
+  var acurrentPage = $(".pagination3 li.active").index(); 
   // Assurez-vous que les utilisateurs ne sont pas à la page 1 et tentent de naviguer vers une page précédente
   if (acurrentPage === 1) {
     return false; 
   } else {
     acurrentPage--; 
-    $(".pagination li").removeClass('active'); 
-    $("#page .list-group").hide(); 
+    $(".pagination3 li").removeClass('active'); 
+    $(".paperContentPage .pag").hide(); 
     var agrandTotal = alimitPerPage * acurrentPage; 
 
     for (var i = agrandTotal - alimitPerPage; i < agrandTotal; i++) {
-      $("#page .list-group:eq(" + i + ")").show();
+      $(".paperContentPage .pag:eq(" + i + ")").show();
     }
 
-    $(".pagination li.current-page:eq(" + (acurrentPage - 1) + ")").addClass('active'); 
+    $(".pagination3 li.current-page:eq(" + (acurrentPage - 1) + ")").addClass('active'); 
   }
 });
 
   if(anumberOfItems ==0 ){
-     $(".pagination").css("display","none");
+     $(".pagination3").css("display","none");
   }
+
+
+
 
 
 
@@ -88,7 +92,7 @@ $("#previous-page").on("click", function() {
 /////////////pagination pour commentaires et commentaires signalés///////////////////////////////////
 
 
-var numberOfItems = $('.page1 .triangle-right').length; 
+var numberOfItems = $('.page1 .triangle-right ').length; 
 var limitPerPage = 2; 
 $('.page1 .triangle-right:gt(' + (limitPerPage - 1) + ')').hide(); 
 var totalPages = Math.round(numberOfItems / limitPerPage); 
@@ -168,4 +172,5 @@ $("#previous-page").on("click", function() {
 if(numberOfItems ==0 ){
      $(".pagination1").css("display","none");
   }
+
 

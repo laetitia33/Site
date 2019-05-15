@@ -35,19 +35,14 @@
 		<!--jquery-->
    		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
 
+
    		<!--jquery horloge-->
 		<script src="http://cdnjs.cloudflare.com/ajax/libs/moment.js/2.0.0/moment.min.js"></script>
 
 		<!--jquery-->
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/2.0.2/anime.min.js"></script>
 
-		<!--Ajouter ce site aux favoris-->
-		<script language="JavaScript">
-		function favoris() {
-			if ( navigator.appName != 'Microsoft Internet Explorer' )
-			{ window.sidebar.addPanel("<a href="javascript:void(favoris());">Assitance Informatique Bassi d'Arcachon</a>","http://www.tonsite.com",""; }
-			else { window.external.AddFavorite("http://www.tonsite.com","le nom du site"); } 
-		</script>
+	
 		<!--fenetre de confirmation-->
 		<link data-require="sweet-alert@*" data-semver="0.4.2" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/1.1.3/sweetalert.css" />
 		<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
@@ -58,14 +53,23 @@
 		<script src="assets/js/pageSites/js/modernizr.custom.js"></script>
 
 		<!--presentation sites-->
+		<link rel="stylesheet" id="fontawesome-css" href="assets/js/presentation/font-awesome.css" type="text/css" media="all">
+		<link rel="stylesheet" id="prettyPhoto-css" href="https://cdnjs.cloudflare.com/ajax/libs/prettyPhoto/3.1.6/css/prettyPhoto.css" type="text/css" media="all">
+		<link rel="stylesheet" id="flexslider-css" href="assets/js/presentation/flexslider.css" type="text/css" media="screen">
+		<link rel="stylesheet" id="mainstyle-css" href="assets/js/presentation/slider.css" type="text/css" media="all">
+		<link rel="stylesheet" type="text/css" href="assets/js/presentation/360player.css"/>
+		<link rel="stylesheet" type="text/css" href="assets/js/presentation/360player-visualization.css"/>
 
-
+		<script type="text/javascript" src="https://unpkg.com/default-passive-events"></script>
+		
+		<!--tooltip-->
+		<link rel="stylesheet" type="text/css" href="assets/js/tooltipLogin/component.css" />
 
 		<title><?= isset($title) ? $title : 'Création de sites internet';?></title>
 	</head>
 
 
-<body class="demo-3">
+<body>
 		<div id="container" class="container intro-effect-sliced">
 			<!-- Top Navigation -->
 		<!-- background etoiles animées-->																		
@@ -102,7 +106,7 @@
 			
 			<button data-info="Entrer"  class="trigger " ><span ></span></button>
 			<a href='index.php'>Retour à l'accueil du site</a>
-		
+
 			<article class="content">
 		    	
 
@@ -136,50 +140,25 @@
 
 		
 				<h2 id='réalisés'><hr>Liste des projets réalisés</h2><hr>
+
+
 			</article>
 
+<?php  include_once 'assets/js/presentation/presentation.php' ?>
 			<!--background animé-->
 		<div id="large-header" class="large-header" >     
 		  <canvas id="demo-canvas"></canvas>
+		
 
 		</div>	
-	<div id="carousel">
-			<figure id="spinner">
-			<figure>
-			  <img src="assets/js/pageSites/img/large/1.png"alt="A danseur in brisé (a leap with the legs together) on a blue background">
-			    <figcaption>Anton Ploom</figcaption>
-			</figure>
-			<figure>
-			  <img src="assets/js/pageSites/img/large/2.png" alt="">
-			    <figcaption>Annija Kopshtale</figcaption>
-			</figure>
-			<figure>
-			  <img src="assets/js/pageSites/img/large/3.png" alt="">
-			    <figcaption>Daria Elmakova</figcaption>
-			  </figure>
-			   <figure>
-			     <img src="assets/js/pageSites/img/large/4.PNG" alt="">
-			<figcaption>Margaret Rodchenkova</figcaption>
-			</figure>
-			<figure>
-			  <img src="assets/js/pageSites/img/large/5.PNG" alt="">
-			<figcaption>Marta Ozolina</figcaption>
-			</figure>
 		
-			</div>
-			<span style=float:left class='ss-icon' onclick="galleryspin('-')">&lt;PRE</span>
-			<span style=float:right class='ss-icon' onclick="galleryspin('')">&gt;NEXT</span>
-			  <p class ='carouselP'>
-			Commandes: curseur gauche et droite ou cliquez sur les flèches pour faire pivoter, Z ou cliquez pour basculer le zoom sur l'image au premier plan, C ou survolez pour afficher / masquer la légende.</p>
-
 		<a href="#" class="scroll-to"><i class="fa fa-chevron-up"></i></a>
 		<?php  include_once 'views/include/footer.php' ?>
-       
 		</div><!-- /container -->
+		
+ 
 
-
-
-
+				<div class="regle">Règle</div>
 				<script src ="assets/js/classie.js"></script>
 				<script src ="assets/js/pageSites/script2.js"></script>
 				<script src="assets/js/cookiechoices.js"></script>
@@ -189,10 +168,8 @@
 				<script src="assets/js/background/js/demo-1.js"></script>
 				<script>document.addEventListener('DOMContentLoaded', function(event){cookieChoices.showCookieConsentBar('Ce site utilise des cookies pour vous offrir le meilleur service. En poursuivant votre navigation, vous acceptez l’utilisation des cookies.', 'J’accepte', 'En savoir plus', 'http://www.example.com/mentions-legales/');});</script>
 
-				<script src="assets/js/pageSites/js/classie.js"></script>
 				<script src="assets/js/pageSites/js/main.js"></script>
-
-			<!--presentation site-->		
+	
 			<script>
 			(function() {
 				new Slideshow( document.getElementById( 'slideshow-1' ) );
@@ -244,6 +221,7 @@
 					  });
 					});
 		</script>
+
 		<script>
 			(function() {
 				// detect if IE : from http://stackoverflow.com/a/16657946		
@@ -369,6 +347,468 @@
 			})();
 		</script>
 
+			<!--presentation site-->	
+			<script src="assets/js/tooltipLogin/anime.min.js"></script>
+			<script src="assets/js/tooltipLogin/charming.min.js"></script>
+			<script src="assets/js/tooltipLogin/main.js"></script>		
+			<script type="text/javascript" src="assets/js/presentation/jquery.js"></script>
+			<script type="text/javascript" src="assets/js/presentation/jquery-migrate.min.js"></script>
+			<script type="text/javascript" src="assets/js/presentation/modernizr.custom.79639.js"></script>
+			<script type="text/javascript" src="assets/js/presentation/jquery.prettyPhoto.js"></script>
+			<script type="text/javascript" src="assets/js/presentation/all-functions.js"></script>
+			<script type="text/javascript" src="assets/js/presentation/classList.js"></script>
+			<script type="text/javascript" src="assets/js/presentation/bespoke.js"></script>
+			<script type="text/javascript" src="assets/js/presentation/jquery.flexslider.js"></script>
+			<script>jQuery(document).ready(function ($){scrollinit("carousel", 3, 1, true, true, true, true, false);});</script>
+			<script>
+jQuery(document).ready(function($){
+	'use strict';
+	var themes,
+		selectedThemeIndex,
+		instructionsTimeout,
+		deck;
+	window.scrollinit = function(){
+		deck = bespoke.from('article');
+		initThemeSwitching();
+	};
+	scrollinit();
+	function initThemeSwitching() {
+		themes = [
+			'classic',
+			'cube',
+			'carousel',
+			'concave',
+			'coverflow',
+			'spiraltop',
+			'spiralbottom',
+			'classictilt'
+		];
+		selectedThemeIndex = 0;
+		if(window.lastslide !==''){
+			deck.slide(window.lastslide-1);
+		}else{
+			deck.slide(0);
+		}
+		if(window.openfirst !== 1){
+			deck.slide(0);
+			window.openfirst = 1
+		}
+		initInstructions();
+		initKeys();
+		initButtons();
+		initSlideGestures();
+		initClickInactive();
+		var whichtehem = "2";
+		//If browser doesn't support trasnforms3d swich scroll effect to classic
+		//==================================================
+		if(Modernizr.csstransforms3d === false){
+			$('body').addClass("classic");
+		}
+	}
+	//Display wellcome buble (use cookie to show only once
+	//==================================================
+	function initInstructions() {
+		if (isTouch()) {
+			$('body').addClass('forios');
+		}
+		function setCookie(c_name,value,exdays){
+			var exdate=new Date();
+			exdate.setDate(exdate.getDate() + exdays);
+			var c_value=escape(value) + ((exdays===null) ? "" : "; expires="+exdate.toUTCString());
+			document.cookie=c_name + "=" + c_value;
+		}	
+		function getCookie(c_name){
+			var c_value = document.cookie;
+			var c_start = c_value.indexOf(" " + c_name + "=");
+			if (c_start === -1){
+				c_start = c_value.indexOf(c_name + "=");
+			}
+			if (c_start === -1){
+				c_value = null;
+			}else{
+				c_start = c_value.indexOf("=", c_start) + 1;
+				var c_end = c_value.indexOf(";", c_start);
+				if (c_end === -1){
+					c_end = c_value.length;
+				}
+				c_value = unescape(c_value.substring(c_start,c_end));
+			}
+			return c_value;
+		}
+		function checkCookie(){
+			window.bopen = 2;
+			var bubleopen = Number(getCookie("storyline"));
+			if(bubleopen !== 1){
+				$(window).bind("load", function() {
+					window.bopen = 1;
+					$("#ss-container").unbind("mousewheel DOMMouseScroll");
+					instructionsTimeout=setTimeout(showInstructions, 2000);
+				});
+			}
+		}			checkCookie();
+		setCookie('storyline','1', 1);	
+			}
+	//Small bottom navigation
+	//==================================================
+	function initButtons() {
+		document.getElementById('enter-arrow').addEventListener('click', function(){
+			var storyId = $('.bespoke-active a.read-more-init').attr('href');
+			selectactive(storyId)
+		});
+		document.getElementById('back-arrow').addEventListener('click', function(){deck.slide(0)});
+		document.getElementById('next-arrow').addEventListener('click', gonext);
+		document.getElementById('prev-arrow').addEventListener('click', deck.prev);
+
+	}
+	function gonext(){
+		deck.next();
+		var n = $("section").length;
+		$('section').each(function(){
+			if( $(this).hasClass('bespoke-active') && Number($(this).attr('rel'))+1 ===n){
+								if(window.initajax() !== false){
+					document.removeEventListener('keydown', gokb);
+					document.getElementById('next-arrow').removeEventListener('click', gonext);
+				}
+							}
+		});
+	};
+	//Keyboard navigation
+	//==================================================
+	function initKeys(e) {
+		document.getElementById('next-arrow').removeEventListener('click', gonext);
+		
+		
+		if (/Firefox/.test(navigator.userAgent)) {
+			document.addEventListener('keydown', function(e) {
+				if (e.which >= 37 && e.which <= 40) {
+					e.preventDefault();
+				}
+			});
+		}
+		window.gokb = function(e) {
+			
+			if(window.bopen === 1){
+				hideInstructions();	
+				window.bopen = 2;
+			}
+			var key = e.which;
+			if(key == 13 ){
+				window.issearch = 0
+			 $("#searchform").submit(function(e){ window.issearch = 1})
+				var storyId = $('.bespoke-active a.read-more-init').attr('href');
+				selectactive(storyId);
+			}
+			if(key === 37){
+				deck.prev();
+			}
+			if(key === 32 || key === 39){
+				deck.next();
+			}
+			if(key === 38){
+				if(Modernizr.csstransforms3d !== false){
+				prevTheme();
+				}
+			}
+			if(key === 40){
+				if(Modernizr.csstransforms3d !== false){
+				nextTheme();
+				}
+			}
+			
+			var n = $("section").length;
+			$('section').each(function(){
+				if( $(this).hasClass('bespoke-active') && Number($(this).attr('rel'))+1 ===n){
+											if(window.initajax() !== false){
+							document.removeEventListener('keydown', gokb);
+						}
+										}
+				});
+			};
+		document.addEventListener('keydown', gokb);
+	}
+	//Animate post on read more click
+	//==================================================
+	function selectactive(storyId){
+		//alert(storyId)
+		var contentholder = document.getElementsByClassName("bespoke-active")[0];
+		var allholder = document.getElementsByClassName("bespoke-parent")[0];
+					allholder.style.opacity -= 0.1;
+			document.body.style.opacity -= 0.1;
+			move(contentholder)
+				.rotate(10)
+				.scale(6)
+				.duration('0.4s')
+				.end(function(){
+					if(window.issearch != 1){
+						window.open(storyId, '_self');
+					}
+				});	}
+	
+	function extractDelta(e) {
+		if (e.wheelDelta) {
+			return e.wheelDelta;
+		}
+		if (e.originalEvent.detail) {
+			return e.originalEvent.detail* -40;
+		}
+		if (e.originalEvent && e.originalEvent.wheelDelta) {
+			return e.originalEvent.wheelDelta;
+		}
+	}
+
+	//Navigation for touch devices
+	//==================================================
+	function initSlideGestures() {
+		var start = 0;
+		var main = document.getElementById('main'),
+			startPosition,
+			delta,
+			
+			singleTouch = function(fn, preventDefault) {
+				return function(e) {
+					if(e.touches.length === 1){
+						fn(e.touches[0].pageX);
+					}
+				};
+			},
+			touchstart = singleTouch(function(position) {
+				startPosition = position;
+				delta = 0;
+					start = 0;
+					main.addEventListener('touchend', touchend); 
+			}),
+
+			touchmove = singleTouch(function(position) {
+				delta = position - startPosition;
+			}, true),
+			
+			touchend = function() {		
+			if(jQuery(document).width() < 530){
+					if(jQuery(window).scrollTop() > jQuery(document).height() - jQuery(window).height()-80){
+												if(window.initajax() === false){
+							main.addEventListener('touchstart', touchstart);
+							main.addEventListener('touchmove', touchmove);
+							main.addEventListener('touchend', touchend);
+						}else{
+							main.removeEventListener('touchstart', touchstart);
+							main.removeEventListener('touchmove', touchmove);
+							main.removeEventListener('touchend', touchend);
+						}
+											}
+				}	
+				if (Math.abs(delta) < 50) {
+					return;
+				}
+				if(delta > 0){
+					deck.prev();
+				}else{
+					deck.next();
+				}
+				var n = $("section").length;
+						
+				$('section').each(function(){
+					
+					if( $(this).hasClass('bespoke-active') && Number($(this).attr('rel'))+1 ===n && jQuery(document).width() > 530){
+												if(window.initajax() === false){
+							main.addEventListener('touchstart', touchstart);
+							main.addEventListener('touchmove', touchmove);
+							main.addEventListener('touchend', touchend);
+						}else{
+							main.removeEventListener('touchstart', touchstart);
+							main.removeEventListener('touchmove', touchmove);
+							main.removeEventListener('touchend', touchend);
+						}
+											}
+				});
+				
+			};
+		window.remvoetuch = function(){
+			main.removeEventListener('touchstart', touchstart);
+			main.removeEventListener('touchmove', touchmove);
+			main.removeEventListener('touchend', touchend);
+		};
+		window.addtuch = function(){
+			main.addEventListener('touchstart', touchstart);
+			main.addEventListener('touchmove', touchmove);
+			main.addEventListener('touchend', touchend);
+		};
+		window.addtuch();
+	}
+	function selectTheme(index) {
+		var theme = themes[index];
+		var blackbody = 'blackbody';
+		document.body.className = theme  ;
+		selectedThemeIndex = index;
+	}
+
+	function nextTheme() {
+		offsetSelectedTheme(1);
+		if (window.bopen === 1){
+			hideInstructions();	
+			window.bopen = 2;
+		}
+	}
+	function prevTheme() {
+		offsetSelectedTheme(-1);
+		if (window.bopen === 1){
+			hideInstructions();	
+			window.bopen = 2;
+		}
+	}
+
+	function offsetSelectedTheme(n) {
+		selectTheme(modulo(selectedThemeIndex + n, themes.length));
+	}
+	//Show hide wellcome bubble
+	//==================================================
+	function showInstructions() {
+		$('section').addClass('addblur');
+		$('.addbg').addClass('addbgv');
+		$('.addbg').click(function() {
+			if(window.bopen === 1){
+				hideInstructions();	
+				window.bopen = 2;
+			}
+			
+			$(this).unbind("click");
+		});
+		document.querySelectorAll('header p')[0].className = 'visible animated fadeInUp';
+	}
+	function hideInstructions() {
+		window.gomouse();
+		$('section').removeClass('addblur');
+		$('.addbg').removeClass('addbgv');
+		clearTimeout(instructionsTimeout);
+		document.querySelectorAll('header p')[0].className = 'hidden';
+	}
+
+	function isTouch() {
+		return !!('ontouchstart' in window) || navigator.msMaxTouchPoints;
+	}
+
+	function modulo(num, n) {
+		return ((num % n) + n) % n;
+	}
+	//Mouse click navigation
+	//==================================================
+	function initClickInactive(){
+		$("section").unbind("click");
+		var main = document.getElementById('main');
+		var n = $("section").length;
+		window.lastslide = n;
+		$('section').click(function() {
+			var page = $(this).attr('rel');
+			var count = Number(page)+1;
+			if( $(this).hasClass('bespoke-inactive') ){
+				if(count === n){
+										if(window.initajax() === false){
+						document.addEventListener('keydown', gokb);
+						window.remvoetuch();
+						initSlideGestures();
+					}else{
+						document.removeEventListener('keydown', gokb);
+						window.remvoetuch();
+					}
+									}
+			deck.slide(page);
+			
+			}
+			
+		});
+	}
+                                 
+            window.startparallax = function(){
+				//jQuery('#articlehold').parallax();
+                
+                var $scene = $('#articlehold').parallax();
+               /// $scene.parallax('enable');
+               // $scene.parallax('disable');
+              //  $scene.parallax('updateLayers');
+				
+			}
+			setTimeout(window.startparallax,400);	
+	//Animate post on read more click
+	//==================================================
+	var contentholder = document.getElementsByClassName("bespoke-active");
+		var allholder = document.getElementsByClassName("bespoke-parent");
+	function animate(){
+		'use strict';
+		
+		$('a.read-more-init').click(function () {
+			
+			var storyId = $(this).attr('href');
+			selectactive(storyId);
+			return false;
+		});   
+		function selectactive(storyId){
+	
+			allholder[0].style.opacity -= 0.1;
+			document.body.style.opacity -= 0.1;
+			move(contentholder[0])
+				.rotate(10)
+				.scale(6)
+				.duration('0.4s')
+				.end(function(){
+					window.open(storyId, '_self');
+			});
+		}
+		
+		
+	} 		animate();
+		if(Modernizr.csstransforms3d !== false){
+		var contentholder2 = document.getElementsByClassName("go-anim");
+		if(contentholder2.length > 0){
+			for(var i = 0, j=contentholder2.length; i<j; i++){
+				contentholder2[i].addEventListener("mouseover", function(){
+					var holdertoanimate = this.getElementsByClassName("container-border")[0];	
+					var ribbon = this.getElementsByClassName("ribbon")[0];	
+					
+					if(holdertoanimate){						   
+						move(this)
+							.set('margin-top', -20)
+							.duration('0.7s')
+							.end();
+						if(ribbon){
+							move(ribbon)
+								.set('margin-top', -15)
+								.duration('0.7s')
+								.end();
+						}
+					}else{					   
+						move(this)
+							.set('margin-top', -20)
+							.duration('0.7s')
+							.end();
+					}
+				});
+				contentholder2[i].addEventListener("mouseout", function(){
+					var holdertoanimate = this.getElementsByClassName("container-border")[0];
+					var ribbon = this.getElementsByClassName("ribbon")[0];	
+					if(holdertoanimate){						   
+						 move(this)
+							.set('margin-top', 0)
+							.duration('0.7s')
+							.end();
+						if(ribbon){
+							move(ribbon)
+								.set('margin-top', -0)
+								.duration('0.7s')
+								.end();
+						}
+					}else{
+						move(this)
+							.set('margin-top', 0)
+							.duration('0.7s')
+							.end();
+					}
+				});
+			}
+		}
+	}
+	
+});
+</script>
+	
 </body>
 			
 </html>

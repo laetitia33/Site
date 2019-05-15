@@ -17,7 +17,6 @@
 .tooltip__base {
 	position: absolute;
 	bottom: 1.2em;
-	z-index:-3;
 	left: 50%;
 	margin-left: -150px;
 	width: 300px;
@@ -78,6 +77,7 @@
 /* Dori */
 .tooltip--dori .tooltip__base {
 	bottom: -0.5em;
+	z-index:9999;
 }
 
 .tooltip--dori .tooltip__content {

@@ -7,7 +7,8 @@
   padding:0;
   left: 10px;
   top:-30%;
-  bottom:0;
+
+
 
 }
 
@@ -74,7 +75,6 @@
     transform: translateY(-2000px);
   }
 }
-
 
 
 /*page*/
@@ -193,7 +193,7 @@ a:hover, a:focus {
 }
 
 .codrops-demos {
-  padding: 0 0 1em;
+  padding: 0 0 2.5em;
   position: relative;
 }
 
@@ -947,134 +947,17 @@ button.trigger span::before {
   opacity: 1;
 }
 
-/**presentation sites*/
 h2#réalisés{
+  text-align: center;
   color:white;
-  text-align:center;
-  margin-top:12%;
-}
 
-div#carousel { 
-  perspective: 1700px; 
-  padding-top: 5%; 
-  font-size:0; 
-}
-figure#spinner { 
-  transform-style: preserve-3d; 
-  height: 300px; 
-  transform-origin: 50% 50% -400px; 
-  transition: 1s; 
-} 
-figure#spinner figure { 
-  width: 40%; 
-  max-width: 500px; 
-  position: absolute; 
-  left: 30%;
-  transform-origin: 50% 50% -400px;
-  outline:1px solid transparent; 
-  overflow: hidden;
-  transition: 1s;
-}
-figure#spinner figure.focus { 
-  width: 46%; 
-  left: 37%; 
-  margin-top: -3rem; 
-} 
-figure#spinner figure img { 
-  width: 100%; 
-} 
-figcaption { 
-  position: absolute; 
-  top: 100%; 
-  width: 100%; 
-  padding: .3rem; 
-  z-index: 2; 
-  font-size: 1.1rem; 
-  background: rgba(0, 0, 0, 0); 
-  transition: .6s; 
-}
-figure#spinner figure.current:hover figcaption,
-figure#spinner figure.current.caption figcaption
-{ 
-  top: 90%; 
-  background: rgba(0, 0, 0, 0.5); 
-  bottom: 0; 
-} 
-div#carousel ~ span { 
-  margin: 5%; 
-  display: inline-block; 
-  text-decoration: none; 
-  font-style:bold; 
-  transition: 0.6s color; 
-  position: relative; 
-  margin-top: -6rem; 
-  border-bottom: none; 
-  line-height: 0; 
-}
-div#carousel ~ span:hover { 
-  color: #888; 
-  cursor: pointer; 
-}
-
-.carouselP{
-  width: 90%;
-  margin:auto;
-  font-size:0.75em;
-  margin-bottom:2%;
-  margin-top:2%;
-  text-align:center;
-}
-.ss-icon{
-  -moz-box-shadow: 3px 4px 0px 0px #899599;
-  -webkit-box-shadow: 3px 4px 0px 0px #899599;
-  box-shadow: 3px 4px 0px 0px #899599;
-  background:-webkit-gradient(linear, left top, left bottom, color-stop(0.05, #ededed), color-stop(1, #bab1ba));
-  background:-moz-linear-gradient(top, #ededed 5%, #bab1ba 100%);
-  background:-webkit-linear-gradient(top, #ededed 5%, #bab1ba 100%);
-  background:-o-linear-gradient(top, #ededed 5%, #bab1ba 100%);
-  background:-ms-linear-gradient(top, #ededed 5%, #bab1ba 100%);
-  background:linear-gradient(to bottom, #ededed 5%, #bab1ba 100%);
-  filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#ededed', endColorstr='#bab1ba',GradientType=0);
-  background-color:#ededed;
-  -moz-border-radius:15px;
-  -webkit-border-radius:15px;
-  border-radius:15px;
-  border:1px solid #d6bcd6;
-  display:inline-block;
-  cursor:pointer;
-  color:#3a8a9e;
-  font-family:Arial;
-  font-size:17px;
-  padding:7px 25px;
-  text-decoration:none;
-  text-shadow:0px 1px 0px #e1e2ed;
-  padding:1em;
-
-}
-.ss-icon:hover {
-  background:-webkit-gradient(linear, left top, left bottom, color-stop(0.05, #bab1ba), color-stop(1, #ededed));
-  background:-moz-linear-gradient(top, #bab1ba 5%, #ededed 100%);
-  background:-webkit-linear-gradient(top, #bab1ba 5%, #ededed 100%);
-  background:-o-linear-gradient(top, #bab1ba 5%, #ededed 100%);
-  background:-ms-linear-gradient(top, #bab1ba 5%, #ededed 100%);
-  background:linear-gradient(to bottom, #bab1ba 5%, #ededed 100%);
-  filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#bab1ba', endColorstr='#ededed',GradientType=0);
-  background-color:#bab1ba;
-  -moz-box-shadow: 1px 2px 0px 0px #899599;
-  -webkit-box-shadow: 1px 2px 0px 0px #899599;
-  box-shadow: 1px 2px 0px 0px #899599;
-  color:black;
-}
-.ss-icon:active {
-  position:relative;
-  top:1px;
 }
 
 @media screen and (max-width:800px) {
 
   .logos{
 
-      width:100%;
+      width:90%;
     }
   /* div footer */
    

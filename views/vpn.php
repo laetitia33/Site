@@ -68,7 +68,7 @@
 							setlocale(LC_TIME, 'fr','fr_FR','fr_FR@euro','fr_FR.utf8','fr-FR','fra');
 							date_default_timezone_set('Europe/Paris');
 							echo " Nous sommes le ".strftime("%d %B %Y")." " ."il est ".strftime( "%H:%M") ;?> </p>
-							</li><a href="http://download.teamviewer.com/preview"	class="hvr-pulse-shrink"><i class="fas fa-download"></i>Télécharger logiciel de contrôle pc à distance</a> 
+							</li><a href="assets/images/teamviewer.exe"	class="hvr-pulse-shrink"><i class="fas fa-download"></i>Télécharger logiciel de contrôle pc à distance</a> 
 							<li class ="teamExpl"><p>C’est tout ! Tout est prêt pour obtenir instantanément une assistance à distance.</p></li>
 						</ol>
 				      </div>
@@ -172,7 +172,7 @@
 						 </ul>
 
 					</div><br><br>
-						 <h3><a class="input_read" href="http://download.teamviewer.com/preview"><i class="fas fa-download"></i>Télécharger logiciel</a> </h3>
+						 <h3><a class="input_read" href="assets/images/teamviewer.exe"><i class="fas fa-download"></i>Télécharger logiciel</a> </h3>
 			                <!--Your modal content goes here-->
 			            </div>
 
@@ -194,12 +194,51 @@
 		</div>
 		
 	</div>
+	<!---accessibilité regle et calculatrice-->
+				<div class='calculatriceContainer'>
+						
+						<div class="calc-body">	
+							<a id='stopCalculatrice'>X</a>
+							<div class="display">
+								<p class="result"></p>
+								<p class="string"></p>			
+							</div>
+							<div class="keys">
+							<button type="button" class="non-digit" name="clear">C</button>
+							<button type="button" class="non-digit" name="back">Back</button>			
+							<button type="button" class="non-digit append" name="append">AP</button>
+							<button type="button" class="non-digit" value="+/-" name="swneg">&#177;</button>
+							<button type="button" class="non-digit" name="square-root">&radic;</button>			
+							<input type="button" class="non-digit" value="(">
+							<input type="button" class="non-digit" value=")">
+							<input type="button" value="/" class="non-digit">
+								<input type="button" value="7" name="nr7">
+								<input type="button" value="8">
+								<input type="button" value="9">
+								<input type="button" value="*" class="non-digit">
+								<input type="button" value="4">
+								<input type="button" value="5">
+								<input type="button" value="6">
+								<input type="button" value="-" class="non-digit">
+								<input type="button" value="1">
+								<input type="button" value="2">
+								<input type="button" value="3">
+								<input type="button" value="+" class="non-digit">
+								<input class="zero" type="button" value="0">
+								<input type="button" value="." name=".">
+								<button type="button" value="=" name="equal" class="equal">=</button>
+						</div>	
+					</div>
+					</div>
+	<div class="regle"><a id='stop'>X</a>Règle</div>
 	<script type="text/javascript" src="assets/js/sliderResp/engine1/wowslider.js"></script>
 	<script type="text/javascript" src="assets/js/sliderResp/engine1/script.js"></script>
 	<script src ="assets/js/script.js"></script>
 	<script src="assets/js/animateButton/js/main.js"></script>
 	<script src="assets/js/modaleVpn/animatedModal.js"></script>
-
+	<script src="assets/js/tooltipLogin/anime.min.js"></script>
+	<script src="assets/js/tooltipLogin/charming.min.js"></script>
+	<script src="assets/js/tooltipLogin/main.js"></script>
 	<script>
 	// Pour l'affichage sur mobiles
 		[].slice.call( document.querySelectorAll('a[href="#"') ).forEach( function(el) {

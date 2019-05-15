@@ -29,6 +29,14 @@ if(isset($_SESSION['id']) && $_SESSION['id_group'] == 1):
 								<li><a class="btn" href="index.php?action=gold"><i class="fas fa-book-open"></i>  Livre d'or</a></li>
 								<li><a class="btn" href="index.php?action=email"><i class="fas fa-envelope"></i> boite mails</a></li>
 								<li><a class ="btn deco" href="index.php?action=logout"><i class="fas fa-sign-out-alt"></i> Déconnexion</a></li>
+								<form ACTION="http://www.google.com/search" target="_blank" METHOD="GET"> 
+									<div class="containerLoupe">
+						  				<div class="loupe">
+						    					<input type="text" name="q" class="loupe__input  size="25" maxlength="255" value="" /> 
+						    			<div class='google'><input  type="checkbox" name="sitesearch" value="lumiti-info.com" checked  /> sur info-lumiti.com</div>				
+						    		<div class="loupe__button"> 						
+						  		</div>    			
+								</form> 
 						</ul>	
 				</div><!-- /dummy -->
 				</div>
@@ -57,7 +65,7 @@ elseif(isset($_SESSION['id']) && $_SESSION['id_group'] == 2)
 				<div id="dummy" class="dummy navigation_mobile">
 				<ul class="navigation_mobile">
 					<li><div class ='font-effect-3d-float'>
-						Laetitia Bernardi 
+						info-lumiti.com 
 					</div></li>
 					<li><div class ='tarifs'>
 					<a href="assets/images/tarifs.jpg" download><i class="fas fa-download"></i> Télécharger tarifs </a>
@@ -70,6 +78,14 @@ elseif(isset($_SESSION['id']) && $_SESSION['id_group'] == 2)
 					<li><a class="btn" href="index.php?action=email"><i class="far fa-envelope"></i>  Contactez-nous</a></li>
 					<li><a class="btn" href="index.php?action=gold"><i class="fas fa-book-open"></i>  Livre d'or</a></li>
 					<li><a class ="btn deco" href="index.php?action=logout"><i class="fas fa-sign-out-alt"></i> Déconnexion</a></li>
+						<form ACTION="http://www.google.com/search" target="_blank" METHOD="GET"> 
+					<div class="containerLoupe">
+					  <div class="loupe">
+					    <input type="text" name="q" class="loupe__input  size="25" maxlength="255" value="" /> 
+					    	<div class='google'><input  type="checkbox" name="sitesearch" value="lumiti-info.com" checked  /> sur info-lumiti.com</div>				
+					    <div class="loupe__button"> 						
+					  </div>    			
+				</form> 
 				</ul>
 				</div><!-- /dummy -->
 				</div>
@@ -97,7 +113,7 @@ else
 
 				<ul class="navigation_mobile">
 				<li><div class ='font-effect-3d-float'>
-					Laetitia Bernardi 
+					info-lumiti.com 
 				</div></li>
 				<li><div class ='tarifs'>
 						<a href="assets/images/tarifs.jpg" download><i class="fas fa-download"></i> Télécharger tarifs </a>
@@ -109,6 +125,14 @@ else
 						<li><a class="btn" href="index.php?action=login"><i class="fas fa-sign-in-alt"></i>  Inscription/connexion</a></li>
 						<li><a class="btn" href="index.php?action=gold"><i class="fas fa-book-open"></i>  Livre d'or</a></li>
 						<li><a class="btn" href="index.php?action=email"><i class="fas fa-envelope"></i>  Contactez-nous</a></li>
+					<form ACTION="http://www.google.com/search" target="_blank" METHOD="GET"> 
+					<div class="containerLoupe">
+					  <div class="loupe">
+					    <input type="text" name="q" class="loupe__input  size="25" maxlength="255" value="" /> 
+					    	<div class='google'><input  type="checkbox" name="sitesearch" value="lumiti-info.com" checked  /> sur info-lumiti.com</div>				
+					    <div class="loupe__button"> 						
+					  </div>    			
+				</form> 
 				</ul>
 				</div><!-- /dummy -->
 

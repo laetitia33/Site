@@ -12,33 +12,34 @@
 		<?php
 		
 		else
+	
 		: ?>
 
-<div id="wowslider-container1">
-
-<div class="ws_images">
-	 	<a href='#welcome' class='hvr-radial-out'>En savoir plus</a>
-	<ul>
-		<li><img src="assets/js/sliderAccueil/data1/images/image4.jpg" alt="Vous avez un problème en informatique ? ...," title="Vous avez un problème en informatique ? ...," id="wows1_0"/></li>
-		<li><img src="assets/js/sliderAccueil/data1/images/image5.jpg" alt="..vous souhaitez créer un site ? , ..." title=" ..vous souhaitez créer un site ? , ..." id="wows1_1"/></li>
-		<li><img src="assets/js/sliderAccueil/data1/images/image10.jpg" alt=".. Apprendre les bases de l'informatique ?.. " title=" .. Apprendre les bases de l'informatique ?.. " id="wows1_2"/></li>
-		<li><img src="assets/js/sliderAccueil/data1/images/image19.jpg" alt="..Réaliser un projet personnel ? " title="..Réaliser un projet personnel ? " id="wows1_4"/></li>
-		<li><img src="assets/js/sliderAccueil/data1/images/image16.jpg" alt="jquery image carousel" title="dans une ambiance sereine et décontractée,  à domicile" id="wows1_3"/></a></li>
-		
-	</ul>
-</div>
-	<div class="ws_bullets"><div>
-		<a href="#" title="Vous avez un problème en informatique ? ...,"><span><img src="assets/js/sliderAccueil/data1/tooltips/image4.jpg" alt="Vous avez un problème en informatique ? ...,"/>1</span></a>
-		<a href="#" title="..vous souhaitez créer un site ? , ..."><span><img src="assets/js/sliderAccueil/data1/tooltips/image5.jpg" alt="..vous souhaitez créer un site ? , ..."/>2</span></a>
-		<a href="#" title=".. Apprendre les bases de l'informatique ?.. "><span><img src="assets/js/sliderAccueil/data1/tooltips/image10.jpg" alt=".. Apprendre les bases de l'informatique ?.. "/>3</span></a>
-		<a href="#" title="..Réaliser un projet personnel ?  "><span><img src="assets/js/sliderAccueil/data1/tooltips/image19.jpg" alt="..Réaliser un projet personnel ? "/>5</span></a>
-		<a href="#" title="dans une ambiance sereine et décontractée,  à domicile"><span><img src="assets/js/sliderAccueil/data1/tooltips/image16.jpg" alt="dans une ambiance sereine et décontractée,  à domicile"/>4</span></a>
 	
-	</div>
-</div>
 
-<div class="ws_shadow"></div>
-</div>	
+
+<!-- Start WOWSlider.com BODY section --> <!-- add to the <body> of your page -->
+	<div id="wowslider-container1">
+	<a href='#welcome' class='hvr-radial-out'>Entrez</a>
+	<div class="ws_images"><ul>
+
+		<li><img src="assets/js/sliderAccueil/data1/images/image4.jpg" alt="Vous avez un problème informatique?..," title="Vous avez un problème informatique?..," id="wows1_0"/></li>
+		<li><img src="assets/js/sliderAccueil/data1/images/image5.jpg" alt="..vous souhaitez creer un site?.." title="..vous souhaitez creer un site?.." id="wows1_1"/></li>
+		<li><img src="assets/js/sliderAccueil/data1/images//image10.jpg" alt="..apprendre les bases de l'informatique?.." title="..apprendre les bases de l'informatique?.." id="wows1_2"/></li>
+		<li><img src="assets/js/sliderAccueil/data1/images/image11.jpg" alt="..Apprendre lesbases de l'informatique.. " title="..Apprendre lesbases de l'informatique.. " id="wows1_3"/></li>
+		<li><img src="assets/js/sliderAccueil/data1/images/image16.jpg" alt="image slider" title="dans une ambiance sereine et décontractée à votre domicile.." id="wows1_4"/></li>
+		<li><img src="assets/js/sliderAccueil/data1/images/image19.jpg" alt="..réaliser un projet personnel?" title="..réaliser un projet personnel?" id="wows1_5"/></li>
+	</ul></div>
+	<div class="ws_bullets"><div>
+		<a href="#" title="Vous avez un problème informatique?..,"><span><img src="assets/js/sliderAccueil/data1/tooltips/image4.jpg" alt="Vous avez un problème informatique?..,"/>1</span></a>
+		<a href="#" title="..vous souhaitez creer un site?.."><span><img src="assets/js/sliderAccueil/data1/tooltips/image5.jpg" alt="..vous souhaitez creer un site?.."/>2</span></a>
+		<a href="#" title="..apprendre les bases de l'informatique?.."><span><img src="assets/js/sliderAccueil/data1/tooltips/image10.jpg" alt="..apprendre les bases de l'informatique?.."/>3</span></a>
+		<a href="#" title="..Apprendre lesbases de l'informatique.. "><span><img src="assets/js/sliderAccueil/data1/tooltips/image11.jpg" alt="..Apprendre lesbases de l'informatique.. "/>4</span></a>
+		<a href="#" title="dans une ambiance sereine et décontractée à votre domicile.."><span><img src="assets/js/sliderAccueil/data1/tooltips/image16.jpg" alt="dans une ambiance sereine et décontractée à votre domicile.."/>5</span></a>
+		<a href="#" title="..réaliser un projet personnel?"><span><img src="assets/js/sliderAccueil/data1/tooltips/image19.jpg" alt="..réaliser un projet personnel?"/>6</span></a>
+	</div></div><div class="ws_script" style="position:absolute;left:-99%"></div>
+	<div class="ws_shadow"></div>
+	</div>	
 	  <?php
          endif;
          ?>
@@ -106,9 +107,7 @@
 	while ($data = $posts->fetch()):?>
 		
 			<div class="list-group">
-			
-        		<a href="javascript:void(0)" class="list-group-item active"></a>
-      
+			      
 						<div class="service"><?php echo "<img alt ='images des services proposés' src= '".$data['image']."' />";?>								
 						</div>
 				
@@ -155,10 +154,7 @@
 				<div class="news" >	
 					<p><?= htmlspecialchars_decode(nl2br(html_entity_decode($data['content'])));?>	
 				</div>
-
-		
-		
-
+	
 		</div>
 
 			</div> <!-- cd-modal-content -->
@@ -166,8 +162,7 @@
 
 		<a href="#0" class="cd-modal-close">Close</a>
 	</section> <!-- .cd-section -->
-
-	
+		
 
 			<div class="coms">
 
@@ -187,9 +182,7 @@
 </div>
 	
 </div>
-      <ul class="pagination">
-        <li id="previous-page"><a href="javascript:void(1)" aria-label=Previous><span aria-hidden=true>Précédente &laquo;</span></a></li>
-      </ul>
+
 		<?php
 	
 		$posts->closeCursor();

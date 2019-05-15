@@ -92,8 +92,7 @@ class PostManager extends Manager
     {
         $this->_date_creation= $date_creation;
     }
-    /********************************************* GETTERS/ SETTERS *************************************************/
-
+    /********************************************* GETTERS/ SETTERS ************************************************/
 
 //récupère le dernier service
     public function getLastPost()
@@ -114,7 +113,6 @@ class PostManager extends Manager
 
         return $req;
     }
-
 
 //nombre le nombre de services
     public function countPosts()

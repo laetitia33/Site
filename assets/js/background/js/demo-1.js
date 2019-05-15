@@ -22,10 +22,10 @@
 
             // create points
         points = [];
-        for(var x = 0; x < width; x = x + width/20) {
-            for(var y = 0; y < height; y = y + height/20) {
-                var px = x + Math.random()*width/20;
-                var py = y + Math.random()*height/20;
+        for(var x = 0; x < width; x = x + width/10) {
+            for(var y = 0; y < height; y = y + height/10) {
+                var px = x + Math.random()*width/10;
+                var py = y + Math.random()*height/10;
                 var p = {x: px, originX: px, y: py, originY: py };
                 points.push(p);
             }
@@ -69,13 +69,13 @@
 
     // Event handling
     // 
-   /* function addListeners() {
+    function addListeners() {
         if(!('ontouchstart' in window)) {
             window.addEventListener('mousemove', mouseMove);
         }
         window.addEventListener('scroll', scrollCheck);
         window.addEventListener('resize', resize);
-    }*/
+    }
 
     function mouseMove(e) {
         var posx = posy = 0;

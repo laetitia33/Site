@@ -6,13 +6,12 @@
 
 		<meta name="description" content="Assitance informatique,Conseil,Conception de sites,Formation !">
 		<meta name="viewport" content="width=device-width initial-scale=1">
-		<meta property="og:url" content="https://cinecinemadeparis.000webhostapp.com"/>
+		<meta property="og:url" content="info.lumiti.com"/>
 		<meta property="og:title" content="Assistance informatique"/>
 		<meta property="og:type" content="website">
 		<meta property="og:image" content="assets/images/icone.png">
 		<meta name="Language" CONTENT="fr" />
-		
-		<!--- police -->
+		<meta name="google-site-verification" content="GU5kihBubOiyqQ7cZsAjGcJndAFBMjMqgMF1sVgqI7g" />		<!--- police -->
 		<link href='http://fonts.googleapis.com/css?family=Questrial|Droid+Sans|Alice|Rancho|Roboto|Niconne|Marck+Script' rel='stylesheet' type='text/css'>
 		<!--type neon nom entreprise-->
 		<link href="https://uvc.one/upload/iblock/5b2/5b2a90b62e7e14ca24ec45683f4a7961.css" rel="stylesheet">
@@ -66,8 +65,6 @@
 		<!--fenetre de confirmation-->
 		<link data-require="sweet-alert@*" data-semver="0.4.2" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/1.1.3/sweetalert.css" />
 		<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
-		
-
 
 		<!--tooltip-->
 		<link rel="stylesheet" type="text/css" href="assets/js/tooltipLogin/component.css" />
@@ -83,9 +80,6 @@
 
 		<!--modale vpn-->
 		<link rel="stylesheet" href="assets/js/modaleVpn/animate.min.css">
-
-		<!--livre d'or pages-->
-
 
 
 		<title><?= isset($title) ? $title : 'Assistance informatique';?></title>

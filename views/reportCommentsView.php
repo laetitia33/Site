@@ -30,7 +30,7 @@
 
       <div class="page1">
 
-
+<!--liste des commentaires signalés-->
       <?php
       while ($comment = $reportComments->fetch()):
       ?>

@@ -21,7 +21,8 @@ class CommentController
         }
         else{
             
-            header('Location: index.php?action=gold#ancrecom');
+            echo '<script>document.location.href="index.php?action=gold#ancrecom";</script>';                 
+
         }
     }
 // Signaler un commentaire
@@ -29,6 +30,7 @@ class CommentController
     {         
         $reportComment = $this->_comment->reportComment($_GET['id']);//signale un commentaire grace à son id
                        
-        header('Location: index.php?action=gold'.'&commentReport');
+        echo '<script>document.location.href=" index.php?action=gold'.'&commentReport";</script>';                 
+
     }
 }

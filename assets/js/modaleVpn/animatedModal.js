@@ -1,3 +1,4 @@
+
 /*=========================================
  * animatedModal.js: Version 1.0
  * author: João Pereira

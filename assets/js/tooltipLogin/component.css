@@ -16,7 +16,7 @@
 
 .tooltip__base {
 	position: absolute;
-	bottom: 1.2em;
+	bottom: 2.2em;
 	left: 50%;
 	margin-left: -150px;
 	width: 300px;
@@ -79,6 +79,7 @@
 	bottom: -0.5em;
 	z-index:9999;
 }
+
 
 .tooltip--dori .tooltip__content {
 	margin: 0 0 1em;
@@ -177,8 +178,9 @@
 
 /* Hador */
 .tooltip--hador .tooltip__base {
-	bottom: 2.25em;
-	margin-left: -115px;
+	bottom: 1.25em;
+	margin-left: -195px;
+
 }
 
 .path-hador-1 {

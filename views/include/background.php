@@ -2,8 +2,8 @@
 <?php
 
     ?>
-<svg class ='svg1'width="800px" height="800px" viewBox="0 0 800 800" version="1.1">
-  <g id="paths" class="path" stroke="#FFAE0C" stroke-width="2" fill="none" fill-rule="evenodd" stroke-linecap="round" stroke-linejoin="round" fill="none" stroke-opacity="1" stroke-dasharray="30,150" stroke-dashoffset="2000">
+<svg class ='svg1' width="800px" height="800px" viewBox="0 0 800 800" version="1.1">
+  <g id="paths" class="path" stroke="#FFAE0C" stroke-width="2" fill="none" fill-rule="evenodd" stroke-linecap="round" stroke-linejoin="round"  stroke-opacity="1" stroke-dasharray="30,150" stroke-dashoffset="2000">
     <g id="left" transform="translate(461.000000, 416.000000)">
       <polyline points="18 0 27 0 55 28 95 28 115 48 127 48"></polyline>
       <polyline points="18 23 27 23 47 43 86 43 107 64 127 64"></polyline>
@@ -11,7 +11,7 @@
       <polyline points="72 92 98 92 110 80 127 80"></polyline>
       <polyline points="84 80 99 80 107 72 127 72"></polyline>
     </g>
-    <g id="bottom" transform="translate(596.000000, 504.000000)">
+    <g class="bottom" transform="translate(596.000000, 504.000000)">
       <polyline points="4.02077033 67.0000542 4.02077033 63.0208243 12.0415946 55 12.0415946 40.0415946 0 28 0 -5.68434189e-14"></polyline>
       <polyline points="20 67 20 36 8 24 8 0"></polyline>
       <polyline points="27 59 27 31 16 20 16 0"></polyline>
@@ -19,7 +19,7 @@
       <polyline points="48 56 48 48 44 44 44 23 32 11 32 0"></polyline>
     </g>
   </g>
-  <g id="paths-2" class="path-2" stroke="#FFAE0C" stroke-width="3" fill="none" fill-rule="evenodd" stroke-linecap="round" stroke-linejoin="round" fill="none" stroke-opacity="1" stroke-dasharray="50,150" stroke-dashoffset="2000"
+  <g id="paths-2" class="path-2" stroke="#FFAE0C" stroke-width="3" fill="none" fill-rule="evenodd" stroke-linecap="round" stroke-linejoin="round"  stroke-opacity="1" stroke-dasharray="50,150" stroke-dashoffset="2000">
     <g id="right" transform="translate(620.000000, 427.000000)">
       <polyline points="16 69 28 69 44 85 52 85 56 81 68 81"></polyline>
       <polyline points="16 61 100 61 104 65 111 65"></polyline>
@@ -30,22 +30,22 @@
       <polyline points="0 28 0 16 16 0 22 0"></polyline>
     </g>
   </g>
-  <g id="paths-bg" stroke="#FFAE0C" stroke-width="1.5" fill="none" fill-rule="evenodd" stroke-linecap="round" stroke-linejoin="round">
-    <g id="left" transform="translate(461.000000, 416.000000)">
+  <g class="paths-bg" stroke="#FFAE0C" stroke-width="1.5" fill="none" fill-rule="evenodd" stroke-linecap="round" stroke-linejoin="round">
+    <g class="left" transform="translate(461.000000, 416.000000)">
       <polyline points="18 0 27 0 55 28 95 28 115 48 127 48"></polyline>
       <polyline points="18 23 27 23 47 43 86 43 107 64 127 64"></polyline>
       <polyline points="-8.03677904e-06 10.9791757 26.9791757 10.9791757 51 35 90 35 111 56 127 56"></polyline>
       <polyline points="72 92 98 92 110 80 127 80"></polyline>
       <polyline points="84 80 99 80 107 72 127 72"></polyline>
     </g>
-    <g id="bottom" transform="translate(596.000000, 504.000000)">
+    <g class="bottom" transform="translate(596.000000, 504.000000)">
       <polyline points="4.02077033 67.0000542 4.02077033 63.0208243 12.0415946 55 12.0415946 40.0415946 0 28 0 -5.68434189e-14"></polyline>
       <polyline points="20 67 20 36 8 24 8 0"></polyline>
       <polyline points="27 59 27 31 16 20 16 0"></polyline>
       <polyline points="36 67 36 28 24 16 24 0"></polyline>
       <polyline points="48 56 48 48 44 44 44 23 32 11 32 0"></polyline>
     </g>
-    <g id="right" transform="translate(620.000000, 427.000000)">
+    <g class="right" transform="translate(620.000000, 427.000000)">
       <polyline points="16 69 28 69 44 85 52 85 56 81 68 81"></polyline>
       <polyline points="16 61 100 61 104 65 111 65"></polyline>
       <polyline points="16 53 120 53 132.041595 65.0415946 132.041595 72.0001243"></polyline>

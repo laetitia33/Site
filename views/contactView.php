@@ -1,3 +1,4 @@
+    
 
 
 <?php $title = 'Contact';?>
@@ -7,13 +8,13 @@
 <html lang="fr" class='template'>
   <?php include_once 'views/include/head.php';?>
 
-<!------emails à envoyer coté client ou emails reçus coté serveur ---->
+<!--emails à envoyer coté client ou emails reçus coté serveur -->
      
 
   <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
   <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css">
  <body> 
-  <div id="blocpage">
+
 
   <header>
       
@@ -21,7 +22,6 @@
       <?php include_once 'views/include/menu_responsive.php'; ?>
   </header>
       <?php include_once 'views/include/background3.php'; ?>
-
     <div class="container">
       <h1>Boite de réception</h1>
 
@@ -158,7 +158,8 @@ Formation à domicile.</textarea>
             </div>  
           </div>
           </div>
-        <div class="regle"><a id='stop'>X</a>Règle</div>
+      <div class="regle"><a id='stop'>X</a>Règle</div>
+    </div>
     <script src="//code.jquery.com/jquery-1.11.3.min.js"></script>
     <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
     <script src="assets/js/gmail.js"></script>
@@ -168,7 +169,8 @@ Formation à domicile.</textarea>
     <script src="assets/js/tooltipLogin/anime.min.js"></script>
     <script src="assets/js/tooltipLogin/charming.min.js"></script>
     <script src="assets/js/tooltipLogin/main.js"></script>
-
+     <script src="assets/js/cookiechoices.js"></script>        
+    <script src="www.info-lumiti.com/cookiechoices.js"></script><script>document.addEventListener('DOMContentLoaded', function(event){cookieChoices.showCookieConsentBar('Ce site utilise des cookies pour vous offrir le meilleur service. En poursuivant votre navigation, vous acceptez l’utilisation des cookies.', 'J’accepte', 'En savoir plus', 'www.info-lumiti.com');});</script>
 </body>
 </html>
 
@@ -178,11 +180,11 @@ Formation à domicile.</textarea>
   <?php include_once 'views/include/head.php';?>
 
 
-<!------emails à envoyer coté client ou emails reçus coté serveur ---->
+<!--emails à envoyer coté client ou emails reçus coté serveur -->
      
 
- <body> 
-  <div id="blocpage">
+<body> 
+
 
   <header>
       
@@ -196,20 +198,10 @@ Formation à domicile.</textarea>
   
 
 <form class ="form"  method="post" action="index.php?action=addMail" > 
-<?php
-
-     if($_GET['action'] == 'addMail'){echo ("<script type='text/javascript' > 
- 
-            swal({
-              title: 'Envoyé!',
-              text: 'Votre message a bien été envoyé!',
-              icon: 'success'
-            })</script>");}
-                    
-     ?>
 
     <fieldset id="contact">
-     <legend><h2 class="pageList"><i class="fas fa-at"></i> Contact </h2><p>* Tous les champs sont requis</p></legend>
+     <legend><span><i class="fas fa-at"></i> Contact </span></legend>
+     <p>* Tous les champs sont requis</p>
                 <div>
                     <label for="name"></label><br />
                     <input type="text"  id="name" name="name"  placeholder=" &#xf007; Entrez votre nom" class="inputbasic" value="" required/>
@@ -234,7 +226,7 @@ Formation à domicile.</textarea>
     <div class="g-recaptcha" data-theme="light" data-sitekey="6Leae5kUAAAAANbvHn1qo9K0BZ61pXtAOn1CwN7f" ></div>
 
 
-             <input type="submit" class="submit" value ="Envoyez votre message &#xf1d8" OnClick="return envoi();"/>
+             <input type="submit" class="submit" id='submit' value ="Envoyez votre message &#xf1d8;" />
             
             
     </fieldset>
@@ -284,17 +276,17 @@ Formation à domicile.</textarea>
             </div>  
           </div>
           </div>
-        <div class="regle"><a id='stop'>X</a>Règle</div>
+        <div class="regle"><a id='stop1'>X</a>Règle</div>
         <script src ="assets/js/script.js"></script>
         <script src ="assets/js/tinymce/placeholder.js"></script>
         <script src ="assets/js/tinymce/placeholder.min.js"></script>
         <script src="assets/js/pagination.js"></script>
         <script src="assets/js/form.js"></script>
-        <script type="text/javascript" src="assets/js/sliderAccueil/engine1/wowslider.js"></script>
-        <script type="text/javascript" src="assets/js/sliderAccueil/engine1/script.js"></script>
-        <script src="assets/js/cookiechoices.js"></script>
+        <script src="assets/js/sliderAccueil/engine1/wowslider.js"></script>
+        <script src="assets/js/sliderAccueil/engine1/script.js"></script>
         <script src="assets/js/classie.js"></script>
-        <script>document.addEventListener('DOMContentLoaded', function(event){cookieChoices.showCookieConsentBar('Ce site utilise des cookies pour vous offrir le meilleur service. En poursuivant votre navigation, vous acceptez l’utilisation des cookies.', 'J’accepte', 'En savoir plus', 'http://www.example.com/mentions-legales/');});</script>
+        <script src="assets/js/cookiechoices.js"></script>        
+        <script src="www.info-lumiti.com/cookiechoices.js"></script><script>document.addEventListener('DOMContentLoaded', function(event){cookieChoices.showCookieConsentBar('Ce site utilise des cookies pour vous offrir le meilleur service. En poursuivant votre navigation, vous acceptez l’utilisation des cookies.', 'J’accepte', 'En savoir plus', 'www.info-lumiti.com');});</script>
         <script src="assets/js/animateButton/js/main.js"></script>
         <script src="assets/js/tooltipLogin/anime.min.js"></script>
         <script src="assets/js/tooltipLogin/charming.min.js"></script>

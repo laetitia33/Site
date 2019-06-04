@@ -1,5 +1,7 @@
 
 <div class="containerCrousel">
+
+	
 <div id="ss-holder" 
 class="ss-holder">
 <div id="effects">
@@ -14,25 +16,25 @@ class="ss-holder">
 						</div>
 					</div>
 					<div class="hover-effect h-style">
-						<a href="assets/js/pageSites/img/large/1.png" rel="prettyPhotoImages[1]">
-						<img src="assets/js/pageSites/img/large/1.png" class="clean-img">
+						<a href="assets/js/pageSites/img/large/1.png">
+						<img src="assets/js/pageSites/img/large/1.png" alt ='photo premier site' class="clean-img">
 						<div class="mask">
 							<i class="icon-search"></i>
 							<span class="img-rollover"></span></div></a>
 						</div>
 						<div class="ss-container">
 							<h3 class="content-title">
-								<a href="https://cinecinemadeparis.000webhostapp.com/"target="_blank">Projet personnel</a>
+								<a href="https://cinecinemadeparis.000webhostapp.com/" target="_blank">Site d'une salle de cinéma</a>
 							</h3>
-							<div>
-
-								Pour ce projet, l'application a été développée en utilisant les 5 langages appris lors de ma formation: HTML, CSS, JS, PHP et SQL. L'approche visuelle et le thème étaient entièrement libres.
-								<a href="#"><strong>Read more</strong><i class="icon-long-arrow-right"></i></a></div>
-						
-						</div>
+							<p>
+								Pour ce projet, l'application a été développée en utilisant les 5 langages appris lors de ma formation: HTML, CSS, JS, PHP et SQL.(site fictif dans le cadre de la formation)  
+							</p>
+						<a class="buttonPopSite" href="#popupSite1">En savoir plus</a>						
+					</div>
 					</div>
 				</section>
-						<section>
+
+				<section>
 					<div class="ss-row orange go-anim">
 						<div class="ribbon">
 							<i class="icon-time icon-large"></i> 13,Sept 
@@ -42,17 +44,18 @@ class="ss-holder">
 						</div>
 					</div>
 					<div class="hover-effect h-style">
-						<a href="assets/js/pageSites/img/large/2.png" rel="prettyPhotoImages[1]">
-						<img src="assets/js/pageSites/img/large/2.png" class="clean-img">
+						<a href="assets/js/pageSites/img/large/2.png">
+						<img src="assets/js/pageSites/img/large/2.png" class="clean-img" alt='photo deuxième site'>
 						<div class="mask">
 							<i class="icon-search"></i>
 							<span class="img-rollover"></span></div></a>
 						</div>
 						<div class="ss-container">
 							<h3 class="content-title">
-								<a href="https://forterohejean.000webhostapp.com/"target="_blank">Blog pour un écrivain</a>
+								<a href="https://forterohejean.000webhostapp.com/" target="_blank">Blog pour un écrivain</a>
 							</h3>
-							<div>Vous développerez une application de blog simple en PHP et avec une base de données MySQL. Elle doit fournir une interface frontend (lecture des billets) et une interface backend (administration des billets pour l'écriture). <a href="#"><strong>Read more</strong><i class="icon-long-arrow-right"></i></a></div>
+							<p>Développement d'une application de blog simple en PHP et avec une base de données MySQL.(site fictif dans le cadre de la formation)</p>
+							<a class="buttonPopSite" href="#popupSite2">En savoir plus</a>	
 						</div>
 					</div>
 				</section>
@@ -66,18 +69,18 @@ class="ss-holder">
 						</div>
 					</div>
 					<div class="hover-effect h-style">
-						<a href="assets/js/pageSites/img/large/3.png" rel="prettyPhotoImages[1]">
-						<img src="assets/js/pageSites/img/large/3.png" class="clean-img">
+						<a href="assets/js/pageSites/img/large/3.png">
+						<img src="assets/js/pageSites/img/large/3.png" class="clean-img" alt='photo troisième site'>
 						<div class="mask">
 							<i class="icon-search"></i>
 							<span class="img-rollover"></span></div></a>
 						</div>
 						<div class="ss-container">
 							<h3 class="content-title">
-								<a href="https://dev-strasbourg-projet-2.pantheonsite.io/" target="_blank">Créez un site en personnalisant un thème WordPress</a>
+								<a href="https://dev-strasbourg-projet-2.pantheonsite.io/" target="_blank">Création d'un site en personnalisant un thème WordPress</a>
 							</h3>
-							<div>Créez le site de l'office du tourisme de Strasbourg en personnalisant un thème WordPress. ... <a href="#"><strong>Read more</strong><i class="icon-long-arrow-right"></i></a></div>
-							
+							<p>Creation le site de l'office du tourisme de Strasbourg en personnalisant un thème WordPress.(site fictif dans le cadre de la formation)</p>
+							<a class="buttonPopSite" href="#popupSite3">En savoir plus</a>							
 						</div>
 					</div>
 				</section>
@@ -91,18 +94,18 @@ class="ss-holder">
 						</div>
 					</div>
 					<div class="hover-effect h-style">
-						<a href="assets/js/pageSites/img/large/4.PNG" rel="prettyPhotoImages[1]">
-						<img src="assets/js/pageSites/img/large/4.PNG" class="clean-img">
+						<a href="assets/js/pageSites/img/large/4.PNG">
+						<img src="assets/js/pageSites/img/large/4.PNG" class="clean-img" alt ='photo quatrième site'>
 						<div class="mask">
 							<i class="icon-search"></i>
 							<span class="img-rollover"></span></div></a>
 						</div>
 						<div class="ss-container">
 							<h3 class="content-title">
-								<a href="https://webagencyprojet1dwjopenclassoom.000webhostapp.com/"target="_blank">Intégrez la maquette du site d'une agence web</a>
+								<a href="https://webagencyprojet1dwjopenclassoom.000webhostapp.com/" target="_blank">Intégration de la maquette du site d'une agence web</a>
 							</h3>
-							<div>Le site a été réalisé en HTML et CSS (sans framework tel que Bootstrap).<a href="#"><strong>Read more</strong><i class="icon-long-arrow-right"></i></a></div>
-							
+							<p>Le site a été réalisé en HTML et CSS (sans framework tel que Bootstrap).(site fictif dans le cadre de la formation)</p>
+							<a class="buttonPopSite" href="#popupSite4">En savoir plus</a>	
 						</div>
 					</div>
 				</section>
@@ -116,22 +119,19 @@ class="ss-holder">
 							</div>
 						</div>
 						<div class="hover-effect h-style">
-							<a href="assets/js/pageSites/img/large/5.PNG" rel="prettyPhotoImages[1]">
-								<img src="assets/js/pageSites/img/large/5.PNG" class="clean-img"><div class="mask"><i class="icon-search"></i><span class="img-rollover"></span>
+							<a href="assets/js/pageSites/img/large/5.PNG" >
+								<img src="assets/js/pageSites/img/large/5.PNG" class="clean-img" alt='photo cinquième site'><div class="mask"><i class="icon-search"></i><span class="img-rollover"></span>
 								</div>
 							</a>
 						</div>
 						<div class="ss-container">
 							<h3 class="content-title">
-								<a href="https://velolib.000webhostapp.com/"target="_blank">Concevez une carte interactive de location de vélos
+								<a href="https://velolib.000webhostapp.com/" target="_blank">Conception d'une carte interactive de location de vélos
 								</a>
 							</h3>
-							<div>Vous devez développer une page de type "Single page Application" simulant la réservation de vélos dans une ville. Ces vélos sont répartis dans de nombreuses stations dans la ville. L'utilisateur doit pouvoir réserver un vélo depuis son navigateur (à condition qu'il reste des vélos disponibles à la station !). La réservation est alors temporairement enregistrée sur le navigateur du visiteur.
-
-							Cette application doit notamment, en s'appuyant sur JavaScript, afficher une carte avec la liste des stations de location de vélos disponibles dans la ville. 
-								<a href="#"><strong>Read more</strong><i class="icon-long-arrow-right"></i>
-								</a>
-					
+							<p>Site réalisé en Javascript sans framwork en POO(programmation orienté objet).(site fictif dans le cadre de la formation)
+							</p>
+							<a class="buttonPopSite" href="#popupSite5">En savoir plus</a>	
 						</div>
 					</div>
 				</section>
@@ -146,4 +146,6 @@ class="ss-holder">
 		</div>
 	</div>
 	</div>
+
+
 </div>

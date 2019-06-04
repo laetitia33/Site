@@ -1,26 +1,24 @@
 <?php $title =  'Création de sites internet'; ?>
 
-
-
-
 <!DOCTYPE html>
 <html lang="fr" class='template'>
 		<head>
 		<meta charset="utf-8">
 		<!-- feuille de style-->
 		<link rel="stylesheet" type="text/css" href="assets/css/pageSite.css">
+		<meta name="keywords" lang="fr" content="laetitia bernardi, assistance informatique la teste de buch à domicile, assistance informatique bassin d'arcachon à domicile, création de site internet , cours d'informatique à domicile"/>
 
-		<meta name="description" content="Assitance informatique,Conseil,Conception de sites,Formation !">
+		<meta name="description" content="Assitance informatique,Conseil,Ccreation de site internet,ormation !">
 		<meta name="viewport" content="width=device-width initial-scale=1">
-		<meta property="og:url" content="https://cinecinemadeparis.000webhostapp.com"/>
+		<meta property="og:url" content="www.info-lumiti.com"/>
 		<meta property="og:title" content="Assistance informatique"/>
 		<meta property="og:type" content="website">
 		<meta property="og:image" content="assets/images/icone.png">
 		<meta name="Language" CONTENT="fr" />
 		<link href="https://www.jqueryscript.net/css/top.css" rel="stylesheet" type="text/css">
 
-		<!--- police -->
-		<link href='http://fonts.googleapis.com/css?family=Questrial|Droid+Sans|Alice|Rancho|Roboto|Niconne|Marck+Script' rel='stylesheet' type='text/css'>
+		<!-- police -->
+		<link href='https://fonts.googleapis.com/css?family=Questrial%7CDroid+Sans%7CAlice%7CRancho%7CRoboto%7CNiconne%7CMarck+Script' rel='stylesheet' type='text/css'>
 		<!--type neon nom entreprise-->
 		<link href="https://uvc.one/upload/iblock/5b2/5b2a90b62e7e14ca24ec45683f4a7961.css" rel="stylesheet">
 
@@ -37,7 +35,7 @@
 
 
    		<!--jquery horloge-->
-		<script src="http://cdnjs.cloudflare.com/ajax/libs/moment.js/2.0.0/moment.min.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.0.0/moment.min.js"></script>
 
 		<!--jquery-->
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/2.0.2/anime.min.js"></script>
@@ -65,33 +63,49 @@
 		<!--tooltip-->
 		<link rel="stylesheet" type="text/css" href="assets/js/tooltipLogin/component.css" />
 
+		<!--bouton retour site animé-->
+		
+		<link rel="stylesheet" type="text/css" href="assets/js/buttonParticle/css/base.css" />
+		<script>document.documentElement.className="js";var supportsCssVars=function(){var e,t=document.createElement("style");return t.innerHTML="root: { --tmp-var: bold; }",document.head.appendChild(t),e=!!(window.CSS&&window.CSS.supports&&window.CSS.supports("font-weight","var(--tmp-var)")),t.parentNode.removeChild(t),e};supportsCssVars()||alert("Please view this demo in a modern browser that supports CSS Variables.");</script>
+		<!--temps de redirection lien retour accueil-->
+    	<script type="text/javascript">
+      		function RedirectionJavascript(){
+        	document.location.href="index.php";
+      	}
+   		</script>
+
+
 		<title><?= isset($title) ? $title : 'Création de sites internet';?></title>
 	</head>
 
 
 <body>
 		<div id="container" class="container intro-effect-sliced">
-			<!-- Top Navigation -->
+		<!-- Top Navigation -->
 		<!-- background etoiles animées-->																		
-		  	<div id='stars'></div>
-  			<div id='stars2'></div>
-  			<div id='stars3'></div>
+		  	<div class='stars'></div>
+  			<div class='stars2'></div>
+  			<div class='stars3'></div>
 
 
 			<header class="header">					
 				<div class="bg-img"><img src="assets/images/creation3.jpg" alt="Background Image" /></div>
 				<div class="title">
 					<nav class="codrops-demos">
-						<a href="index.php">Accueil</a>
-						<a href="#réalisés">Projets réalisés</a>
+						<a href="index.php">Accueil du site</a>
+						<a href="#realises">Projets réalisés</a>
 						<a href="index.php?action=email" target="_blank">Me contacter</a>
 	 				</nav>
-					<h1>Création de sites internet</h1><br>
-				<p class="subline">Diplomée de la 3w academie en tant que Développeuse intégratrice en réalisation d’applications web </p>
-				<p><img src="assets/images/logo/3w.png" class='3w' alt="logo 3w" /></p>	
+				
+				<h1>Création de sites internet</h1><br><br>
+				
+				<p class="subline">Diplomée de la 3w academie en tant que Développeuse intégratrice en réalisation d’applications web. </p>
+
+				<!--liste des icones php,javascript,css,html..-->
+					<p><img src="assets/images/logo/3w.png" class='3w' alt="logo 3w" /></p>
 					<p class='logos'><strong>Langages utilisés :</strong><br>
-					<i class="fab fa-html5 fa-3x" style="color:#E54D26;"></i>&nbsp;&nbsp;
-					<img class='logoLangage' src="assets/images/logo/myadmin.png" alt="myadmin" />
+					<i class="fab fa-html5 fa-3x " style="color:#E54D26;"></i>&nbsp;&nbsp;
+					<img class='logoLangage' src="assets/images/logo/myadmin.png" alt="logo php myadmin" />
 					&nbsp;&nbsp;<i class="fab fa-css3-alt fa-3x"style="color:#264DE4;"></i>
 					&nbsp;&nbsp;<i class="fab fa-js fa-3x"style="color:#F7DF1E;"></i>
 					&nbsp;&nbsp;<i class="fab fa-php fa-3x"style="color:#787CB4;"></i>
@@ -99,38 +113,39 @@
 					&nbsp;&nbsp;<i class="fab fa-github fa-3x"style="color:#14191E;"></i>
 					&nbsp;&nbsp;<i class="fas fa-database fa-3x "style="color:grey;"></i>
 					&nbsp;&nbsp;<img class='logoLangage' src="assets/images/logo/jquery.png" alt="jquery" /></p><br>
-					<p>Tous les sites sont conçus en responsive design de manière a pouvoir les lire sur tous suports. smartphones, tablettes, tv,pc</p><br><br><br>
+				
+				
 				</div>
+
 				<div class="bg-img"><img src="assets/images/creation3.jpg" alt="Background Image" /></div>
 			</header>
 			
 			<button data-info="Entrer"  class="trigger " ><span ></span></button>
-			<a href='index.php'>Retour à l'accueil du site</a>
 
+		
 			<article class="content">
-		    	
 
 				<!--slideshow-->
 				<div><div id="wrap" class="wrap">
 				<div class="mockup">
-					<img class="mockup__img" src="assets/js/pageSites/img/mockup4.jpg" />
+					<img class="mockup__img picture" src="assets/js/pageSites/img/mockup4.jpg" />
 					<div class="mobile">
 						<ul id="slideshow-1" class="slideshow">
-							<li class="slideshow__item"><img src="assets/js/pageSites/img/small/1.png"/></li>
-							<li class="slideshow__item"><img src="assets/js/pageSites/img/small/2.png"/></li>
-							<li class="slideshow__item"><img src="assets/js/pageSites/img/small/3.png"/></li>
-							<li class="slideshow__item"><img src="assets/js/pageSites/img/small/4.PNG"/></li>
-							<li class="slideshow__item"><img src="assets/js/pageSites/img/small/5.PNG"/></li>
+							<li class="slideshow__item"><img class='picture' src="assets/js/pageSites/img/small/1.png"/></li>
+							<li class="slideshow__item"><img class='picture' src="assets/js/pageSites/img/small/2.png"/></li>
+							<li class="slideshow__item"><img class='picture' src="assets/js/pageSites/img/small/3.png"/></li>
+							<li class="slideshow__item"><img class='picture' src="assets/js/pageSites/img/small/4.PNG"/></li>
+							<li class="slideshow__item"><img class='picture' src="assets/js/pageSites/img/small/5.PNG"/></li>
 
 						</ul>
 					</div>
 					<div class="screen">
 						<ul id="slideshow-2" class="slideshow">
-							<li class="slideshow__item current"><img src="assets/js/pageSites/img/large/1.png"/></li>
-							<li class="slideshow__item"><img src="assets/js/pageSites/img/large/2.png"/></li>
-							<li class="slideshow__item"><img src="assets/js/pageSites/img/large/3.png"/></li>
-							<li class="slideshow__item"><img src="assets/js/pageSites/img/large/4.PNG"/></li>
-							<li class="slideshow__item"><img src="assets/js/pageSites/img/large/5.PNG"/></li>
+							<li class="slideshow__item current"><img class='picture' src="assets/js/pageSites/img/large/1.png"/></li>
+							<li class="slideshow__item"><img class='picture' src="assets/js/pageSites/img/large/2.png"/></li>
+							<li class="slideshow__item"><img class='picture' src="assets/js/pageSites/img/large/3.png"/></li>
+							<li class="slideshow__item"><img class='picture' src="assets/js/pageSites/img/large/4.PNG"/></li>
+							<li class="slideshow__item"><img class='picture' src="assets/js/pageSites/img/large/5.PNG"/></li>
 						</ul>
 					</div>
 			
@@ -139,37 +154,55 @@
 				<div>
 
 		
-				<h2 id='réalisés'><hr>Liste des projets réalisés</h2><hr>
-
+				
 
 			</article>
+	<!-- background etoiles animées-->																		
+		  	<div class='stars'></div>
+  			<div class='stars2'></div>
+  			<div class='stars3'></div>
+		<h2 id='realises'><hr>Liste des projets réalisés</h2><hr>
+		<?php  include_once 'assets/js/presentation/presentation.php' ?>
+			<div class='explicationServiceDetail'>
+				<p>*Tous les sites sont conçus en responsive design de manière à pouvoir les lire sur tous suports. smartphones, tablettes, tv,pc.</p>
+				<p>Navigation du diaporama à l'aide de la souris  et/ou des flèches " 
+					<i class="fas fa-arrow-left"></i> <i class="fas fa-arrow-right"></i> <i class="fas fa-arrow-down"></i> <i class="fas fa-arrow-up"></i>
 
-<?php  include_once 'assets/js/presentation/presentation.php' ?>
-			<!--background animé-->
+					 " du clavier.</p>
+			</div>
+			<span class="grid__item1 theme-2">
+					<button class="action"><svg class="icon icon--rewind"><use xlink:href="#icon-rewind" ></use></svg></button>
+					<button class="particles-button" OnClick="setTimeout('RedirectionJavascript()', 2200)" ><i class="fas fa-hand-point-left" 
+					></i>  Retour vers l'accueil du site</button>
+			</span>
+		<!--background animé-->
 		<div id="large-header" class="large-header" >     
 		  <canvas id="demo-canvas"></canvas>
-		
-
 		</div>	
-		
+		<span id=' '></span>
 		<a href="#" class="scroll-to"><i class="fa fa-chevron-up"></i></a>
-		<?php  include_once 'views/include/footer.php' ?>
-		</div><!-- /container -->
-		
- 
 
-				<div class="regle">Règle</div>
+		<?php  include_once 'views/include/footer.php' ?>
+
+		</div><!-- /container -->
+		<?php  include_once 'views/include/acces.php' ?>
+		<?php  include_once 'views/include/popup.php' ?>		
+				<!-- javascript-->
 				<script src ="assets/js/classie.js"></script>
 				<script src ="assets/js/pageSites/script2.js"></script>
-				<script src="assets/js/cookiechoices.js"></script>
-							<script src="assets/js/background/js/TweenLite.min.js"></script>
+				<script src="assets/js/background/js/TweenLite.min.js"></script>
 				<script src="assets/js/background/js/EasePack.min.js"></script>
 				<script src="assets/js/background/js/rAF.js"></script>
 				<script src="assets/js/background/js/demo-1.js"></script>
-				<script>document.addEventListener('DOMContentLoaded', function(event){cookieChoices.showCookieConsentBar('Ce site utilise des cookies pour vous offrir le meilleur service. En poursuivant votre navigation, vous acceptez l’utilisation des cookies.', 'J’accepte', 'En savoir plus', 'http://www.example.com/mentions-legales/');});</script>
-
+			
+				<script src="assets/js/tooltipLogin/anime.min.js"></script>
+				<script src="assets/js/tooltipLogin/charming.min.js"></script>
+				<script src="assets/js/tooltipLogin/main.js"></script>
 				<script src="assets/js/pageSites/js/main.js"></script>
-	
+				<script src="assets/js/cookiechoices.js"></script>        
+        		<script src="www.info-lumiti.com/cookiechoices.js"></script>
+        		<script>document.addEventListener('DOMContentLoaded', function(event){cookieChoices.showCookieConsentBar('Ce site utilise des cookies pour vous offrir le meilleur service. En poursuivant votre navigation, vous acceptez l’utilisation des cookies.', 'J’accepte', 'En savoir plus', 'www.info-lumiti.com');});</script>
+
 			<script>
 			(function() {
 				new Slideshow( document.getElementById( 'slideshow-1' ) );
@@ -347,7 +380,7 @@
 			})();
 		</script>
 
-			<!--presentation site-->	
+			<!--presentation site -->	
 			<script src="assets/js/tooltipLogin/anime.min.js"></script>
 			<script src="assets/js/tooltipLogin/charming.min.js"></script>
 			<script src="assets/js/tooltipLogin/main.js"></script>		
@@ -359,8 +392,15 @@
 			<script type="text/javascript" src="assets/js/presentation/classList.js"></script>
 			<script type="text/javascript" src="assets/js/presentation/bespoke.js"></script>
 			<script type="text/javascript" src="assets/js/presentation/jquery.flexslider.js"></script>
+			
+	    	<script src='assets/js/buttonParticle/js/particles.js'></script>
+	    	<script src='assets/js/buttonParticle/js/demo.js'></script>
 			<script>jQuery(document).ready(function ($){scrollinit("carousel", 3, 1, true, true, true, true, false);});</script>
-			<script>
+			<!--zoom image-->
+			<script type="text/javascript">$('img').loupe1();</script>
+			
+			
+<script>
 jQuery(document).ready(function($){
 	'use strict';
 	var themes,
@@ -371,6 +411,7 @@ jQuery(document).ready(function($){
 		deck = bespoke.from('article');
 		initThemeSwitching();
 	};
+	
 	scrollinit();
 	function initThemeSwitching() {
 		themes = [
@@ -378,10 +419,7 @@ jQuery(document).ready(function($){
 			'cube',
 			'carousel',
 			'concave',
-			'coverflow',
-			'spiraltop',
-			'spiralbottom',
-			'classictilt'
+			'coverflow'
 		];
 		selectedThemeIndex = 0;
 		if(window.lastslide !==''){
@@ -390,9 +428,10 @@ jQuery(document).ready(function($){
 			deck.slide(0);
 		}
 		if(window.openfirst !== 1){
-			deck.slide(0);
+			deck.slide(1);
 			window.openfirst = 1
 		}
+		
 		initInstructions();
 		initKeys();
 		initButtons();
@@ -405,6 +444,9 @@ jQuery(document).ready(function($){
 			$('body').addClass("classic");
 		}
 	}
+	
+	
+	
 	//Display wellcome buble (use cookie to show only once
 	//==================================================
 	function initInstructions() {
@@ -442,10 +484,13 @@ jQuery(document).ready(function($){
 				$(window).bind("load", function() {
 					window.bopen = 1;
 					$("#ss-container").unbind("mousewheel DOMMouseScroll");
+					
+					showInstructions()
 					instructionsTimeout=setTimeout(showInstructions, 2000);
 				});
 			}
 		}			checkCookie();
+				
 		setCookie('storyline','1', 1);	
 			}
 	//Small bottom navigation
@@ -453,14 +498,15 @@ jQuery(document).ready(function($){
 	function initButtons() {
 		document.getElementById('enter-arrow').addEventListener('click', function(){
 			var storyId = $('.bespoke-active a.read-more-init').attr('href');
-			selectactive(storyId)
+			selectactive(storyId);
 		});
-		document.getElementById('back-arrow').addEventListener('click', function(){deck.slide(0)});
+		document.getElementById('backb-arrow').addEventListener('click', function(){deck.slide(0); window.clearInterval(autorotateposts);});
 		document.getElementById('next-arrow').addEventListener('click', gonext);
-		document.getElementById('prev-arrow').addEventListener('click', deck.prev);
+		document.getElementById('prev-arrow').addEventListener('click', function(){deck.prev(); window.clearInterval(autorotateposts);});
 
 	}
 	function gonext(){
+		window.clearInterval(autorotateposts);
 		deck.next();
 		var n = $("section").length;
 		$('section').each(function(){
@@ -471,12 +517,11 @@ jQuery(document).ready(function($){
 				}
 							}
 		});
-	};
+	}
 	//Keyboard navigation
 	//==================================================
 	function initKeys(e) {
 		document.getElementById('next-arrow').removeEventListener('click', gonext);
-		
 		
 		if (/Firefox/.test(navigator.userAgent)) {
 			document.addEventListener('keydown', function(e) {
@@ -485,26 +530,29 @@ jQuery(document).ready(function($){
 				}
 			});
 		}
+		
 		window.gokb = function(e) {
-			
 			if(window.bopen === 1){
 				hideInstructions();	
 				window.bopen = 2;
 			}
 			var key = e.which;
-			if(key == 13 ){
-				window.issearch = 0
-			 $("#searchform").submit(function(e){ window.issearch = 1})
+			if(key === 13 ){
+				window.issearch = 0;
+				$("#searchform").submit(function(e){ window.issearch = 1;});
 				var storyId = $('.bespoke-active a.read-more-init').attr('href');
 				selectactive(storyId);
 			}
 			if(key === 37){
+				window.clearInterval(autorotateposts);
 				deck.prev();
 			}
 			if(key === 32 || key === 39){
+				window.clearInterval(autorotateposts);
 				deck.next();
 			}
-			if(key === 38){
+			//theme swiching
+			/*if(key === 38){
 				if(Modernizr.csstransforms3d !== false){
 				prevTheme();
 				}
@@ -513,8 +561,7 @@ jQuery(document).ready(function($){
 				if(Modernizr.csstransforms3d !== false){
 				nextTheme();
 				}
-			}
-			
+			}*/
 			var n = $("section").length;
 			$('section').each(function(){
 				if( $(this).hasClass('bespoke-active') && Number($(this).attr('rel'))+1 ===n){
@@ -555,7 +602,59 @@ jQuery(document).ready(function($){
 			return e.originalEvent.wheelDelta;
 		}
 	}
-
+	//Mouse wheel navigation
+	//==================================================
+    window.gomouse = function gomousewheel(){
+		var n = $("section").length;
+		$('section').each(function(){
+			if( $(this).hasClass('bespoke-active') && Number($(this).attr('rel'))+1 ===n && jQuery(document).width() > 530){
+								if(window.initajax() === false){
+					document.addEventListener('keydown', gokb);
+				}else{
+					$("#ss-container").unbind("mousewheel DOMMouseScroll");
+					document.removeEventListener('keydown', gokb);	
+				}
+							}
+		});
+		if(jQuery(document).width() < 530){
+			if(jQuery(window).scrollTop() > jQuery(document).height() - jQuery(window).height()-150){
+								if(window.initajax() === false){
+					document.addEventListener('keydown', gokb);
+				}else{
+					$("#ss-container").unbind("mousewheel DOMMouseScroll");
+					document.removeEventListener('keydown', gokb);	
+				}
+								
+			}
+		}
+		$('#ss-container').bind('mousewheel DOMMouseScroll', function(e){
+			if(extractDelta(e) > 0) {
+			$("#ss-container").unbind("mousewheel DOMMouseScroll");
+				setTimeout(prevp, 200); 
+			}
+			if(extractDelta(e) < 0) {
+			$("#ss-container").unbind("mousewheel DOMMouseScroll");
+				setTimeout(nextp, 200);
+			}
+		});
+		function prevp(){
+			window.clearInterval(autorotateposts);
+			deck.prev();
+			setTimeout( gomousewheel, 200);  
+		}
+		function nextp(){
+			window.clearInterval(autorotateposts);
+			deck.next();
+			setTimeout( gomousewheel, 200);  
+		}
+	};
+	window.gomouse();
+	$(".nano").hover(function() {
+		$("#ss-container").unbind("mousewheel DOMMouseScroll")},
+		function(){
+			window.gomouse();
+		}
+	);
 	//Navigation for touch devices
 	//==================================================
 	function initSlideGestures() {
@@ -600,8 +699,10 @@ jQuery(document).ready(function($){
 					return;
 				}
 				if(delta > 0){
+					window.clearInterval(autorotateposts);
 					deck.prev();
 				}else{
+					window.clearInterval(autorotateposts);
 					deck.next();
 				}
 				var n = $("section").length;
@@ -634,10 +735,10 @@ jQuery(document).ready(function($){
 		};
 		window.addtuch();
 	}
+	//theme swiching
 	function selectTheme(index) {
 		var theme = themes[index];
-		var blackbody = 'blackbody';
-		document.body.className = theme  ;
+		document.body.className = theme;
 		selectedThemeIndex = index;
 	}
 
@@ -655,10 +756,10 @@ jQuery(document).ready(function($){
 			window.bopen = 2;
 		}
 	}
-
 	function offsetSelectedTheme(n) {
 		selectTheme(modulo(selectedThemeIndex + n, themes.length));
 	}
+	
 	//Show hide wellcome bubble
 	//==================================================
 	function showInstructions() {
@@ -697,6 +798,7 @@ jQuery(document).ready(function($){
 		var n = $("section").length;
 		window.lastslide = n;
 		$('section').click(function() {
+			window.clearInterval(autorotateposts);
 			var page = $(this).attr('rel');
 			var count = Number(page)+1;
 			if( $(this).hasClass('bespoke-inactive') ){
@@ -716,24 +818,15 @@ jQuery(document).ready(function($){
 			
 		});
 	}
-                                 
-            window.startparallax = function(){
-				//jQuery('#articlehold').parallax();
-                
-                var $scene = $('#articlehold').parallax();
-               /// $scene.parallax('enable');
-               // $scene.parallax('disable');
-              //  $scene.parallax('updateLayers');
-				
-			}
-			setTimeout(window.startparallax,400);	
+	
+		
+	
+			
 	//Animate post on read more click
 	//==================================================
 	var contentholder = document.getElementsByClassName("bespoke-active");
 		var allholder = document.getElementsByClassName("bespoke-parent");
 	function animate(){
-		'use strict';
-		
 		$('a.read-more-init').click(function () {
 			
 			var storyId = $(this).attr('href');
@@ -762,8 +855,7 @@ jQuery(document).ready(function($){
 				contentholder2[i].addEventListener("mouseover", function(){
 					var holdertoanimate = this.getElementsByClassName("container-border")[0];	
 					var ribbon = this.getElementsByClassName("ribbon")[0];	
-					
-					if(holdertoanimate){						   
+					if(holdertoanimate){
 						move(this)
 							.set('margin-top', -20)
 							.duration('0.7s')
@@ -774,7 +866,7 @@ jQuery(document).ready(function($){
 								.duration('0.7s')
 								.end();
 						}
-					}else{					   
+					}else{
 						move(this)
 							.set('margin-top', -20)
 							.duration('0.7s')
@@ -784,8 +876,8 @@ jQuery(document).ready(function($){
 				contentholder2[i].addEventListener("mouseout", function(){
 					var holdertoanimate = this.getElementsByClassName("container-border")[0];
 					var ribbon = this.getElementsByClassName("ribbon")[0];	
-					if(holdertoanimate){						   
-						 move(this)
+					if(holdertoanimate){
+						move(this)
 							.set('margin-top', 0)
 							.duration('0.7s')
 							.end();
@@ -805,7 +897,8 @@ jQuery(document).ready(function($){
 			}
 		}
 	}
-	
+	var autorotateposts;
+		 	
 });
 </script>
 	

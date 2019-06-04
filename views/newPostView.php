@@ -5,7 +5,10 @@
 
 <h2 class='pageList'>Mise en ligne d'un nouveau service</h2>
 
-<div class="oneServDetail">   
+<div class="oneServDetail">
+
+<!---formulaire de mise en ligne d'un service-->
+
 <form class ="form" action="index.php?action=createPost" method="POST">
         <div>
             

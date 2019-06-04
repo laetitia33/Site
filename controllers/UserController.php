@@ -56,12 +56,13 @@ class UserController
 
     }
 
+     
 
 
 // Liste des membres
     public function adminListUsers()
     {
-    	$usersTotal =$this->_user->countUsers();//connaitre le nombre total d'inscrits
+        $usersTotal =$this->_user->countUsers();//connaitre le nombre total d'inscrits
         $users = $this->_user->getAllUsers();
         $postsTotal = $this->_post->countPosts();//connaitre le nombre total de services
         $commentsTotal = $this->_comment->countComments();//connaitre le nombre total de commentaires
@@ -85,6 +86,7 @@ class UserController
             if($isPasswordCorrect && $user['id_group'] == 2)
             {
                 session_start();
+        
                 $_SESSION['id'] = $user['id'];
                 $_SESSION['pseudo'] = $user['pseudo'];
                 $_SESSION['pass'] = $user['pass'];
@@ -97,11 +99,12 @@ class UserController
                 setcookie('pseudo', $pseudo, time() + 1800, null, null, false, true);
                 setcookie('pass', $pass_hash, time() + 1800, null, null, false, true);
                 setcookie('id_group', $group, time() + 1800, null, null, false, true);
-                header('Location: index.php');
+                header('Location: index.php#ws_shadow');
             }
             elseif($isPasswordCorrect && $user['id_group'] == 1)
             {
                 session_start();
+
                 $_SESSION['id'] = $user['id'];
                 $_SESSION['pseudo'] = $user['pseudo'];
                 $_SESSION['pass'] = $user['pass'];

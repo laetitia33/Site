@@ -6,6 +6,7 @@
 <body>
 	<?php include_once 'views/include/background3.php'; ?>
 
+<!--presentation volet gauche -->
 	<div id="volet_clos">
 		<div id="volet">
 			<p>Par téléphone au <br> <i class="fas fa-phone-volume"></i><a href="tel:+0659982720"> 06 59 98 27 20 </a><br>du lundi au samedi de 8h à 19h <br>sans interruption  ou par <br><i class="fas fa-envelope"></i> <a href="index.php?action=email">E-mail</a></p>
@@ -15,7 +16,6 @@
 	</div>
 
 	<div id="blocpage">
-
 		<header>
 			
 			<?php include_once 'views/include/menu.php'; ?>
@@ -25,13 +25,14 @@
 			<a id="films"></a>
 	<div class ="pageInfo">
 					
-		<!--///////////////////////// rdv ou agenda admin///////////////////////-->
+		
+<!--///////////////////////// rdv ou agenda admin///////////////////////-->
 
 <?php 		
 if(isset($_SESSION['id']) && $_SESSION['id_group'] == 1 ):?>
 
 	<h2>Mon planning</h2>
-	<iframe src="https://pro.rdv360.com/agenda/laetitia-bernardi?ajx_md=1" style="border: 0" width="800" height="600" frameborder="0" scrolling="no"></iframe>
+	<iframe src="https://pro.rdv360.com/agenda/laetitia-bernardi?ajx_md=1" style="border: 0" width="800" height="600" frameborder="0" scrolling="yes"></iframe>
 	<?php
 
 else :;?>
@@ -40,7 +41,10 @@ else :;?>
 	<?php 
 	if(isset($_SESSION['id']) && $_SESSION['id_group'] == 1 OR isset($_SESSION['id']) && $_SESSION['id_group'] == 2 ): ?>
 		
-		<script type="text/javascript" src="https://www.rdv360.com/js/iframeResizer.min.js"></script><iframe id="rdv360Iframe" src="https://www.rdv360.com/laetitia-bernardi?ajx_md=1" width="100%" scrolling="no"  style="border:0px;"></iframe><script type="text/javascript">$(function(){$('#rdv360Iframe').iFrameResize();});</script>		
+		<script type="text/javascript" src="https://www.rdv360.com/js/iframeResizer.min.js"></script><iframe id="rdv360Iframe" src="https://www.rdv360.com/laetitia-bernardi?ajx_md=1" width="100%" height="1800" scrolling="yes"  style="border:0px;
+    margin-top: 2%;
+    margin-bottom: 2%;
+    ;"></iframe><script type="text/javascript">$(function(){$('#rdv360Iframe').iFrameResize();});</script>		
 
 	<?php 
 		//sinon se connecter pour prendre un rdv
@@ -59,48 +63,19 @@ else :;?>
 		<a href="#" class="scroll-to"><i class="fa fa-chevron-up"></i></a>
 		<?php include_once 'views/include/footer.php' ?>			
 	</div>	
-	<!---accessibilité regle et calculatrice-->
-				<div class='calculatriceContainer'>
-						
-						<div class="calc-body">	
-							<a id='stopCalculatrice'>X</a>
-							<div class="display">
-								<p class="result"></p>
-								<p class="string"></p>			
-							</div>
-							<div class="keys">
-							<button type="button" class="non-digit" name="clear">C</button>
-							<button type="button" class="non-digit" name="back">Back</button>			
-							<button type="button" class="non-digit append" name="append">AP</button>
-							<button type="button" class="non-digit" value="+/-" name="swneg">&#177;</button>
-							<button type="button" class="non-digit" name="square-root">&radic;</button>			
-							<input type="button" class="non-digit" value="(">
-							<input type="button" class="non-digit" value=")">
-							<input type="button" value="/" class="non-digit">
-								<input type="button" value="7" name="nr7">
-								<input type="button" value="8">
-								<input type="button" value="9">
-								<input type="button" value="*" class="non-digit">
-								<input type="button" value="4">
-								<input type="button" value="5">
-								<input type="button" value="6">
-								<input type="button" value="-" class="non-digit">
-								<input type="button" value="1">
-								<input type="button" value="2">
-								<input type="button" value="3">
-								<input type="button" value="+" class="non-digit">
-								<input class="zero" type="button" value="0">
-								<input type="button" value="." name=".">
-								<button type="button" value="=" name="equal" class="equal">=</button>
-						</div>	
-					</div>
-					</div>
-				<div class="regle"><a id='stop'>X</a>Règle</div>
+</div>
+
+<!-- javascript-->
+
 	<script src ="assets/js/script.js"></script>
 	<script src="assets/js/animateButton/js/main.js"></script>
 	<script src="assets/js/tooltipLogin/anime.min.js"></script>
 	<script src="assets/js/tooltipLogin/charming.min.js"></script>
 	<script src="assets/js/tooltipLogin/main.js"></script>
+	<!--zoom image-->
+	<script>$('img').loupe1();</script>
+	<script src="assets/js/cookiechoices.js"></script>        
+    <script src="www.info-lumiti.com/cookiechoices.js"></script><script>document.addEventListener('DOMContentLoaded', function(event){cookieChoices.showCookieConsentBar('Ce site utilise des cookies pour vous offrir le meilleur service. En poursuivant votre navigation, vous acceptez l’utilisation des cookies.', 'J’accepte', 'En savoir plus', 'www.info-lumiti.com');});</script>
 	
 </body>
 </html>

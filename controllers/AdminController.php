@@ -74,7 +74,7 @@ class AdministrationController
     {
         $post = $this->_post->getPost($_GET['post_id']);//récuperer le service selectionné
         $reportComment = $this->_comment->approvedComment($_GET['id']);//approuver un commentaire en fonction de son id
-        header('Location: index.php?action=adminCommentsReport');
+        echo '<script>document.location.href="index.php?action=adminCommentsReport";</script>';
     }
 
 
@@ -85,9 +85,8 @@ class AdministrationController
         
         $reportComments = $this->_comment->approvedComments();
             
-        header('Location:index.php?action=adminCommentsReport#reportcom' );
-        
-        
+        echo '<script>document.location.href="index.php?action=adminCommentsReport#reportcom";</script>';
+       
     }
 
 
@@ -111,9 +110,8 @@ class AdministrationController
     {
         $deleteComments = $this->_comment->deleteAllComments();
 
-        header('Location:index.php?action=adminListComments#deleteCom' );
-        
-   
+        echo '<script>document.location.href="index.php?action=adminListComments#deleteCom";</script>';
+  
     }
 
 
@@ -121,9 +119,8 @@ class AdministrationController
     public function deleteCommentsLivreGold()
     {
         $deleteComments = $this->_comment->deleteAllComments();
-
-             header('Location:index.php?action=gold' );          
-        
+         
+        echo '<script>document.location.href="index.php?action=gold";</script>';
    
     }
 
@@ -132,8 +129,7 @@ class AdministrationController
     {
         $deleteAllCommentReport = $this->_comment->deleteCommentsReport();
        
-        header('Location:index.php?action=adminCommentsReport#reportcom');
-        
+        echo '<script>document.location.href="index.php?action=adminCommentsReport#reportcom";</script>';
    
     }
 
@@ -148,9 +144,8 @@ class AdministrationController
         }
         else
         {
-          
-            header('Location:index.php?action=adminListComments#deleteCom' );
-    
+            echo '<script>document.location.href="index.php?action=adminListComments#deleteCom";</script>';
+  
         }
     }
 
@@ -166,9 +161,7 @@ class AdministrationController
         }
         else
         {
-          
-            header('Location:index.php?action=gold' );
-            
+            echo '<script>document.location.href="index.php?action=gold";</script>';     
         }
     }
 
@@ -184,8 +177,8 @@ class AdministrationController
         else
         {
          
-             header('Location: index.php?action=listpost');
-            
+            echo '<script>document.location.href="index.php?action=listpost";</script>';     
+           
         }
     }
 
@@ -201,9 +194,7 @@ class AdministrationController
         else
         {
          
-            header('Location:index.php?action=adminCommentsReport#reportcom');
-
-            
+            echo '<script>document.location.href="index.php?action=adminCommentsReport#reportcom";</script>';                 
         }
     }
 
@@ -218,7 +209,8 @@ class AdministrationController
     {
         $createPost = $this->_post->createPost($author, $title,$image, $content);
  
-        header('Location: index.php?action=listPosts#episodes');
+        echo '<script>document.location.href="index.php?action=listPosts#episodes";</script>';                 
+
     }
 
 
@@ -243,7 +235,9 @@ class AdministrationController
         if ($updatePost === false) {
             throw new Exception('Impossible de mettre à jour le service');
         } else {
-            header('Location: index.php?action=listPosts');
+
+            echo '<script>document.location.href="index.php?action=listPosts";</script>';                 
+
         }
     }
 
@@ -258,7 +252,8 @@ class AdministrationController
         } elseif ($deleteComments === false) {
             throw new Exception('Impossible de supprimer les commentaire du service');
         } else {
-            header('Location:index.php?action=listPosts');
+         
+            echo '<script>document.location.href="index.php?action=listPosts";</script>';                 
         
         }
     }

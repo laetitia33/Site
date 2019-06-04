@@ -1,18 +1,21 @@
 	<head>
-		<meta charset="utf-8">
+		<meta charset="UTF-8">
 		<!-- feuille de style-->
 		<link rel="stylesheet" type="text/css" href="assets/css/style.css">
 
 
-		<meta name="description" content="Assitance informatique,Conseil,Conception de sites,Formation !">
+		<meta name="description" content="Assistance informatique,Conseil,Conception de sites,Formation ">
 		<meta name="viewport" content="width=device-width initial-scale=1">
-		<meta property="og:url" content="info.lumiti.com"/>
+		<meta property="og:url" content="www.info.lumiti.com"/>
 		<meta property="og:title" content="Assistance informatique"/>
 		<meta property="og:type" content="website">
 		<meta property="og:image" content="assets/images/icone.png">
 		<meta name="Language" CONTENT="fr" />
+		<meta name="keywords" content="Assistance informatique, informatique, création de site, laetita bernardi, info-lumiti,cours d'informatiquetique à domicile, assistance informatique à distance" />
+		<meta name="robots" content="all" />
+
 		<meta name="google-site-verification" content="GU5kihBubOiyqQ7cZsAjGcJndAFBMjMqgMF1sVgqI7g" />		<!--- police -->
-		<link href='http://fonts.googleapis.com/css?family=Questrial|Droid+Sans|Alice|Rancho|Roboto|Niconne|Marck+Script' rel='stylesheet' type='text/css'>
+		<link href='https://fonts.googleapis.com/css?family=Questrial%7CDroid+Sans%7CAlice%7CRancho%7CRoboto%7CNiconne%7CMarck+Script' rel='stylesheet' type='text/css'>
 		<!--type neon nom entreprise-->
 		<link href="https://uvc.one/upload/iblock/5b2/5b2a90b62e7e14ca24ec45683f4a7961.css" rel="stylesheet">
 
@@ -27,7 +30,7 @@
    		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
 
    		<!--jquery slider page vpn-->
-		<script src="http://cdnjs.cloudflare.com/ajax/libs/moment.js/2.0.0/moment.min.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.0.0/moment.min.js"></script>
 
 		<!--jquery-->
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/2.0.2/anime.min.js"></script>
@@ -39,28 +42,14 @@
 
   		<!--slider page d'acceuil-->
   		<link rel="stylesheet" type="text/css" href="assets/js/sliderAccueil/engine1/style.css" />
-		<script type="text/javascript" src="assets/js/sliderAccueil/engine1/jquery.js"></script>
+		<script src="assets/js/sliderAccueil/engine1/jquery.js"></script>
 
 		<!-- validation formulaires -->
   		<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.17.0/jquery.validate.js"></script>
   		<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.17.0/additional-methods.js"></script>
 
-		<!-- slider page controle pc-->
- 		<script src="assets/js/slider_controle/jquery.easing.1.2.js"></script>
- 		<link href="assets/js/slider_controle/anythingslider.css" rel="stylesheet">
-	 	<script src="assets/js/slider_controle/jquery.anythingslider.min.js"></script>
- 		<script src="assets/js/slider_controle/jquery.anythingslider.fx.min.js"></script>
 
 		<link rel="stylesheet" type="text/css" href="assets/js/menu/css/component.css" />
-
-
-		<!--Ajouter ce site aux favoris-->
-		<script language="JavaScript">
-		function favoris() {
-			if ( navigator.appName != 'Microsoft Internet Explorer' )
-			{ window.sidebar.addPanel("<a href="javascript:void(favoris());">Assitance InformatiqueBassi d'Arcachon</a>","http://www.tonsite.com",""; }
-			else { window.external.AddFavorite("http://www.tonsite.com","le nom du site"); } 
-		</script>
 
 		<!--fenetre de confirmation-->
 		<link data-require="sweet-alert@*" data-semver="0.4.2" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/1.1.3/sweetalert.css" />
@@ -81,6 +70,15 @@
 		<!--modale vpn-->
 		<link rel="stylesheet" href="assets/js/modaleVpn/animate.min.css">
 
+		<!--loupe-->
+		<script>
+		  window.console = window.console || function(t) {};
+		</script>
+		<script>
+		  if (document.location.search.match(/type=embed/gi)) {
+		    window.parent.postMessage("resize", "*");
+		  }
+		</script>
 
 		<title><?= isset($title) ? $title : 'Assistance informatique';?></title>
 	</head>

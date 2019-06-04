@@ -3,7 +3,7 @@
 .containerCrousel{
 	position:relative;
 	width: 90%;
-	height:600px;
+	height:700px;
 	margin:0 auto 0;
 
 }
@@ -31,7 +31,8 @@
 	-webkit-user-select:none
 }
 .ss-holder p{
-	padding:8px 0
+	padding:8px 0;
+	font-size:1.5em;
 }
 .ss-holder h1{
 	font-size:30px
